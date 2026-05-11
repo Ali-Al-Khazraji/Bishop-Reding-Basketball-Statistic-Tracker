@@ -1,0 +1,115 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace BRCSS_BasketballStats
+{
+    public partial class frmMatchSetup : Form
+    {
+        public frmMatchSetup()
+        {
+            InitializeComponent();
+        }
+        private void btnSubmit_MSS_Click(object sender, EventArgs e)
+        {
+            bool testCheck = false;
+            try
+            {
+                string testCombo = cmbBracket_MSS.SelectedItem.ToString();
+            }
+            catch
+            {
+                testCheck = true;
+                MessageBox.Show("Please make sure that you've selected a member from the dropdown list and that all information boxes are filled out before proceeding! Thank you.");
+            }
+            if (txtMatchLocation_MSS.Text == "")
+            {
+                MessageBox.Show("Please make sure that you've selected a member from the dropdown list and that all information boxes are filled out before proceeding! Thank you.");
+            }
+            else if (txtMatchLocation_MSS.Text != "" && testCheck == false)
+            {
+                bool flag = false;
+                if (txtMatchDate_MSS.Text == "")
+                {
+                    MessageBox.Show("Please do not leave textboxes blank or use inappropriate characters! THe format for DOB is : DD-MONTHNAME-YY, this student's Date of Birth has been defaulted to January 1st, 2000 due to the error. Please re-edit this student's profile at the latest, thank you.");
+                    flag = true;
+                }
+                string[] dobParts = new string[3];
+                if (flag == false)
+                {
+                    dobParts = txtMatchDate_MSS.Text.Split('-');
+                }
+                if (flag == false && dobParts.Length > 3 || dobParts.Length < 3)
+                {
+                    MessageBox.Show("Please do not leave textboxes blank or use inappropriate characters! THe format for DOB is : DD-MONTHNAME-YY, this student's Date of Birth has been defaulted to January 1st, 2000 due to the error. Please re-edit this student's profile at the latest, thank you.");
+                    flag = true;
+                }
+                bool dateValidFormat = true;
+                if (flag == false)
+                {
+                    dateValidFormat = dobParts[0].Length == 2 && char.IsDigit(dobParts[0][0]) && char.IsDigit(dobParts[0][1]);
+                }
+                if (dateValidFormat == false && flag == false)
+                {
+                    MessageBox.Show("Please do not leave textboxes blank or use inappropriate characters! THe format for DOB is : DD-MONTHNAME-YY, this student's Date of Birth has been defaulted to January 1st, 2000 due to the error. Please re-edit this student's profile at the latest, thank you.");
+                    flag = true;
+                }
+                bool isMonth = true;
+                if (flag == false)
+                {
+                    isMonth = (dobParts[1] == "Jan" || dobParts[1] == "Feb" || dobParts[1] == "Mar" || dobParts[1] == "Apr" || dobParts[1] == "May" || dobParts[1] == "Jun" || dobParts[1] == "Jul" || dobParts[1] == "Aug" || dobParts[1] == "Sep" || dobParts[1] == "Oct" || dobParts[1] == "Nov" || dobParts[1] == "Dec");
+                }
+                bool monthValidFormat = true;
+                if (flag == false)
+                {
+                    monthValidFormat = dobParts[1].Length == 3 && char.IsLetter(dobParts[1][0]) && char.IsLetter(dobParts[1][1]) && char.IsLetter(dobParts[1][2]);
+                }
+                if (flag == false && isMonth == false || monthValidFormat == false)
+                {
+                    MessageBox.Show("Please do not leave textboxes blank or use inappropriate characters! THe format for DOB is : DD-MONTHNAME-YY, this student's Date of Birth has been defaulted to January 1st, 2000 due to the error. Please re-edit this student's profile at the latest, thank you.");
+                    flag = true;
+                }
+                bool date2ValidFormat = true;
+                if (flag == false)
+                {
+                    date2ValidFormat = dobParts[2].Length == 2 && char.IsDigit(dobParts[2][0]) && char.IsDigit(dobParts[2][1]);
+                }
+                if (date2ValidFormat == false && flag == false)
+                {
+                    MessageBox.Show("Please do not leave textboxes blank or use inappropriate characters! THe format for DOB is : DD-MONTHNAME-YY, this student's Date of Birth has been defaulted to January 1st, 2000 due to the error. Please re-edit this student's profile at the latest, thank you.");
+                    flag = true;
+                }
+                string matchDate = txtMatchDate_MSS.Text;
+                string opponentName = txtOpponentTeamName_MSS.Text;
+                string matchLocation = txtMatchLocation_MSS.Text;
+                string teamBracket = cmbBracket_MSS.SelectedItem.ToString();
+                string finalText = "";
+                if (flag != true)
+                {
+                    this.Hide();
+                    finalText = teamBracket + "; Royals Vs. " + opponentName + " ; " + matchDate + " ; " + matchLocation;
+                    frmMatch frmMatch = new frmMatch(finalText, teamBracket);
+                    frmMatch.Show();
+                }
+            }
+        }
+        private void frmMatchSetup_Load(object sender, EventArgs e)
+        {
+            cmbBracket_MSS.Items.Add("Novice Boys");
+            cmbBracket_MSS.Items.Add("Junior Boys");
+            cmbBracket_MSS.Items.Add("Junior Girls");
+            cmbBracket_MSS.Items.Add("Senior Boys");
+            cmbBracket_MSS.Items.Add("Senior Girls");
+        }
+        private void btnCancel_MSS_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}

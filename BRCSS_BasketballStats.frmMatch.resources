@@ -1,0 +1,737 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.OleDb;
+using System.IO;
+namespace BRCSS_BasketballStats
+{
+    public partial class frmTeamCreation : Form
+    {
+        private string basketballPosition = "";
+        private string jerseyNumber = "";
+        private string playerFName = "";
+        private string playerLName = "";
+        private string selectedPlayerFName = "";
+        private string selectedPlayerLName = "";
+        private string convertFName = "";
+        private string convertLName = "";
+        private string convertBasketballPosition = "";
+        private string convertJerseyNumber = "";
+        private string convertTeam = "";
+        private OleDbConnection connection = new OleDbConnection();
+        public frmTeamCreation()
+        {
+            InitializeComponent();
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Royals Basketball Database.accdb; Persist Security Info=False";
+            disableEdit();
+        }
+        private void frmTeamCreation_Load(object sender, EventArgs e)
+        {
+            txtBasketballPosition_CS.KeyPress += txtBasketballPosition_CS_KeyPress;
+            txtJerseyNumber_CS.KeyPress += txtJerseyNumber_CS_KeyPress;
+            txtPlayerFName_CS.KeyPress += txtPlayerFName_CS_KeyPress;
+            txtPlayerLName_CS.KeyPress += txtPlayerLName_CS_KeyPress;
+            txtPlayerFirstName2_CS.KeyPress += txtPlayerFirstName2_CS_KeyPress;
+            txtPlayerLastName2_CS.KeyPress += txtPlayerLastName2_CS_KeyPress;
+            txtJerseyNumber2_CS.KeyPress += txtJerseyNumber2_CS_KeyPress;
+            txtBasketballPosition2_CS.KeyPress += txtBasketballPosition2_CS_KeyPress;
+            txtNewTeam_CS.KeyPress += txtNewTeam_CS_KeyPress;
+            cmbTeamBracket_CS.Items.Add("Novice Boys");
+            cmbTeamBracket_CS.Items.Add("Junior Boys");
+            cmbTeamBracket_CS.Items.Add("Junior Girls");
+            cmbTeamBracket_CS.Items.Add("Senior Boys");
+            cmbTeamBracket_CS.Items.Add("Senior Girls");
+            cmbTeamBracket_CS.Items.Add("Archive");
+        }
+        private void cmbTeamBracket_CS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            enableEdit();
+            clearText();
+            listNewTeamPlayers.Items.Clear();
+            try
+            {
+                connection.Open();
+                OleDbCommand commandTeam = new OleDbCommand();
+                commandTeam.Connection = connection;
+                //define the SQL query to retrieve the selected student's record
+                string query;
+                if (cmbTeamBracket_CS.Text.Contains("Archive"))
+                {
+                    query = "SELECT * FROM tblArchivedPlayers WHERE TeamBracket='" + cmbTeamBracket_CS.Text + "'";
+                }
+                else
+                {
+                    query = "SELECT * FROM tblActivePlayers WHERE TeamBracket='" + cmbTeamBracket_CS.Text + "'";
+                }
+                commandTeam.CommandText = query;
+                OleDbDataReader readerTeam = commandTeam.ExecuteReader();
+                while (readerTeam.Read())
+                {
+                    listNewTeamPlayers.Items.Add(readerTeam["LastName"].ToString() + ", " + readerTeam["FirstName"].ToString() + " - #" + readerTeam["JerseyNumber"].ToString());
+                }
+                readerTeam.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                connection.Close();
+            }
+        }
+        private void btnAdd_CS_Click(object sender, EventArgs e)
+        { 
+            try
+            {
+                clearText();
+                bool alreadyExists = false;
+                OleDbCommand checkUserExists1 = new OleDbCommand();
+                checkUserExists1.Connection = connection;
+                connection.Open();
+                checkUserExists1.CommandText = "SELECT * FROM tblSubstitutions";
+                OleDbDataReader checkUserExists1Reader = checkUserExists1.ExecuteReader();
+                while (checkUserExists1Reader.Read())
+                {
+                    if (checkUserExists1Reader["FirstName"].ToString() == playerFName)
+                    {
+                        connection.Close();
+                        MessageBox.Show("Note. This player already exists! Please alter the name to prevent duplication, thank you!");
+                        checkUserExists1Reader.Close();
+                        alreadyExists = true;
+                    }
+                    if (checkUserExists1Reader["LastName"].ToString() == playerFName)
+                    {
+                        connection.Close();
+                        MessageBox.Show("Note. This player already exists! Please alter the name to prevent duplication, thank you!");
+                        checkUserExists1Reader.Close();
+                        alreadyExists = true;
+                    }
+                }
+                if (alreadyExists == false)
+                {
+                    connection.Close();
+                    checkUserExists1Reader.Close();
+                    string teamBracket = cmbTeamBracket_CS.SelectedItem.ToString();
+                    OleDbCommand commandID = new OleDbCommand();
+                    if (teamBracket.Contains("Archive"))
+                    {
+                        commandID.CommandText = "SELECT MAX(IDNumber) FROM tblArchive";
+                    }
+                    else
+                    {
+                        commandID.CommandText = "SELECT MAX(IDNumber) FROM tblActivePlayers";
+                    }
+                    commandID.Connection = connection;
+                    connection.Open();
+                    int currentID = Convert.ToInt32(commandID.ExecuteScalar());
+                    connection.Close();
+                    OleDbCommand commandAdd = new OleDbCommand();
+                    commandAdd.Connection = connection;
+                    connection.Open();
+                    string query = "";
+                    if (teamBracket.Contains("Archive"))
+                    {
+                        query = "INSERT INTO tblArchive (IDNumber, FirstName, LastName, JerseyNumber, BasketballPosition, TeamBracket) VALUES (@IDNumber, @FirstName, @LastName, @JerseyNumber, @Position, @BracketName)";
+                    }
+                    else
+                    {
+                        query = "INSERT INTO tblActivePlayers (IDNumber, FirstName, LastName, JerseyNumber, BasketballPosition, TeamBracket) VALUES (@IDNumber, @FirstName, @LastName, @JerseyNumber, @Position, @BracketName)";
+                    }
+                    commandAdd.CommandText = query;
+                    int output = 0;
+                    bool jerseyNumberCheck = jerseyNumber.Length == 2 || jerseyNumber.Length == 1 && int.TryParse(jerseyNumber, out output);
+                    bool positionCheck = basketballPosition == "Shooting Guard" || basketballPosition == "Point Guard" || basketballPosition == "Center" || basketballPosition == "Small Forward" || basketballPosition == "Power Forward";
+                    if (IsLettersOnly(playerFName) == true && IsLettersOnly(playerLName) == true && jerseyNumberCheck == true && positionCheck == true)
+                    {
+                        commandAdd.Parameters.AddWithValue("@IDNumber", currentID + 1);
+                        commandAdd.Parameters.AddWithValue("@FirstName", playerFName);
+                        commandAdd.Parameters.AddWithValue("@LastName", playerLName);
+                        commandAdd.Parameters.AddWithValue("@JerseyNumber", jerseyNumber);
+                        commandAdd.Parameters.AddWithValue("@Position", basketballPosition);
+                        commandAdd.Parameters.AddWithValue("@BracketName", teamBracket);
+                        commandAdd.ExecuteNonQuery();
+                        connection.Close();
+                        query = "";
+                        OleDbCommand subID = new OleDbCommand();
+                        subID.CommandText = "SELECT MAX(IDNumber) FROM tblSubstitutions";
+                        subID.Connection = connection;
+                        connection.Open();
+                        int idSubstitution = Convert.ToInt32(subID.ExecuteScalar());
+                        connection.Close();
+                        OleDbCommand commandAddSubstitution = new OleDbCommand();
+                        commandAddSubstitution.Connection = connection;
+                        connection.Open();
+                        query = "INSERT INTO tblSubstitutions (IDNumber, FirstName, LastName, JerseyNumber, BasketballPosition, TeamBracket) VALUES (@IDNumber, @FirstName, @LastName, @JerseyNumber, @Position, @BracketName)";
+                        commandAddSubstitution.CommandText = query;
+                        commandAddSubstitution.Parameters.AddWithValue("@IDNumber", idSubstitution + 1);
+                        commandAddSubstitution.Parameters.AddWithValue("@FirstName", playerFName);
+                        commandAddSubstitution.Parameters.AddWithValue("@LastName", playerLName);
+                        commandAddSubstitution.Parameters.AddWithValue("@JerseyNumber", jerseyNumber);
+                        commandAddSubstitution.Parameters.AddWithValue("@Position", basketballPosition);
+                        commandAddSubstitution.Parameters.AddWithValue("@BracketName", teamBracket);
+                        commandAddSubstitution.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Inputs detected! Please correct all invalid inputs (Make sure to press Enter after typing a name in ANY textbox!) in the textboxes, and try again, thank you!");
+                        connection.Close();
+                    }
+                    listNewTeamPlayers.Items.Clear();
+                    OleDbCommand commandGatherPlayers = new OleDbCommand();
+                    commandGatherPlayers.Connection = connection;
+                    connection.Open();
+                    if (teamBracket == "Archive")
+                    {
+                        commandGatherPlayers.CommandText = "SELECT * FROM tblArchivedPlayers";
+                    }
+                    if (teamBracket != "Archive")
+                    {
+                        commandGatherPlayers.CommandText = "SELECT * FROM tblActivePlayers";
+                    }
+                    OleDbDataReader commandReader = commandGatherPlayers.ExecuteReader();
+                    string playerName = "";
+                    while (commandReader.Read())
+                    {
+                        playerName = commandReader["LastName"].ToString() + ", " + commandReader["FirstName"].ToString() + " - #" + commandReader["JerseyNumber"].ToString();
+                        listNewTeamPlayers.Items.Add(playerName);
+                    }
+                    connection.Close();
+                    commandReader.Close();
+                }
+            }
+            catch
+            {
+                connection.Close();
+            }
+        }
+        private void btnDelete_CS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string teamBracket = cmbTeamBracket_CS.SelectedItem.ToString();
+                string[] selectedItem = listNewTeamPlayers.SelectedItem.ToString().Split(',');
+                string firstName = "";
+                string lastName = "";
+                for (int searchID = 0; searchID < selectedItem[1].Length; searchID++)
+                {
+                    if (selectedItem[1][searchID] == '-')
+                    {
+                        firstName = selectedItem[1].Substring(0, searchID - 1).Trim();
+                    }
+                    if (selectedItem[1][searchID] == '#')
+                    {
+                        jerseyNumber = selectedItem[1].Substring(searchID + 1, selectedItem[1].Length - (searchID + 1));
+                    }
+                }
+                lastName = selectedItem[0].Trim();
+                try
+                {
+                    OleDbCommand commandDelete = new OleDbCommand();
+                    commandDelete.Connection = connection;
+                    connection.Open();
+                    string query = "";
+                    if (teamBracket == "Archive")
+                    {
+                        query = "DELETE from tblArchivedPlayers WHERE FirstName = @FirstName AND LastName = @LastName";
+                    }
+                    if (teamBracket != "Archive")
+                    {
+                        query = "DELETE from tblActivePlayers WHERE FirstName = @FirstName AND LastName = @LastName";
+                    }
+                    commandDelete.CommandText = query;
+                    if (IsLettersOnly(firstName) == true && IsLettersOnly(lastName) == true)
+                    {
+                        commandDelete.Parameters.AddWithValue("@FirstName", firstName);
+                        commandDelete.Parameters.AddWithValue("@LastName", lastName);
+                        commandDelete.ExecuteNonQuery();
+                        connection.Close();
+                        OleDbCommand commandDeleteSub = new OleDbCommand();
+                        commandDeleteSub.Connection = connection;
+                        connection.Open();
+                        commandDeleteSub.CommandText = "DELETE from tblSubstitutions WHERE FirstName = @FirstName AND LastName = @LastName";
+                        commandDeleteSub.CommandText = query;
+                        commandDeleteSub.Parameters.AddWithValue("@FirstName", firstName);
+                        commandDeleteSub.Parameters.AddWithValue("@LastName", lastName);
+                        commandDeleteSub.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Inputs detected! Please correct all invalid inputs in the textboxes, and try again, thank you!");
+                        connection.Close();
+                    }
+                    OleDbCommand commandGatherPlayers = new OleDbCommand();
+                    commandGatherPlayers.Connection = connection;
+                    connection.Open();
+                    if (teamBracket == "Archive")
+                    {
+                        commandGatherPlayers.CommandText = "SELECT * FROM tblArchivedPlayers";
+                    }
+                    if (teamBracket != "Archive")
+                    {
+                        commandGatherPlayers.CommandText = "SELECT * FROM tblActivePlayers";//adding plyrs back to list.
+                    }
+                    OleDbDataReader commandReader = commandGatherPlayers.ExecuteReader();
+                    string playerName = "";
+                    listNewTeamPlayers.Items.Clear();
+                    while (commandReader.Read())
+                    {
+                        playerName = commandReader["LastName"].ToString() + ", " + commandReader["FirstName"].ToString() + " - #" + commandReader["JerseyNumber"].ToString();
+                        listNewTeamPlayers.Items.Add(playerName);
+                    }
+                    connection.Close();
+                    commandReader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    connection.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No player selected, please try again by selecting a player on the list, thank you!");
+            }
+        }
+        private void btnSubmit_CS_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to Submit?", "Submitting...", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+        private void picPlayer_CS_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                picPlayer_CS.Image = new Bitmap(openFileDialog.FileName);
+            }
+        }
+        private void btnPhotoUpload_CS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string selectedPlayerFName = txtSelectedPlayerFName_CS.Text;
+                string selectedPlayerLName = txtSelectedPlayerFName_CS.Text;
+                string teamBracket = cmbTeamBracket_CS.SelectedItem.ToString();
+                OleDbCommand uploadPhoto = new OleDbCommand();
+                uploadPhoto.Connection = connection;
+                connection.Open();
+                string query;
+                if (teamBracket.Contains("Archive"))
+                {
+                    query = "UPDATE tblArchivedPlayers SET PlayerPhoto = @PhotoToAdd WHERE LastName = @LastName AND FirstName = @FirstName";
+                    uploadPhoto.Parameters.AddWithValue("@PhotoToAdd", getPhoto());
+                    uploadPhoto.Parameters.AddWithValue("@LastName", selectedPlayerLName);
+                    uploadPhoto.Parameters.AddWithValue("@FirstName", selectedPlayerFName);
+                }
+                else
+                {
+                    query = "UPDATE tblActivePlayers SET PlayerPhoto = @PhotoToAdd WHERE LastName = @LastName AND FirstName = @FirstName";
+                    uploadPhoto.Parameters.AddWithValue("@PhotoToAdd", getPhoto());
+                    uploadPhoto.Parameters.AddWithValue("@LastName", selectedPlayerLName);
+                    uploadPhoto.Parameters.AddWithValue("@FirstName", selectedPlayerFName);
+                }
+                uploadPhoto.CommandText = query;
+                uploadPhoto.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error : Photo was not uploaded properly! Please refer to the user manual for instructions!");
+            }
+            updateRecord();
+        }
+        private void updateRecord()
+        {
+            try//add the players to active, and to sub
+            {
+                string teamBracket = cmbTeamBracket_CS.SelectedItem.ToString();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                connection.Open();
+                string query = "";
+                if (teamBracket.Contains("Archive"))
+                {
+                    query = "UPDATE tblArchivePlayers SET PlayerPhoto = @PhotoToAdd WHERE LastName = @LastName AND FirstName = @FirstName";
+                    command.Parameters.AddWithValue("@PhotoToAdd", getPhoto());
+                    command.Parameters.AddWithValue("@LastName", playerLName);
+                    command.Parameters.AddWithValue("@FirstName", playerFName);
+                }
+                else
+                {
+                    query = "UPDATE tblArchivePlayers SET PlayerPhoto = @PhotoToAdd WHERE LastName = @LastName AND FirstName = @FirstName";
+                    command.Parameters.AddWithValue("@PhotoToAdd", getPhoto());
+                    command.Parameters.AddWithValue("@LastName", playerLName);
+                    command.Parameters.AddWithValue("@FirstName", playerFName);
+                }
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Note. Error saving Image to Database: " + ex.Message);
+            }
+        }
+        private void disableEdit()
+        {
+            btnDelete_CS.Enabled = false;
+            txtPlayerFName_CS.Enabled = false;
+            txtPlayerLName_CS.Enabled = false;
+            txtJerseyNumber_CS.Enabled = false;
+            txtBasketballPosition_CS.Enabled = false;
+        }
+        private void enableEdit()
+        {
+            btnDelete_CS.Enabled = true;
+            txtPlayerFName_CS.Enabled = true;
+            txtPlayerLName_CS.Enabled = true;
+            txtJerseyNumber_CS.Enabled = true;
+            txtBasketballPosition_CS.Enabled = true;
+        }
+        private void clearText()
+        {
+            TextBox[] txt = { txtBasketballPosition2_CS, txtBasketballPosition_CS, txtCurrentTeam_CS, txtJerseyNumber2_CS, txtJerseyNumber_CS, txtNewTeam_CS, txtPlayerFirstName2_CS, txtPlayerFName_CS, txtPlayerLastName2_CS, txtPlayerLName_CS, txtSelectedPlayerFName_CS, txtSelectedPlayerLName_CS };
+            foreach (Control cntrl in txt)
+            {
+                if (cntrl is TextBox toBeTxt)
+                {
+                    toBeTxt.Text = "";
+                }
+            }
+        }
+        private bool IsLettersOnly(string text)
+        {
+            foreach (char c in text)
+            {
+                if (!char.IsLetter(c))
+                    return false;
+            }
+            return true;
+        }
+        private void listNewTeamPlayers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string teamBracket = cmbTeamBracket_CS.SelectedItem.ToString();
+                string[] selectedItem = listNewTeamPlayers.SelectedItem.ToString().Split(',');
+                string firstName = "";
+                string lastName = "";
+                for (int searchID = 0; searchID < selectedItem[1].Length; searchID++)
+                {
+                    if (selectedItem[1][searchID] == '-')
+                    {
+                        firstName = selectedItem[1].Substring(0, searchID - 1).Trim();
+                    }
+                    if (selectedItem[1][searchID] == '#')
+                    {
+                        jerseyNumber = selectedItem[1].Substring(searchID + 1, selectedItem[1].Length - (searchID + 1));
+                    }
+                }
+                lastName = selectedItem[0].Trim();
+                txtPlayerFirstName2_CS.Text = firstName;
+                txtPlayerLastName2_CS.Text = lastName;
+                txtJerseyNumber2_CS.Text = jerseyNumber;
+                OleDbCommand findPosition = new OleDbCommand();
+                findPosition.Connection = connection;
+                connection.Open();
+                if (teamBracket.Contains("Archive"))
+                {
+                    findPosition.CommandText = "SELECT * FROM tblArchivedPlayers WHERE LastName = @LastName AND FirstName = @FirstName";
+                    findPosition.Parameters.AddWithValue("@LastName", lastName);
+                    findPosition.Parameters.AddWithValue("@FirstName", firstName);
+                }
+                else
+                {
+                    findPosition.CommandText = "SELECT * FROM tblActivePlayers WHERE LastName = @LastName AND FirstName = @FirstName";
+                    findPosition.Parameters.AddWithValue("@LastName", lastName);
+                    findPosition.Parameters.AddWithValue("@FirstName", firstName);
+                }
+                OleDbDataReader positionGather = findPosition.ExecuteReader();
+                string basketballPosition = "";
+                while (positionGather.Read())
+                {
+                    basketballPosition = positionGather["BasketballPosition"].ToString();
+                    txtBasketballPosition2_CS.Text = basketballPosition;
+                    txtCurrentTeam_CS.Text = cmbTeamBracket_CS.SelectedItem.ToString();
+                    try
+                    {
+                        if (positionGather["Photo"] != DBNull.Value)
+                        {
+                            byte[] photoBytes = (byte[])positionGather["PlayerPhoto"];
+                            using (MemoryStream ms = new MemoryStream(photoBytes))
+                            {
+                                Image image = Image.FromStream(ms);
+                                picPlayer_CS.Image = image;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                         
+                    }
+                }
+                connection.Close();
+                txtSelectedPlayerFName_CS.Text = firstName;
+                txtSelectedPlayerLName_CS.Text = lastName;
+            }
+            catch
+            {
+                MessageBox.Show("Note. No player selected, please try again by selecting a player on the list, and that you've selected a team bracket, thank you!");
+            }
+        }
+        private byte[] getPhoto()
+        {
+            byte[] tempByte = new byte[1];
+            try
+            {
+                MemoryStream stream = new MemoryStream();
+                picPlayer_CS.Image.Save(stream, picPlayer_CS.Image.RawFormat);
+                return stream.GetBuffer();
+            }
+            catch 
+            {
+                MessageBox.Show("Error : Failed to Obtain Photo, please submit a photo properly in the photo submission box. Thank you!");
+                return tempByte;
+            }
+        }
+        private void btnChangeTeam_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string teamBracket = cmbTeamBracket_CS.SelectedItem.ToString();
+                string[] selectedItem = listNewTeamPlayers.SelectedItem.ToString().Split(',');
+                string firstName = "";
+                string lastName = "";
+                for (int searchID = 0; searchID < selectedItem[1].Length; searchID++)
+                {
+                    if (selectedItem[1][searchID] == '-')
+                    {
+                        firstName = selectedItem[1].Substring(0, searchID - 1).Trim();
+                    }
+                    if (selectedItem[1][searchID] == '#')
+                    {
+                        jerseyNumber = selectedItem[1].Substring(searchID + 1, selectedItem[1].Length - (searchID + 1));
+                    }
+                }
+                lastName = selectedItem[0].Trim();
+                bool alreadyExists = false;
+                OleDbCommand checkUserExists1 = new OleDbCommand();
+                checkUserExists1.Connection = connection;
+                connection.Open();
+                checkUserExists1.CommandText = "SELECT * FROM tblSubstitutions";
+                OleDbDataReader checkUserExists1Reader = checkUserExists1.ExecuteReader();
+                while (checkUserExists1Reader.Read())
+                {
+                    if (checkUserExists1Reader["FirstName"].ToString() == playerFName)
+                    {
+                        connection.Close();
+                        MessageBox.Show("Note. This player already exists! Please alter the name to prevent duplication, thank you!");
+                        checkUserExists1Reader.Close();
+                        alreadyExists = true;
+                    }
+                    if (checkUserExists1Reader["LastName"].ToString() == playerFName)
+                    {
+                        connection.Close();
+                        MessageBox.Show("Note. This player already exists! Please alter the name to prevent duplication, thank you!");
+                        checkUserExists1Reader.Close();
+                        alreadyExists = true;
+                    }
+                }
+                if (alreadyExists == false)
+                {
+                    connection.Close();
+                    checkUserExists1Reader.Close();
+                    if (convertTeam.ToLower() == "archive")
+                    {
+                        convertTeam = "tblArchivedPlayers";
+                    }
+                    bool teamName = convertTeam == "Novice Boys" || convertTeam == "Junior Boys" || convertTeam == "Junior Girls" || convertTeam == "Senior Boys" || convertTeam == "Senior Girls" || convertTeam == "tblArchivedPlayers";
+                    if (teamName == false)
+                    {
+                        MessageBox.Show("Invalid Inputs detected! Please correct all invalid inputs (Make sure to press Enter after typing a name in ANY textbox!) in the textboxes, and try again, thank you!");
+                    }
+                    if (teamName == true && convertTeam != "tblArchivedPlayers" && convertTeam != txtCurrentTeam_CS.Text)
+                    {
+                        OleDbCommand setTeamBrackJersey = new OleDbCommand();
+                        setTeamBrackJersey.CommandText = "UPDATE tblSubstitutions SET TeamBracket = @NewTeamBracket, JerseyNumber = @NewJersey WHERE LastName = @LastName AND FirstName = @FirstName";
+                        setTeamBrackJersey.Parameters.AddWithValue("@NewTeamBracket", convertTeam);
+                        setTeamBrackJersey.Parameters.AddWithValue("@NewJersey", jerseyNumber);
+                        setTeamBrackJersey.Parameters.AddWithValue("@LastName", lastName);
+                        setTeamBrackJersey.Parameters.AddWithValue("@FirstName", firstName);
+                        setTeamBrackJersey.Connection = connection;
+                        connection.Open();
+                        setTeamBrackJersey.ExecuteNonQuery();
+                        connection.Close();
+                        OleDbCommand setRest = new OleDbCommand();
+                        setRest.CommandText = "UPDATE tblSubstitutions SET BasketballPosition = @bPosition, LastName = @NewLastName, FirstName = @NewFirstName WHERE LastName = @OldLastName AND FirstName = @OldFirstName";
+                        setRest.Parameters.AddWithValue("@bPosition", convertBasketballPosition);
+                        setRest.Parameters.AddWithValue("@NewLastName", convertLName);
+                        setRest.Parameters.AddWithValue("@NewFirstName", convertFName);
+                        setRest.Parameters.AddWithValue("@OldLastName", lastName);
+                        setRest.Parameters.AddWithValue("@OldFirstName", firstName);
+                        setRest.Connection = connection;
+                        connection.Open();
+                        setRest.ExecuteNonQuery();
+                        connection.Close();
+                        OleDbCommand setActive1 = new OleDbCommand();
+                        setActive1.CommandText = "UPDATE tblActivePlayers SET TeamBracket = @NewTeamBracket, JerseyNumber = @NewJersey WHERE LastName = @LastName AND FirstName = @FirstName";
+                        setActive1.Parameters.AddWithValue("@NewTeamBracket", convertTeam);
+                        setActive1.Parameters.AddWithValue("@NewJersey", jerseyNumber);
+                        setActive1.Parameters.AddWithValue("@LastName", lastName);
+                        setActive1.Parameters.AddWithValue("@FirstName", firstName);
+                        setActive1.Connection = connection;
+                        connection.Open();
+                        setActive1.ExecuteNonQuery();
+                        connection.Close();
+                        OleDbCommand setActive2 = new OleDbCommand();
+                        setActive2.CommandText = "UPDATE tblActivePlayers SET BasketballPosition = @bPosition, LastName = @NewLastName, FirstName = @NewFirstName WHERE LastName = @OldLastName AND FirstName = @OldFirstName";
+                        setActive2.Parameters.AddWithValue("@bPosition", convertBasketballPosition);
+                        setActive2.Parameters.AddWithValue("@NewLastName", convertLName);
+                        setActive2.Parameters.AddWithValue("@NewFirstName", convertFName);
+                        setActive2.Parameters.AddWithValue("@OldLastName", lastName);
+                        setActive2.Parameters.AddWithValue("@OldFirstName", firstName);
+                        setActive2.Connection = connection;
+                        connection.Open();
+                        setActive2.ExecuteNonQuery();
+                        connection.Close();
+                        //
+                        clearText();
+                        listNewTeamPlayers.Items.Clear();
+                        OleDbCommand commandGatherPlayers = new OleDbCommand();
+                        commandGatherPlayers.Connection = connection;
+                        connection.Open();
+                        if (teamBracket == "Archive")
+                        {
+                            commandGatherPlayers.CommandText = "SELECT * FROM tblArchivedPlayers";
+                        }
+                        if (teamBracket != "Archive")
+                        {
+                            commandGatherPlayers.CommandText = "SELECT * FROM tblActivePlayers";//adding plyrs back to list.
+                        }
+                        OleDbDataReader commandReader = commandGatherPlayers.ExecuteReader();
+                        string playerName = "";
+                        listNewTeamPlayers.Items.Clear();
+                        while (commandReader.Read())
+                        {
+                            playerName = commandReader["LastName"].ToString() + ", " + commandReader["FirstName"].ToString() + " - #" + commandReader["JerseyNumber"].ToString();
+                            listNewTeamPlayers.Items.Add(playerName);
+                        }
+                        connection.Close();
+                        commandReader.Close();
+                    }
+                    else if (teamName == true && convertTeam == "tblArchivedPlayers" && convertTeam != txtCurrentTeam_CS.Text)
+                    {
+                        OleDbCommand commandID = new OleDbCommand();
+                        commandID.CommandText = "SELECT MAX(IDNumber) FROM tblArchivedPlayers";
+                        commandID.Connection = connection;
+                        connection.Open();
+                        int currentID = Convert.ToInt32(commandID.ExecuteScalar());
+                        connection.Close();
+                        OleDbCommand deleteRecord = new OleDbCommand();
+                        deleteRecord.Connection = connection;
+                        deleteRecord.CommandText = "DELETE FROM tblActivePlayers WHERE FirstName = @FirstName AND LastName = @LastName";
+                        deleteRecord.Parameters.AddWithValue("@LastName", lastName);
+                        deleteRecord.Parameters.AddWithValue("@FirstName", firstName);
+                        connection.Open();
+                        deleteRecord.ExecuteNonQuery();
+                        connection.Close();
+                        OleDbCommand deleteRecord2 = new OleDbCommand();
+                        deleteRecord2.Connection = connection;
+                        deleteRecord2.CommandText = "DELETE FROM tblSubstitutions WHERE FirstName = @FirstName AND LastName = @LastName";
+                        deleteRecord2.Parameters.AddWithValue("@LastName", lastName);
+                        deleteRecord2.Parameters.AddWithValue("@FirstName", firstName);
+                        connection.Open();
+                        deleteRecord2.ExecuteNonQuery();
+                        connection.Close();
+                        OleDbCommand insertArchive = new OleDbCommand();
+                        insertArchive.Connection = connection;
+                        connection.Open();
+                        insertArchive.CommandText = "INSERT INTO tblArchivedPlayers (IDNumber, FirstName, LastName, JerseyNumber, BasketballPosition, TeamBracket) VALUES (@IDNumber, @FirstName, @LastName, @JerseyNumber, @Position, @BracketName)";
+                        insertArchive.Parameters.AddWithValue("@IDNumber", currentID + 1);
+                        insertArchive.Parameters.AddWithValue("@FirstName", convertFName);
+                        insertArchive.Parameters.AddWithValue("@LastName", convertLName);
+                        insertArchive.Parameters.AddWithValue("@JerseyNumber", convertJerseyNumber);
+                        insertArchive.Parameters.AddWithValue("@Position", convertBasketballPosition);
+                        insertArchive.Parameters.AddWithValue("@BracketName", convertTeam);
+                        insertArchive.ExecuteNonQuery();
+                        connection.Close();
+                        //
+                        clearText();
+                        listNewTeamPlayers.Items.Clear();
+                        OleDbCommand commandGatherPlayers = new OleDbCommand();
+                        commandGatherPlayers.Connection = connection;
+                        connection.Open();
+                        if (teamBracket == "Archive")
+                        {
+                            commandGatherPlayers.CommandText = "SELECT * FROM tblArchivedPlayers";
+                        }
+                        if (teamBracket != "Archive")
+                        {
+                            commandGatherPlayers.CommandText = "SELECT * FROM tblActivePlayers";//adding plyrs back to list.
+                        }
+                        OleDbDataReader commandReader = commandGatherPlayers.ExecuteReader();
+                        string playerName = "";
+                        listNewTeamPlayers.Items.Clear();
+                        while (commandReader.Read())
+                        {
+                            playerName = commandReader["LastName"].ToString() + ", " + commandReader["FirstName"].ToString() + " - #" + commandReader["JerseyNumber"].ToString();
+                            listNewTeamPlayers.Items.Add(playerName);
+                        }
+                        connection.Close();
+                        commandReader.Close();
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Inputs detected! Please correct all invalid inputs (Make sure to press Enter after typing a name in ANY textbox!) in the textboxes, and try again, thank you!");
+            }
+        }
+        private void txtPlayerFName_CS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            playerFName = txtPlayerFName_CS.Text;
+        }
+        private void txtPlayerLName_CS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            playerLName = txtPlayerLName_CS.Text;
+        }
+        private void txtBasketballPosition_CS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            basketballPosition = txtBasketballPosition_CS.Text;
+        }
+        private void txtJerseyNumber_CS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            jerseyNumber = txtJerseyNumber_CS.Text;
+        }
+        private void txtPlayerFirstName2_CS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            convertFName = txtPlayerFirstName2_CS.Text;
+        }
+        private void txtPlayerLastName2_CS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            convertLName = txtPlayerLastName2_CS.Text;
+        }
+        private void txtBasketballPosition2_CS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            convertBasketballPosition = txtBasketballPosition2_CS.Text;
+        }
+        private void txtJerseyNumber2_CS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            convertJerseyNumber = txtJerseyNumber2_CS.Text;
+        }
+        private void txtNewTeam_CS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            convertTeam = txtNewTeam_CS.Text;
+        }
+    }
+}

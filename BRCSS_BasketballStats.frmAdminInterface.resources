@@ -1,0 +1,227 @@
+﻿namespace BRCSS_BasketballStats
+{
+    partial class frmMatchSetup
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.grpMatchDetails = new System.Windows.Forms.GroupBox();
+            this.cmbBracket_MSS = new System.Windows.Forms.ComboBox();
+            this.txtMatchDate_MSS = new System.Windows.Forms.TextBox();
+            this.lblMatchLocation_MSS = new System.Windows.Forms.Label();
+            this.txtOpponentTeamName_MSS = new System.Windows.Forms.TextBox();
+            this.lblOpponentTeamName_MSS = new System.Windows.Forms.Label();
+            this.txtMatchLocation_MSS = new System.Windows.Forms.TextBox();
+            this.lblMatchDate_MSS = new System.Windows.Forms.Label();
+            this.lblTeamBracket_MSS = new System.Windows.Forms.Label();
+            this.lblRoyals_MSS = new System.Windows.Forms.Label();
+            this.picBRLogo_DTL = new System.Windows.Forms.PictureBox();
+            this.btnSubmit_MSS = new System.Windows.Forms.Button();
+            this.btnCancel_MSS = new System.Windows.Forms.Button();
+            this.grpMatchDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBRLogo_DTL)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // grpMatchDetails
+            // 
+            this.grpMatchDetails.Controls.Add(this.cmbBracket_MSS);
+            this.grpMatchDetails.Controls.Add(this.txtMatchDate_MSS);
+            this.grpMatchDetails.Controls.Add(this.lblMatchLocation_MSS);
+            this.grpMatchDetails.Controls.Add(this.txtOpponentTeamName_MSS);
+            this.grpMatchDetails.Controls.Add(this.lblOpponentTeamName_MSS);
+            this.grpMatchDetails.Controls.Add(this.txtMatchLocation_MSS);
+            this.grpMatchDetails.Controls.Add(this.lblMatchDate_MSS);
+            this.grpMatchDetails.Controls.Add(this.lblTeamBracket_MSS);
+            this.grpMatchDetails.Controls.Add(this.lblRoyals_MSS);
+            this.grpMatchDetails.Controls.Add(this.picBRLogo_DTL);
+            this.grpMatchDetails.Location = new System.Drawing.Point(10, 6);
+            this.grpMatchDetails.Name = "grpMatchDetails";
+            this.grpMatchDetails.Size = new System.Drawing.Size(346, 159);
+            this.grpMatchDetails.TabIndex = 0;
+            this.grpMatchDetails.TabStop = false;
+            this.grpMatchDetails.Text = "Match Details";
+            // 
+            // cmbBracket_MSS
+            // 
+            this.cmbBracket_MSS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBracket_MSS.FormattingEnabled = true;
+            this.cmbBracket_MSS.Location = new System.Drawing.Point(227, 129);
+            this.cmbBracket_MSS.Name = "cmbBracket_MSS";
+            this.cmbBracket_MSS.Size = new System.Drawing.Size(106, 24);
+            this.cmbBracket_MSS.TabIndex = 3;
+            // 
+            // txtMatchDate_MSS
+            // 
+            this.txtMatchDate_MSS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMatchDate_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtMatchDate_MSS.Location = new System.Drawing.Point(96, 75);
+            this.txtMatchDate_MSS.Name = "txtMatchDate_MSS";
+            this.txtMatchDate_MSS.Size = new System.Drawing.Size(106, 20);
+            this.txtMatchDate_MSS.TabIndex = 0;
+            // 
+            // lblMatchLocation_MSS
+            // 
+            this.lblMatchLocation_MSS.AutoSize = true;
+            this.lblMatchLocation_MSS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMatchLocation_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatchLocation_MSS.Location = new System.Drawing.Point(96, 98);
+            this.lblMatchLocation_MSS.Name = "lblMatchLocation_MSS";
+            this.lblMatchLocation_MSS.Size = new System.Drawing.Size(101, 28);
+            this.lblMatchLocation_MSS.TabIndex = 7;
+            this.lblMatchLocation_MSS.Text = "MATCH LOCATION\r\n(I.E. ROYALS COURT)";
+            // 
+            // txtOpponentTeamName_MSS
+            // 
+            this.txtOpponentTeamName_MSS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOpponentTeamName_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtOpponentTeamName_MSS.Location = new System.Drawing.Point(227, 75);
+            this.txtOpponentTeamName_MSS.Name = "txtOpponentTeamName_MSS";
+            this.txtOpponentTeamName_MSS.Size = new System.Drawing.Size(106, 20);
+            this.txtOpponentTeamName_MSS.TabIndex = 1;
+            // 
+            // lblOpponentTeamName_MSS
+            // 
+            this.lblOpponentTeamName_MSS.AutoSize = true;
+            this.lblOpponentTeamName_MSS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOpponentTeamName_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpponentTeamName_MSS.Location = new System.Drawing.Point(227, 44);
+            this.lblOpponentTeamName_MSS.Name = "lblOpponentTeamName_MSS";
+            this.lblOpponentTeamName_MSS.Size = new System.Drawing.Size(99, 28);
+            this.lblOpponentTeamName_MSS.TabIndex = 6;
+            this.lblOpponentTeamName_MSS.Text = "OPPONENT TEAM\'S \r\nNAME";
+            // 
+            // txtMatchLocation_MSS
+            // 
+            this.txtMatchLocation_MSS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMatchLocation_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtMatchLocation_MSS.Location = new System.Drawing.Point(96, 129);
+            this.txtMatchLocation_MSS.Name = "txtMatchLocation_MSS";
+            this.txtMatchLocation_MSS.Size = new System.Drawing.Size(106, 20);
+            this.txtMatchLocation_MSS.TabIndex = 2;
+            // 
+            // lblMatchDate_MSS
+            // 
+            this.lblMatchDate_MSS.AutoSize = true;
+            this.lblMatchDate_MSS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMatchDate_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatchDate_MSS.Location = new System.Drawing.Point(96, 44);
+            this.lblMatchDate_MSS.Name = "lblMatchDate_MSS";
+            this.lblMatchDate_MSS.Size = new System.Drawing.Size(68, 28);
+            this.lblMatchDate_MSS.TabIndex = 5;
+            this.lblMatchDate_MSS.Text = "MATCH DATE\r\n(DD/MM/YY)";
+            // 
+            // lblTeamBracket_MSS
+            // 
+            this.lblTeamBracket_MSS.AutoSize = true;
+            this.lblTeamBracket_MSS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTeamBracket_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTeamBracket_MSS.Location = new System.Drawing.Point(227, 98);
+            this.lblTeamBracket_MSS.Name = "lblTeamBracket_MSS";
+            this.lblTeamBracket_MSS.Size = new System.Drawing.Size(73, 28);
+            this.lblTeamBracket_MSS.TabIndex = 8;
+            this.lblTeamBracket_MSS.Text = "ROYALS TEAM\r\nBRACKET";
+            // 
+            // lblRoyals_MSS
+            // 
+            this.lblRoyals_MSS.AutoSize = true;
+            this.lblRoyals_MSS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRoyals_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoyals_MSS.Location = new System.Drawing.Point(96, 25);
+            this.lblRoyals_MSS.Name = "lblRoyals_MSS";
+            this.lblRoyals_MSS.Size = new System.Drawing.Size(121, 15);
+            this.lblRoyals_MSS.TabIndex = 4;
+            this.lblRoyals_MSS.Text = "BISHOP REDING ROYALS";
+            // 
+            // picBRLogo_DTL
+            // 
+            this.picBRLogo_DTL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picBRLogo_DTL.Image = global::BRCSS_BasketballStats.Properties.Resources.brLogo;
+            this.picBRLogo_DTL.Location = new System.Drawing.Point(9, 25);
+            this.picBRLogo_DTL.Name = "picBRLogo_DTL";
+            this.picBRLogo_DTL.Size = new System.Drawing.Size(74, 124);
+            this.picBRLogo_DTL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBRLogo_DTL.TabIndex = 0;
+            this.picBRLogo_DTL.TabStop = false;
+            // 
+            // btnSubmit_MSS
+            // 
+            this.btnSubmit_MSS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.btnSubmit_MSS.Location = new System.Drawing.Point(242, 171);
+            this.btnSubmit_MSS.Name = "btnSubmit_MSS";
+            this.btnSubmit_MSS.Size = new System.Drawing.Size(106, 31);
+            this.btnSubmit_MSS.TabIndex = 2;
+            this.btnSubmit_MSS.Text = "Submit";
+            this.btnSubmit_MSS.UseVisualStyleBackColor = true;
+            this.btnSubmit_MSS.Click += new System.EventHandler(this.btnSubmit_MSS_Click);
+            // 
+            // btnCancel_MSS
+            // 
+            this.btnCancel_MSS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel_MSS.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.btnCancel_MSS.Location = new System.Drawing.Point(129, 171);
+            this.btnCancel_MSS.Name = "btnCancel_MSS";
+            this.btnCancel_MSS.Size = new System.Drawing.Size(106, 31);
+            this.btnCancel_MSS.TabIndex = 1;
+            this.btnCancel_MSS.Text = "Cancel";
+            this.btnCancel_MSS.UseVisualStyleBackColor = true;
+            this.btnCancel_MSS.Click += new System.EventHandler(this.btnCancel_MSS_Click);
+            // 
+            // frmMatchSetup
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(364, 210);
+            this.Controls.Add(this.btnCancel_MSS);
+            this.Controls.Add(this.btnSubmit_MSS);
+            this.Controls.Add(this.grpMatchDetails);
+            this.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.Name = "frmMatchSetup";
+            this.Text = "Royals Match Setup Sheet";
+            this.Load += new System.EventHandler(this.frmMatchSetup_Load);
+            this.grpMatchDetails.ResumeLayout(false);
+            this.grpMatchDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBRLogo_DTL)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private System.Windows.Forms.GroupBox grpMatchDetails;
+        private System.Windows.Forms.Label lblTeamBracket_MSS;
+        private System.Windows.Forms.Label lblRoyals_MSS;
+        private System.Windows.Forms.PictureBox picBRLogo_DTL;
+        private System.Windows.Forms.TextBox txtMatchLocation_MSS;
+        private System.Windows.Forms.Label lblMatchDate_MSS;
+        private System.Windows.Forms.TextBox txtOpponentTeamName_MSS;
+        private System.Windows.Forms.Label lblOpponentTeamName_MSS;
+        private System.Windows.Forms.TextBox txtMatchDate_MSS;
+        private System.Windows.Forms.Label lblMatchLocation_MSS;
+        private System.Windows.Forms.Button btnSubmit_MSS;
+        private System.Windows.Forms.Button btnCancel_MSS;
+        private System.Windows.Forms.ComboBox cmbBracket_MSS;
+    }
+}

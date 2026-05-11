@@ -1,0 +1,3195 @@
+﻿namespace BRCSS_BasketballStats
+{
+    partial class frmMatch
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.mnuStrip = new System.Windows.Forms.MenuStrip();
+            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileEndMatch = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTimeout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCallTimeout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStartContGameTimer = new System.Windows.Forms.ToolStripMenuItem();
+            this.grpPointGuard = new System.Windows.Forms.GroupBox();
+            this.nmcTP_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmcMIN_PG = new System.Windows.Forms.NumericUpDown();
+            this.lblTIPP_PG = new System.Windows.Forms.Label();
+            this.nmcFCMT_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmc3PTATMP_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTA_PG = new System.Windows.Forms.NumericUpDown();
+            this.lbl3PTATMP_PG = new System.Windows.Forms.Label();
+            this.txtPTS_PG = new System.Windows.Forms.TextBox();
+            this.nmcFDRW_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PTATMP_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTM_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmc3PT_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmcTO_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PT_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmcSTL_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmcBLK_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmcAST_PG = new System.Windows.Forms.NumericUpDown();
+            this.nmcREB_PG = new System.Windows.Forms.NumericUpDown();
+            this.lblFTMA_PG = new System.Windows.Forms.Label();
+            this.lbl2PTATMP_PG = new System.Windows.Forms.Label();
+            this.lblFDRWCMT_PG = new System.Windows.Forms.Label();
+            this.lblMIN_PG = new System.Windows.Forms.Label();
+            this.lblPTS_PG = new System.Windows.Forms.Label();
+            this.lblTO_PG = new System.Windows.Forms.Label();
+            this.lbl3PT_PG = new System.Windows.Forms.Label();
+            this.lbl2PT_PG = new System.Windows.Forms.Label();
+            this.lblSTL_PG = new System.Windows.Forms.Label();
+            this.lblREB_PG = new System.Windows.Forms.Label();
+            this.lblBLK_PG = new System.Windows.Forms.Label();
+            this.lblAST_PG = new System.Windows.Forms.Label();
+            this.picPointGuard = new System.Windows.Forms.PictureBox();
+            this.grpShootingGuard = new System.Windows.Forms.GroupBox();
+            this.nmcTIPP_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmcMIN_SG = new System.Windows.Forms.NumericUpDown();
+            this.lblTIPP_SG = new System.Windows.Forms.Label();
+            this.nmcFCMT_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmc3PTATMP_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTA_SG = new System.Windows.Forms.NumericUpDown();
+            this.lbl3PTATMP_SG = new System.Windows.Forms.Label();
+            this.txtPTS_SG = new System.Windows.Forms.TextBox();
+            this.nmcFDRW_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PTATMP_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTM_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmc3PT_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmcTO_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PT_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmcSTL_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmcBLK_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmcAST_SG = new System.Windows.Forms.NumericUpDown();
+            this.nmcREB_SG = new System.Windows.Forms.NumericUpDown();
+            this.lblFTMA_SG = new System.Windows.Forms.Label();
+            this.lbl2PTATMP_SG = new System.Windows.Forms.Label();
+            this.lblFDRWCMT_SG = new System.Windows.Forms.Label();
+            this.lblMIN_SG = new System.Windows.Forms.Label();
+            this.lblPTS_SG = new System.Windows.Forms.Label();
+            this.lblTO_SG = new System.Windows.Forms.Label();
+            this.lbl3PT_SG = new System.Windows.Forms.Label();
+            this.lbl2PT_SG = new System.Windows.Forms.Label();
+            this.lblSTL_SG = new System.Windows.Forms.Label();
+            this.lblREB_SG = new System.Windows.Forms.Label();
+            this.lblBLK_SG = new System.Windows.Forms.Label();
+            this.lblAST_SG = new System.Windows.Forms.Label();
+            this.picShootingGuard = new System.Windows.Forms.PictureBox();
+            this.grpPowerForward = new System.Windows.Forms.GroupBox();
+            this.nmcTIPP_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmcMIN_PF = new System.Windows.Forms.NumericUpDown();
+            this.lblTIPP_PF = new System.Windows.Forms.Label();
+            this.nmcFCMT_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmc3PTATMP_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTA_PF = new System.Windows.Forms.NumericUpDown();
+            this.lbl3PTATMP_PF = new System.Windows.Forms.Label();
+            this.txtPTS_PF = new System.Windows.Forms.TextBox();
+            this.nmcFDRW_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PTATMP_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTM_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmc3PT_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmcTO_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PT_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmcSTL_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmcBLK_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmcAST_PF = new System.Windows.Forms.NumericUpDown();
+            this.nmcREB_PF = new System.Windows.Forms.NumericUpDown();
+            this.lblFTMA_PF = new System.Windows.Forms.Label();
+            this.lbl2PTATMP_PF = new System.Windows.Forms.Label();
+            this.lblFDRWCMT_PF = new System.Windows.Forms.Label();
+            this.lblMIN_PF = new System.Windows.Forms.Label();
+            this.lblPTS_PF = new System.Windows.Forms.Label();
+            this.lblTO_PF = new System.Windows.Forms.Label();
+            this.lbl3PT_PF = new System.Windows.Forms.Label();
+            this.lbl2PT_PF = new System.Windows.Forms.Label();
+            this.lblSTL_PF = new System.Windows.Forms.Label();
+            this.lblREB_PF = new System.Windows.Forms.Label();
+            this.lblBLK_PF = new System.Windows.Forms.Label();
+            this.lblAST_PF = new System.Windows.Forms.Label();
+            this.picPowerForward = new System.Windows.Forms.PictureBox();
+            this.grpCenter = new System.Windows.Forms.GroupBox();
+            this.nmcTIPP_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmcMIN_CT = new System.Windows.Forms.NumericUpDown();
+            this.lblTIPP_CT = new System.Windows.Forms.Label();
+            this.nmcFCMT_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmc3PTATMP_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTA_CT = new System.Windows.Forms.NumericUpDown();
+            this.lbl3PTATMP_CT = new System.Windows.Forms.Label();
+            this.txtPTS_CT = new System.Windows.Forms.TextBox();
+            this.nmcFDRW_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PTATMP_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTM_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmc3PT_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmcTO_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PT_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmcSTL_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmcBLK_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmcAST_CT = new System.Windows.Forms.NumericUpDown();
+            this.nmcREB_CT = new System.Windows.Forms.NumericUpDown();
+            this.lblFTMA_CT = new System.Windows.Forms.Label();
+            this.lbl2PTATMP_CT = new System.Windows.Forms.Label();
+            this.lblFDRWCMT_CT = new System.Windows.Forms.Label();
+            this.lblMIN_CT = new System.Windows.Forms.Label();
+            this.lblPTS_CT = new System.Windows.Forms.Label();
+            this.lblTO_CT = new System.Windows.Forms.Label();
+            this.lbl3PT_CT = new System.Windows.Forms.Label();
+            this.lbl2PT_CT = new System.Windows.Forms.Label();
+            this.lblSTL_CT = new System.Windows.Forms.Label();
+            this.lblREB_CT = new System.Windows.Forms.Label();
+            this.lblBLK_CT = new System.Windows.Forms.Label();
+            this.lblAST_CT = new System.Windows.Forms.Label();
+            this.picCenter = new System.Windows.Forms.PictureBox();
+            this.grpSmallForward = new System.Windows.Forms.GroupBox();
+            this.nmcTIPP_SF = new System.Windows.Forms.NumericUpDown();
+            this.lblTIPP_SF = new System.Windows.Forms.Label();
+            this.nmc3PTATMP_SF = new System.Windows.Forms.NumericUpDown();
+            this.lbl3PTATMP_SF = new System.Windows.Forms.Label();
+            this.nmcMIN_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmcFCMT_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTA_SF = new System.Windows.Forms.NumericUpDown();
+            this.txtPTS_SF = new System.Windows.Forms.TextBox();
+            this.nmcFDRW_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PTATMP_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmcFTM_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmc3PT_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmcTO_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmc2PT_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmcSTL_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmcBLK_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmcAST_SF = new System.Windows.Forms.NumericUpDown();
+            this.nmcREB_SF = new System.Windows.Forms.NumericUpDown();
+            this.lblFTMA_SF = new System.Windows.Forms.Label();
+            this.lbl2PTATMP_SF = new System.Windows.Forms.Label();
+            this.lblFDRWCMT_SF = new System.Windows.Forms.Label();
+            this.lblMIN_SF = new System.Windows.Forms.Label();
+            this.lblPTS_SF = new System.Windows.Forms.Label();
+            this.lblTO_SF = new System.Windows.Forms.Label();
+            this.lbl3PT_SF = new System.Windows.Forms.Label();
+            this.lbl2PT_SF = new System.Windows.Forms.Label();
+            this.lblSTL_SF = new System.Windows.Forms.Label();
+            this.lblREB_SF = new System.Windows.Forms.Label();
+            this.lblBLK_SF = new System.Windows.Forms.Label();
+            this.lblAST_SF = new System.Windows.Forms.Label();
+            this.picSmallForward = new System.Windows.Forms.PictureBox();
+            this.grpOVRL = new System.Windows.Forms.GroupBox();
+            this.cmbFVRD_OVRL = new System.Windows.Forms.ComboBox();
+            this.lblFVRD_OVRL = new System.Windows.Forms.Label();
+            this.txtTPTS_OVRL = new System.Windows.Forms.TextBox();
+            this.lblTPTS_OVRL = new System.Windows.Forms.Label();
+            this.lblRoyals_OVRL = new System.Windows.Forms.Label();
+            this.picBRLogo_OVRL = new System.Windows.Forms.PictureBox();
+            this.tmrTimeout = new System.Windows.Forms.Timer(this.components);
+            this.tabSubstitutes = new System.Windows.Forms.TabPage();
+            this.txtSubstitutesSearchBar = new System.Windows.Forms.TextBox();
+            this.listSubstitutes = new System.Windows.Forms.ListBox();
+            this.tabTeamPlayers = new System.Windows.Forms.TabControl();
+            this.mnuFileBorder = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStrip.SuspendLayout();
+            this.grpPointGuard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTP_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_PG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPointGuard)).BeginInit();
+            this.grpShootingGuard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTIPP_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_SG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShootingGuard)).BeginInit();
+            this.grpPowerForward.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTIPP_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_PF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPowerForward)).BeginInit();
+            this.grpCenter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTIPP_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_CT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCenter)).BeginInit();
+            this.grpSmallForward.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTIPP_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_SF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSmallForward)).BeginInit();
+            this.grpOVRL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBRLogo_OVRL)).BeginInit();
+            this.tabSubstitutes.SuspendLayout();
+            this.tabTeamPlayers.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // mnuStrip
+            // 
+            this.mnuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mnuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFile,
+            this.mnuTimeout});
+            this.mnuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mnuStrip.Name = "mnuStrip";
+            this.mnuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.mnuStrip.Size = new System.Drawing.Size(1085, 26);
+            this.mnuStrip.TabIndex = 0;
+            this.mnuStrip.Text = "mnuFileStrip";
+            // 
+            // mnuFile
+            // 
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileEndMatch,
+            this.mnuFileBorder,
+            this.mnuExit});
+            this.mnuFile.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(40, 24);
+            this.mnuFile.Text = "File";
+            // 
+            // mnuFileEndMatch
+            // 
+            this.mnuFileEndMatch.Name = "mnuFileEndMatch";
+            this.mnuFileEndMatch.Size = new System.Drawing.Size(216, 26);
+            this.mnuFileEndMatch.Text = "End Match";
+            this.mnuFileEndMatch.Click += new System.EventHandler(this.mnuFileEndMatch_Click);
+            // 
+            // mnuTimeout
+            // 
+            this.mnuTimeout.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCallTimeout,
+            this.mnuStartContGameTimer});
+            this.mnuTimeout.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.mnuTimeout.Name = "mnuTimeout";
+            this.mnuTimeout.Size = new System.Drawing.Size(70, 24);
+            this.mnuTimeout.Text = "Timeout";
+            // 
+            // mnuCallTimeout
+            // 
+            this.mnuCallTimeout.CheckOnClick = true;
+            this.mnuCallTimeout.Name = "mnuCallTimeout";
+            this.mnuCallTimeout.Size = new System.Drawing.Size(258, 26);
+            this.mnuCallTimeout.Text = "Call Timeout";
+            this.mnuCallTimeout.Click += new System.EventHandler(this.mnuCallTimeout_Click);
+            // 
+            // mnuStartContGameTimer
+            // 
+            this.mnuStartContGameTimer.CheckOnClick = true;
+            this.mnuStartContGameTimer.Name = "mnuStartContGameTimer";
+            this.mnuStartContGameTimer.Size = new System.Drawing.Size(258, 26);
+            this.mnuStartContGameTimer.Text = "Start / Continue Game Timer";
+            this.mnuStartContGameTimer.Click += new System.EventHandler(this.mnuStartContGameTimer_Click);
+            // 
+            // grpPointGuard
+            // 
+            this.grpPointGuard.Controls.Add(this.nmcTP_PG);
+            this.grpPointGuard.Controls.Add(this.nmcMIN_PG);
+            this.grpPointGuard.Controls.Add(this.lblTIPP_PG);
+            this.grpPointGuard.Controls.Add(this.nmcFCMT_PG);
+            this.grpPointGuard.Controls.Add(this.nmc3PTATMP_PG);
+            this.grpPointGuard.Controls.Add(this.nmcFTA_PG);
+            this.grpPointGuard.Controls.Add(this.lbl3PTATMP_PG);
+            this.grpPointGuard.Controls.Add(this.txtPTS_PG);
+            this.grpPointGuard.Controls.Add(this.nmcFDRW_PG);
+            this.grpPointGuard.Controls.Add(this.nmc2PTATMP_PG);
+            this.grpPointGuard.Controls.Add(this.nmcFTM_PG);
+            this.grpPointGuard.Controls.Add(this.nmc3PT_PG);
+            this.grpPointGuard.Controls.Add(this.nmcTO_PG);
+            this.grpPointGuard.Controls.Add(this.nmc2PT_PG);
+            this.grpPointGuard.Controls.Add(this.nmcSTL_PG);
+            this.grpPointGuard.Controls.Add(this.nmcBLK_PG);
+            this.grpPointGuard.Controls.Add(this.nmcAST_PG);
+            this.grpPointGuard.Controls.Add(this.nmcREB_PG);
+            this.grpPointGuard.Controls.Add(this.lblFTMA_PG);
+            this.grpPointGuard.Controls.Add(this.lbl2PTATMP_PG);
+            this.grpPointGuard.Controls.Add(this.lblFDRWCMT_PG);
+            this.grpPointGuard.Controls.Add(this.lblMIN_PG);
+            this.grpPointGuard.Controls.Add(this.lblPTS_PG);
+            this.grpPointGuard.Controls.Add(this.lblTO_PG);
+            this.grpPointGuard.Controls.Add(this.lbl3PT_PG);
+            this.grpPointGuard.Controls.Add(this.lbl2PT_PG);
+            this.grpPointGuard.Controls.Add(this.lblSTL_PG);
+            this.grpPointGuard.Controls.Add(this.lblREB_PG);
+            this.grpPointGuard.Controls.Add(this.lblBLK_PG);
+            this.grpPointGuard.Controls.Add(this.lblAST_PG);
+            this.grpPointGuard.Controls.Add(this.picPointGuard);
+            this.grpPointGuard.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpPointGuard.Location = new System.Drawing.Point(10, 33);
+            this.grpPointGuard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpPointGuard.Name = "grpPointGuard";
+            this.grpPointGuard.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpPointGuard.Size = new System.Drawing.Size(220, 277);
+            this.grpPointGuard.TabIndex = 0;
+            this.grpPointGuard.TabStop = false;
+            this.grpPointGuard.Text = "Point Guard";
+            // 
+            // nmcTP_PG
+            // 
+            this.nmcTP_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTP_PG.Location = new System.Drawing.Point(100, 249);
+            this.nmcTP_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTP_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTP_PG.Name = "nmcTP_PG";
+            this.nmcTP_PG.Size = new System.Drawing.Size(85, 20);
+            this.nmcTP_PG.TabIndex = 14;
+            this.nmcTP_PG.Tag = "TIPPASS;Point Guard";
+            this.nmcTP_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcMIN_PG
+            // 
+            this.nmcMIN_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcMIN_PG.Location = new System.Drawing.Point(6, 124);
+            this.nmcMIN_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcMIN_PG.Maximum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            this.nmcMIN_PG.Name = "nmcMIN_PG";
+            this.nmcMIN_PG.Size = new System.Drawing.Size(84, 20);
+            this.nmcMIN_PG.TabIndex = 3;
+            this.nmcMIN_PG.Tag = "MIN;Point Guard";
+            this.nmcMIN_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTIPP_PG
+            // 
+            this.lblTIPP_PG.AutoSize = true;
+            this.lblTIPP_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTIPP_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTIPP_PG.Location = new System.Drawing.Point(100, 230);
+            this.lblTIPP_PG.Name = "lblTIPP_PG";
+            this.lblTIPP_PG.Size = new System.Drawing.Size(76, 15);
+            this.lblTIPP_PG.TabIndex = 29;
+            this.lblTIPP_PG.Tag = "Point Guard";
+            this.lblTIPP_PG.Text = "TIPPED PASSES";
+            // 
+            // nmcFCMT_PG
+            // 
+            this.nmcFCMT_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFCMT_PG.Location = new System.Drawing.Point(50, 165);
+            this.nmcFCMT_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFCMT_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFCMT_PG.Name = "nmcFCMT_PG";
+            this.nmcFCMT_PG.Size = new System.Drawing.Size(40, 20);
+            this.nmcFCMT_PG.TabIndex = 7;
+            this.nmcFCMT_PG.Tag = "FCMT;Point Guard";
+            this.nmcFCMT_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc3PTATMP_PG
+            // 
+            this.nmc3PTATMP_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PTATMP_PG.Location = new System.Drawing.Point(6, 249);
+            this.nmc3PTATMP_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PTATMP_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PTATMP_PG.Name = "nmc3PTATMP_PG";
+            this.nmc3PTATMP_PG.Size = new System.Drawing.Size(85, 20);
+            this.nmc3PTATMP_PG.TabIndex = 13;
+            this.nmc3PTATMP_PG.Tag = "THREEPTSATMP;Point Guard";
+            this.nmc3PTATMP_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTA_PG
+            // 
+            this.nmcFTA_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTA_PG.Location = new System.Drawing.Point(163, 206);
+            this.nmcFTA_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTA_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTA_PG.Name = "nmcFTA_PG";
+            this.nmcFTA_PG.Size = new System.Drawing.Size(51, 20);
+            this.nmcFTA_PG.TabIndex = 12;
+            this.nmcFTA_PG.Tag = "FTATMP;Point Guard";
+            this.nmcFTA_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl3PTATMP_PG
+            // 
+            this.lbl3PTATMP_PG.AutoSize = true;
+            this.lbl3PTATMP_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PTATMP_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PTATMP_PG.Location = new System.Drawing.Point(6, 230);
+            this.lbl3PTATMP_PG.Name = "lbl3PTATMP_PG";
+            this.lbl3PTATMP_PG.Size = new System.Drawing.Size(55, 15);
+            this.lbl3PTATMP_PG.TabIndex = 28;
+            this.lbl3PTATMP_PG.Tag = "Point Guard";
+            this.lbl3PTATMP_PG.Text = "3PT/ATMP";
+            // 
+            // txtPTS_PG
+            // 
+            this.txtPTS_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPTS_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtPTS_PG.Location = new System.Drawing.Point(98, 39);
+            this.txtPTS_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPTS_PG.Name = "txtPTS_PG";
+            this.txtPTS_PG.ReadOnly = true;
+            this.txtPTS_PG.Size = new System.Drawing.Size(58, 20);
+            this.txtPTS_PG.TabIndex = 15;
+            this.txtPTS_PG.Tag = "Point Guard";
+            this.txtPTS_PG.Text = "0";
+            this.txtPTS_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFDRW_PG
+            // 
+            this.nmcFDRW_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFDRW_PG.Location = new System.Drawing.Point(6, 165);
+            this.nmcFDRW_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFDRW_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFDRW_PG.Name = "nmcFDRW_PG";
+            this.nmcFDRW_PG.Size = new System.Drawing.Size(40, 20);
+            this.nmcFDRW_PG.TabIndex = 6;
+            this.nmcFDRW_PG.Tag = "FDRW;Point Guard";
+            this.nmcFDRW_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PTATMP_PG
+            // 
+            this.nmc2PTATMP_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PTATMP_PG.Location = new System.Drawing.Point(5, 207);
+            this.nmc2PTATMP_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PTATMP_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PTATMP_PG.Name = "nmc2PTATMP_PG";
+            this.nmc2PTATMP_PG.Size = new System.Drawing.Size(85, 20);
+            this.nmc2PTATMP_PG.TabIndex = 10;
+            this.nmc2PTATMP_PG.Tag = "TWOPTSATMP;Point Guard";
+            this.nmc2PTATMP_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTM_PG
+            // 
+            this.nmcFTM_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTM_PG.Location = new System.Drawing.Point(99, 206);
+            this.nmcFTM_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTM_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTM_PG.Name = "nmcFTM_PG";
+            this.nmcFTM_PG.Size = new System.Drawing.Size(57, 20);
+            this.nmcFTM_PG.TabIndex = 11;
+            this.nmcFTM_PG.Tag = "FTMADE;Point Guard";
+            this.nmcFTM_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc3PT_PG
+            // 
+            this.nmc3PT_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PT_PG.Location = new System.Drawing.Point(162, 165);
+            this.nmc3PT_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PT_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PT_PG.Name = "nmc3PT_PG";
+            this.nmc3PT_PG.Size = new System.Drawing.Size(52, 20);
+            this.nmc3PT_PG.TabIndex = 9;
+            this.nmc3PT_PG.Tag = "THREEPTSMADE;Point Guard";
+            this.nmc3PT_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcTO_PG
+            // 
+            this.nmcTO_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTO_PG.Location = new System.Drawing.Point(99, 165);
+            this.nmcTO_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTO_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTO_PG.Name = "nmcTO_PG";
+            this.nmcTO_PG.Size = new System.Drawing.Size(57, 20);
+            this.nmcTO_PG.TabIndex = 8;
+            this.nmcTO_PG.Tag = "TO;Point Guard";
+            this.nmcTO_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PT_PG
+            // 
+            this.nmc2PT_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PT_PG.Location = new System.Drawing.Point(162, 123);
+            this.nmc2PT_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PT_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PT_PG.Name = "nmc2PT_PG";
+            this.nmc2PT_PG.Size = new System.Drawing.Size(52, 20);
+            this.nmc2PT_PG.TabIndex = 5;
+            this.nmc2PT_PG.Tag = "TWOPTSMADE;Point Guard";
+            this.nmc2PT_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcSTL_PG
+            // 
+            this.nmcSTL_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcSTL_PG.Location = new System.Drawing.Point(99, 123);
+            this.nmcSTL_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcSTL_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcSTL_PG.Name = "nmcSTL_PG";
+            this.nmcSTL_PG.Size = new System.Drawing.Size(57, 20);
+            this.nmcSTL_PG.TabIndex = 4;
+            this.nmcSTL_PG.Tag = "STL;Point Guard";
+            this.nmcSTL_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcBLK_PG
+            // 
+            this.nmcBLK_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcBLK_PG.Location = new System.Drawing.Point(162, 81);
+            this.nmcBLK_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcBLK_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcBLK_PG.Name = "nmcBLK_PG";
+            this.nmcBLK_PG.Size = new System.Drawing.Size(52, 20);
+            this.nmcBLK_PG.TabIndex = 2;
+            this.nmcBLK_PG.Tag = "BLK;Point Guard";
+            this.nmcBLK_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcAST_PG
+            // 
+            this.nmcAST_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcAST_PG.Location = new System.Drawing.Point(98, 81);
+            this.nmcAST_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcAST_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcAST_PG.Name = "nmcAST_PG";
+            this.nmcAST_PG.Size = new System.Drawing.Size(58, 20);
+            this.nmcAST_PG.TabIndex = 1;
+            this.nmcAST_PG.Tag = "AST;Point Guard";
+            this.nmcAST_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcREB_PG
+            // 
+            this.nmcREB_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcREB_PG.Location = new System.Drawing.Point(162, 39);
+            this.nmcREB_PG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcREB_PG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcREB_PG.Name = "nmcREB_PG";
+            this.nmcREB_PG.Size = new System.Drawing.Size(52, 20);
+            this.nmcREB_PG.TabIndex = 0;
+            this.nmcREB_PG.Tag = "REB;Point Guard";
+            this.nmcREB_PG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblFTMA_PG
+            // 
+            this.lblFTMA_PG.AutoSize = true;
+            this.lblFTMA_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFTMA_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFTMA_PG.Location = new System.Drawing.Point(99, 190);
+            this.lblFTMA_PG.Name = "lblFTMA_PG";
+            this.lblFTMA_PG.Size = new System.Drawing.Size(115, 15);
+            this.lblFTMA_PG.TabIndex = 27;
+            this.lblFTMA_PG.Tag = "Point Guard";
+            this.lblFTMA_PG.Text = "FTHROW [MADE/ATMP]";
+            // 
+            // lbl2PTATMP_PG
+            // 
+            this.lbl2PTATMP_PG.AutoSize = true;
+            this.lbl2PTATMP_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PTATMP_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PTATMP_PG.Location = new System.Drawing.Point(5, 190);
+            this.lbl2PTATMP_PG.Name = "lbl2PTATMP_PG";
+            this.lbl2PTATMP_PG.Size = new System.Drawing.Size(55, 15);
+            this.lbl2PTATMP_PG.TabIndex = 26;
+            this.lbl2PTATMP_PG.Tag = "Point Guard";
+            this.lbl2PTATMP_PG.Text = "2PT/ATMP";
+            // 
+            // lblFDRWCMT_PG
+            // 
+            this.lblFDRWCMT_PG.AutoSize = true;
+            this.lblFDRWCMT_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFDRWCMT_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFDRWCMT_PG.Location = new System.Drawing.Point(6, 146);
+            this.lblFDRWCMT_PG.Name = "lblFDRWCMT_PG";
+            this.lblFDRWCMT_PG.Size = new System.Drawing.Size(88, 15);
+            this.lblFDRWCMT_PG.TabIndex = 23;
+            this.lblFDRWCMT_PG.Tag = "Point Guard";
+            this.lblFDRWCMT_PG.Text = "FOULS DRW/CMT";
+            // 
+            // lblMIN_PG
+            // 
+            this.lblMIN_PG.AutoSize = true;
+            this.lblMIN_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMIN_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMIN_PG.Location = new System.Drawing.Point(6, 105);
+            this.lblMIN_PG.Name = "lblMIN_PG";
+            this.lblMIN_PG.Size = new System.Drawing.Size(82, 15);
+            this.lblMIN_PG.TabIndex = 20;
+            this.lblMIN_PG.Tag = "Point Guard";
+            this.lblMIN_PG.Text = "TOTAL MINUTES";
+            // 
+            // lblPTS_PG
+            // 
+            this.lblPTS_PG.AutoSize = true;
+            this.lblPTS_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPTS_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTS_PG.Location = new System.Drawing.Point(98, 22);
+            this.lblPTS_PG.Name = "lblPTS_PG";
+            this.lblPTS_PG.Size = new System.Drawing.Size(25, 15);
+            this.lblPTS_PG.TabIndex = 16;
+            this.lblPTS_PG.Tag = "Point Guard";
+            this.lblPTS_PG.Text = "PTS";
+            // 
+            // lblTO_PG
+            // 
+            this.lblTO_PG.AutoSize = true;
+            this.lblTO_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTO_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTO_PG.Location = new System.Drawing.Point(99, 146);
+            this.lblTO_PG.Name = "lblTO_PG";
+            this.lblTO_PG.Size = new System.Drawing.Size(51, 15);
+            this.lblTO_PG.TabIndex = 24;
+            this.lblTO_PG.Tag = "Point Guard";
+            this.lblTO_PG.Text = "TO (OPP)";
+            // 
+            // lbl3PT_PG
+            // 
+            this.lbl3PT_PG.AutoSize = true;
+            this.lbl3PT_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PT_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PT_PG.Location = new System.Drawing.Point(162, 146);
+            this.lbl3PT_PG.Name = "lbl3PT_PG";
+            this.lbl3PT_PG.Size = new System.Drawing.Size(25, 15);
+            this.lbl3PT_PG.TabIndex = 25;
+            this.lbl3PT_PG.Tag = "Point Guard";
+            this.lbl3PT_PG.Text = "3PT";
+            // 
+            // lbl2PT_PG
+            // 
+            this.lbl2PT_PG.AutoSize = true;
+            this.lbl2PT_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PT_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PT_PG.Location = new System.Drawing.Point(163, 105);
+            this.lbl2PT_PG.Name = "lbl2PT_PG";
+            this.lbl2PT_PG.Size = new System.Drawing.Size(25, 15);
+            this.lbl2PT_PG.TabIndex = 22;
+            this.lbl2PT_PG.Tag = "Point Guard";
+            this.lbl2PT_PG.Text = "2PT";
+            // 
+            // lblSTL_PG
+            // 
+            this.lblSTL_PG.AutoSize = true;
+            this.lblSTL_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSTL_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSTL_PG.Location = new System.Drawing.Point(99, 105);
+            this.lblSTL_PG.Name = "lblSTL_PG";
+            this.lblSTL_PG.Size = new System.Drawing.Size(24, 15);
+            this.lblSTL_PG.TabIndex = 21;
+            this.lblSTL_PG.Tag = "Point Guard";
+            this.lblSTL_PG.Text = "STL";
+            // 
+            // lblREB_PG
+            // 
+            this.lblREB_PG.AutoSize = true;
+            this.lblREB_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblREB_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblREB_PG.Location = new System.Drawing.Point(162, 22);
+            this.lblREB_PG.Name = "lblREB_PG";
+            this.lblREB_PG.Size = new System.Drawing.Size(26, 15);
+            this.lblREB_PG.TabIndex = 17;
+            this.lblREB_PG.Tag = "Point Guard";
+            this.lblREB_PG.Text = "REB";
+            // 
+            // lblBLK_PG
+            // 
+            this.lblBLK_PG.AutoSize = true;
+            this.lblBLK_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBLK_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBLK_PG.Location = new System.Drawing.Point(162, 63);
+            this.lblBLK_PG.Name = "lblBLK_PG";
+            this.lblBLK_PG.Size = new System.Drawing.Size(26, 15);
+            this.lblBLK_PG.TabIndex = 19;
+            this.lblBLK_PG.Tag = "Point Guard";
+            this.lblBLK_PG.Text = "BLK";
+            // 
+            // lblAST_PG
+            // 
+            this.lblAST_PG.AutoSize = true;
+            this.lblAST_PG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAST_PG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAST_PG.Location = new System.Drawing.Point(98, 63);
+            this.lblAST_PG.Name = "lblAST_PG";
+            this.lblAST_PG.Size = new System.Drawing.Size(25, 15);
+            this.lblAST_PG.TabIndex = 18;
+            this.lblAST_PG.Tag = "Point Guard";
+            this.lblAST_PG.Text = "AST";
+            // 
+            // picPointGuard
+            // 
+            this.picPointGuard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picPointGuard.Location = new System.Drawing.Point(6, 22);
+            this.picPointGuard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picPointGuard.Name = "picPointGuard";
+            this.picPointGuard.Size = new System.Drawing.Size(82, 79);
+            this.picPointGuard.TabIndex = 0;
+            this.picPointGuard.TabStop = false;
+            this.picPointGuard.Tag = "Point Guard";
+            // 
+            // grpShootingGuard
+            // 
+            this.grpShootingGuard.Controls.Add(this.nmcTIPP_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcMIN_SG);
+            this.grpShootingGuard.Controls.Add(this.lblTIPP_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcFCMT_SG);
+            this.grpShootingGuard.Controls.Add(this.nmc3PTATMP_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcFTA_SG);
+            this.grpShootingGuard.Controls.Add(this.lbl3PTATMP_SG);
+            this.grpShootingGuard.Controls.Add(this.txtPTS_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcFDRW_SG);
+            this.grpShootingGuard.Controls.Add(this.nmc2PTATMP_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcFTM_SG);
+            this.grpShootingGuard.Controls.Add(this.nmc3PT_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcTO_SG);
+            this.grpShootingGuard.Controls.Add(this.nmc2PT_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcSTL_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcBLK_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcAST_SG);
+            this.grpShootingGuard.Controls.Add(this.nmcREB_SG);
+            this.grpShootingGuard.Controls.Add(this.lblFTMA_SG);
+            this.grpShootingGuard.Controls.Add(this.lbl2PTATMP_SG);
+            this.grpShootingGuard.Controls.Add(this.lblFDRWCMT_SG);
+            this.grpShootingGuard.Controls.Add(this.lblMIN_SG);
+            this.grpShootingGuard.Controls.Add(this.lblPTS_SG);
+            this.grpShootingGuard.Controls.Add(this.lblTO_SG);
+            this.grpShootingGuard.Controls.Add(this.lbl3PT_SG);
+            this.grpShootingGuard.Controls.Add(this.lbl2PT_SG);
+            this.grpShootingGuard.Controls.Add(this.lblSTL_SG);
+            this.grpShootingGuard.Controls.Add(this.lblREB_SG);
+            this.grpShootingGuard.Controls.Add(this.lblBLK_SG);
+            this.grpShootingGuard.Controls.Add(this.lblAST_SG);
+            this.grpShootingGuard.Controls.Add(this.picShootingGuard);
+            this.grpShootingGuard.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpShootingGuard.Location = new System.Drawing.Point(237, 33);
+            this.grpShootingGuard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpShootingGuard.Name = "grpShootingGuard";
+            this.grpShootingGuard.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpShootingGuard.Size = new System.Drawing.Size(220, 277);
+            this.grpShootingGuard.TabIndex = 1;
+            this.grpShootingGuard.TabStop = false;
+            this.grpShootingGuard.Text = "Shooting Guard";
+            // 
+            // nmcTIPP_SG
+            // 
+            this.nmcTIPP_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTIPP_SG.Location = new System.Drawing.Point(100, 249);
+            this.nmcTIPP_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTIPP_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTIPP_SG.Name = "nmcTIPP_SG";
+            this.nmcTIPP_SG.Size = new System.Drawing.Size(85, 20);
+            this.nmcTIPP_SG.TabIndex = 14;
+            this.nmcTIPP_SG.Tag = "TIPPASS;Shooting Guard";
+            this.nmcTIPP_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcMIN_SG
+            // 
+            this.nmcMIN_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcMIN_SG.Location = new System.Drawing.Point(5, 124);
+            this.nmcMIN_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcMIN_SG.Maximum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            this.nmcMIN_SG.Name = "nmcMIN_SG";
+            this.nmcMIN_SG.Size = new System.Drawing.Size(84, 20);
+            this.nmcMIN_SG.TabIndex = 3;
+            this.nmcMIN_SG.Tag = "MIN;Shooting Guard";
+            this.nmcMIN_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTIPP_SG
+            // 
+            this.lblTIPP_SG.AutoSize = true;
+            this.lblTIPP_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTIPP_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTIPP_SG.Location = new System.Drawing.Point(100, 230);
+            this.lblTIPP_SG.Name = "lblTIPP_SG";
+            this.lblTIPP_SG.Size = new System.Drawing.Size(76, 15);
+            this.lblTIPP_SG.TabIndex = 29;
+            this.lblTIPP_SG.Tag = "Shooting Guard";
+            this.lblTIPP_SG.Text = "TIPPED PASSES";
+            // 
+            // nmcFCMT_SG
+            // 
+            this.nmcFCMT_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFCMT_SG.Location = new System.Drawing.Point(50, 165);
+            this.nmcFCMT_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFCMT_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFCMT_SG.Name = "nmcFCMT_SG";
+            this.nmcFCMT_SG.Size = new System.Drawing.Size(40, 20);
+            this.nmcFCMT_SG.TabIndex = 7;
+            this.nmcFCMT_SG.Tag = "FCMT;Shooting Guard";
+            this.nmcFCMT_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc3PTATMP_SG
+            // 
+            this.nmc3PTATMP_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PTATMP_SG.Location = new System.Drawing.Point(6, 249);
+            this.nmc3PTATMP_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PTATMP_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PTATMP_SG.Name = "nmc3PTATMP_SG";
+            this.nmc3PTATMP_SG.Size = new System.Drawing.Size(85, 20);
+            this.nmc3PTATMP_SG.TabIndex = 13;
+            this.nmc3PTATMP_SG.Tag = "THREEPTSATMP;Shooting Guard";
+            this.nmc3PTATMP_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTA_SG
+            // 
+            this.nmcFTA_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTA_SG.Location = new System.Drawing.Point(163, 206);
+            this.nmcFTA_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTA_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTA_SG.Name = "nmcFTA_SG";
+            this.nmcFTA_SG.Size = new System.Drawing.Size(51, 20);
+            this.nmcFTA_SG.TabIndex = 12;
+            this.nmcFTA_SG.Tag = "FTATMP;Shooting Guard";
+            this.nmcFTA_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl3PTATMP_SG
+            // 
+            this.lbl3PTATMP_SG.AutoSize = true;
+            this.lbl3PTATMP_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PTATMP_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PTATMP_SG.Location = new System.Drawing.Point(6, 230);
+            this.lbl3PTATMP_SG.Name = "lbl3PTATMP_SG";
+            this.lbl3PTATMP_SG.Size = new System.Drawing.Size(55, 15);
+            this.lbl3PTATMP_SG.TabIndex = 28;
+            this.lbl3PTATMP_SG.Tag = "Shooting Guard";
+            this.lbl3PTATMP_SG.Text = "3PT/ATMP";
+            // 
+            // txtPTS_SG
+            // 
+            this.txtPTS_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPTS_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtPTS_SG.Location = new System.Drawing.Point(98, 39);
+            this.txtPTS_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPTS_SG.Name = "txtPTS_SG";
+            this.txtPTS_SG.ReadOnly = true;
+            this.txtPTS_SG.Size = new System.Drawing.Size(58, 20);
+            this.txtPTS_SG.TabIndex = 15;
+            this.txtPTS_SG.Tag = "Shooting Guard";
+            this.txtPTS_SG.Text = "0";
+            this.txtPTS_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFDRW_SG
+            // 
+            this.nmcFDRW_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFDRW_SG.Location = new System.Drawing.Point(6, 165);
+            this.nmcFDRW_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFDRW_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFDRW_SG.Name = "nmcFDRW_SG";
+            this.nmcFDRW_SG.Size = new System.Drawing.Size(40, 20);
+            this.nmcFDRW_SG.TabIndex = 6;
+            this.nmcFDRW_SG.Tag = "FDRW;Shooting Guard";
+            this.nmcFDRW_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PTATMP_SG
+            // 
+            this.nmc2PTATMP_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PTATMP_SG.Location = new System.Drawing.Point(5, 207);
+            this.nmc2PTATMP_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PTATMP_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PTATMP_SG.Name = "nmc2PTATMP_SG";
+            this.nmc2PTATMP_SG.Size = new System.Drawing.Size(85, 20);
+            this.nmc2PTATMP_SG.TabIndex = 10;
+            this.nmc2PTATMP_SG.Tag = "TWOPTSATMP;Shooting Guard";
+            this.nmc2PTATMP_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTM_SG
+            // 
+            this.nmcFTM_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTM_SG.Location = new System.Drawing.Point(99, 206);
+            this.nmcFTM_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTM_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTM_SG.Name = "nmcFTM_SG";
+            this.nmcFTM_SG.Size = new System.Drawing.Size(57, 20);
+            this.nmcFTM_SG.TabIndex = 11;
+            this.nmcFTM_SG.Tag = "FTMADE;Shooting Guard";
+            this.nmcFTM_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc3PT_SG
+            // 
+            this.nmc3PT_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PT_SG.Location = new System.Drawing.Point(162, 165);
+            this.nmc3PT_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PT_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PT_SG.Name = "nmc3PT_SG";
+            this.nmc3PT_SG.Size = new System.Drawing.Size(52, 20);
+            this.nmc3PT_SG.TabIndex = 9;
+            this.nmc3PT_SG.Tag = "THREEPTSMADE;Shooting Guard";
+            this.nmc3PT_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcTO_SG
+            // 
+            this.nmcTO_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTO_SG.Location = new System.Drawing.Point(99, 165);
+            this.nmcTO_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTO_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTO_SG.Name = "nmcTO_SG";
+            this.nmcTO_SG.Size = new System.Drawing.Size(57, 20);
+            this.nmcTO_SG.TabIndex = 8;
+            this.nmcTO_SG.Tag = "TO;Shooting Guard";
+            this.nmcTO_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PT_SG
+            // 
+            this.nmc2PT_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PT_SG.Location = new System.Drawing.Point(162, 123);
+            this.nmc2PT_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PT_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PT_SG.Name = "nmc2PT_SG";
+            this.nmc2PT_SG.Size = new System.Drawing.Size(52, 20);
+            this.nmc2PT_SG.TabIndex = 5;
+            this.nmc2PT_SG.Tag = "TWOPTSMADE;Shooting Guard";
+            this.nmc2PT_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcSTL_SG
+            // 
+            this.nmcSTL_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcSTL_SG.Location = new System.Drawing.Point(99, 123);
+            this.nmcSTL_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcSTL_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcSTL_SG.Name = "nmcSTL_SG";
+            this.nmcSTL_SG.Size = new System.Drawing.Size(57, 20);
+            this.nmcSTL_SG.TabIndex = 4;
+            this.nmcSTL_SG.Tag = "STL;Shooting Guard";
+            this.nmcSTL_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcBLK_SG
+            // 
+            this.nmcBLK_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcBLK_SG.Location = new System.Drawing.Point(162, 81);
+            this.nmcBLK_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcBLK_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcBLK_SG.Name = "nmcBLK_SG";
+            this.nmcBLK_SG.Size = new System.Drawing.Size(52, 20);
+            this.nmcBLK_SG.TabIndex = 2;
+            this.nmcBLK_SG.Tag = "BLK;Shooting Guard";
+            this.nmcBLK_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcAST_SG
+            // 
+            this.nmcAST_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcAST_SG.Location = new System.Drawing.Point(98, 81);
+            this.nmcAST_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcAST_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcAST_SG.Name = "nmcAST_SG";
+            this.nmcAST_SG.Size = new System.Drawing.Size(58, 20);
+            this.nmcAST_SG.TabIndex = 1;
+            this.nmcAST_SG.Tag = "AST;Shooting Guard";
+            this.nmcAST_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcREB_SG
+            // 
+            this.nmcREB_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcREB_SG.Location = new System.Drawing.Point(162, 39);
+            this.nmcREB_SG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcREB_SG.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcREB_SG.Name = "nmcREB_SG";
+            this.nmcREB_SG.Size = new System.Drawing.Size(52, 20);
+            this.nmcREB_SG.TabIndex = 0;
+            this.nmcREB_SG.Tag = "REB;Shooting Guard";
+            this.nmcREB_SG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblFTMA_SG
+            // 
+            this.lblFTMA_SG.AutoSize = true;
+            this.lblFTMA_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFTMA_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFTMA_SG.Location = new System.Drawing.Point(99, 190);
+            this.lblFTMA_SG.Name = "lblFTMA_SG";
+            this.lblFTMA_SG.Size = new System.Drawing.Size(115, 15);
+            this.lblFTMA_SG.TabIndex = 27;
+            this.lblFTMA_SG.Tag = "Shooting Guard";
+            this.lblFTMA_SG.Text = "FTHROW [MADE/ATMP]";
+            // 
+            // lbl2PTATMP_SG
+            // 
+            this.lbl2PTATMP_SG.AutoSize = true;
+            this.lbl2PTATMP_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PTATMP_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PTATMP_SG.Location = new System.Drawing.Point(5, 190);
+            this.lbl2PTATMP_SG.Name = "lbl2PTATMP_SG";
+            this.lbl2PTATMP_SG.Size = new System.Drawing.Size(55, 15);
+            this.lbl2PTATMP_SG.TabIndex = 26;
+            this.lbl2PTATMP_SG.Tag = "Shooting Guard";
+            this.lbl2PTATMP_SG.Text = "2PT/ATMP";
+            // 
+            // lblFDRWCMT_SG
+            // 
+            this.lblFDRWCMT_SG.AutoSize = true;
+            this.lblFDRWCMT_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFDRWCMT_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFDRWCMT_SG.Location = new System.Drawing.Point(6, 146);
+            this.lblFDRWCMT_SG.Name = "lblFDRWCMT_SG";
+            this.lblFDRWCMT_SG.Size = new System.Drawing.Size(88, 15);
+            this.lblFDRWCMT_SG.TabIndex = 23;
+            this.lblFDRWCMT_SG.Tag = "Shooting Guard";
+            this.lblFDRWCMT_SG.Text = "FOULS DRW/CMT";
+            // 
+            // lblMIN_SG
+            // 
+            this.lblMIN_SG.AutoSize = true;
+            this.lblMIN_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMIN_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMIN_SG.Location = new System.Drawing.Point(6, 105);
+            this.lblMIN_SG.Name = "lblMIN_SG";
+            this.lblMIN_SG.Size = new System.Drawing.Size(82, 15);
+            this.lblMIN_SG.TabIndex = 20;
+            this.lblMIN_SG.Tag = "Shooting Guard";
+            this.lblMIN_SG.Text = "TOTAL MINUTES";
+            // 
+            // lblPTS_SG
+            // 
+            this.lblPTS_SG.AutoSize = true;
+            this.lblPTS_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPTS_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTS_SG.Location = new System.Drawing.Point(98, 22);
+            this.lblPTS_SG.Name = "lblPTS_SG";
+            this.lblPTS_SG.Size = new System.Drawing.Size(25, 15);
+            this.lblPTS_SG.TabIndex = 16;
+            this.lblPTS_SG.Tag = "Shooting Guard";
+            this.lblPTS_SG.Text = "PTS";
+            // 
+            // lblTO_SG
+            // 
+            this.lblTO_SG.AutoSize = true;
+            this.lblTO_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTO_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTO_SG.Location = new System.Drawing.Point(99, 146);
+            this.lblTO_SG.Name = "lblTO_SG";
+            this.lblTO_SG.Size = new System.Drawing.Size(51, 15);
+            this.lblTO_SG.TabIndex = 24;
+            this.lblTO_SG.Tag = "Shooting Guard";
+            this.lblTO_SG.Text = "TO (OPP)";
+            // 
+            // lbl3PT_SG
+            // 
+            this.lbl3PT_SG.AutoSize = true;
+            this.lbl3PT_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PT_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PT_SG.Location = new System.Drawing.Point(162, 146);
+            this.lbl3PT_SG.Name = "lbl3PT_SG";
+            this.lbl3PT_SG.Size = new System.Drawing.Size(25, 15);
+            this.lbl3PT_SG.TabIndex = 25;
+            this.lbl3PT_SG.Tag = "Shooting Guard";
+            this.lbl3PT_SG.Text = "3PT";
+            // 
+            // lbl2PT_SG
+            // 
+            this.lbl2PT_SG.AutoSize = true;
+            this.lbl2PT_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PT_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PT_SG.Location = new System.Drawing.Point(163, 105);
+            this.lbl2PT_SG.Name = "lbl2PT_SG";
+            this.lbl2PT_SG.Size = new System.Drawing.Size(25, 15);
+            this.lbl2PT_SG.TabIndex = 22;
+            this.lbl2PT_SG.Tag = "Shooting Guard";
+            this.lbl2PT_SG.Text = "2PT";
+            // 
+            // lblSTL_SG
+            // 
+            this.lblSTL_SG.AutoSize = true;
+            this.lblSTL_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSTL_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSTL_SG.Location = new System.Drawing.Point(99, 105);
+            this.lblSTL_SG.Name = "lblSTL_SG";
+            this.lblSTL_SG.Size = new System.Drawing.Size(24, 15);
+            this.lblSTL_SG.TabIndex = 21;
+            this.lblSTL_SG.Tag = "Shooting Guard";
+            this.lblSTL_SG.Text = "STL";
+            // 
+            // lblREB_SG
+            // 
+            this.lblREB_SG.AutoSize = true;
+            this.lblREB_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblREB_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblREB_SG.Location = new System.Drawing.Point(162, 22);
+            this.lblREB_SG.Name = "lblREB_SG";
+            this.lblREB_SG.Size = new System.Drawing.Size(26, 15);
+            this.lblREB_SG.TabIndex = 17;
+            this.lblREB_SG.Tag = "Shooting Guard";
+            this.lblREB_SG.Text = "REB";
+            // 
+            // lblBLK_SG
+            // 
+            this.lblBLK_SG.AutoSize = true;
+            this.lblBLK_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBLK_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBLK_SG.Location = new System.Drawing.Point(162, 63);
+            this.lblBLK_SG.Name = "lblBLK_SG";
+            this.lblBLK_SG.Size = new System.Drawing.Size(26, 15);
+            this.lblBLK_SG.TabIndex = 19;
+            this.lblBLK_SG.Tag = "Shooting Guard";
+            this.lblBLK_SG.Text = "BLK";
+            // 
+            // lblAST_SG
+            // 
+            this.lblAST_SG.AutoSize = true;
+            this.lblAST_SG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAST_SG.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAST_SG.Location = new System.Drawing.Point(98, 63);
+            this.lblAST_SG.Name = "lblAST_SG";
+            this.lblAST_SG.Size = new System.Drawing.Size(25, 15);
+            this.lblAST_SG.TabIndex = 18;
+            this.lblAST_SG.Tag = "Shooting Guard";
+            this.lblAST_SG.Text = "AST";
+            // 
+            // picShootingGuard
+            // 
+            this.picShootingGuard.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picShootingGuard.Location = new System.Drawing.Point(6, 22);
+            this.picShootingGuard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picShootingGuard.Name = "picShootingGuard";
+            this.picShootingGuard.Size = new System.Drawing.Size(82, 79);
+            this.picShootingGuard.TabIndex = 0;
+            this.picShootingGuard.TabStop = false;
+            this.picShootingGuard.Tag = "Shooting Guard";
+            // 
+            // grpPowerForward
+            // 
+            this.grpPowerForward.Controls.Add(this.nmcTIPP_PF);
+            this.grpPowerForward.Controls.Add(this.nmcMIN_PF);
+            this.grpPowerForward.Controls.Add(this.lblTIPP_PF);
+            this.grpPowerForward.Controls.Add(this.nmcFCMT_PF);
+            this.grpPowerForward.Controls.Add(this.nmc3PTATMP_PF);
+            this.grpPowerForward.Controls.Add(this.nmcFTA_PF);
+            this.grpPowerForward.Controls.Add(this.lbl3PTATMP_PF);
+            this.grpPowerForward.Controls.Add(this.txtPTS_PF);
+            this.grpPowerForward.Controls.Add(this.nmcFDRW_PF);
+            this.grpPowerForward.Controls.Add(this.nmc2PTATMP_PF);
+            this.grpPowerForward.Controls.Add(this.nmcFTM_PF);
+            this.grpPowerForward.Controls.Add(this.nmc3PT_PF);
+            this.grpPowerForward.Controls.Add(this.nmcTO_PF);
+            this.grpPowerForward.Controls.Add(this.nmc2PT_PF);
+            this.grpPowerForward.Controls.Add(this.nmcSTL_PF);
+            this.grpPowerForward.Controls.Add(this.nmcBLK_PF);
+            this.grpPowerForward.Controls.Add(this.nmcAST_PF);
+            this.grpPowerForward.Controls.Add(this.nmcREB_PF);
+            this.grpPowerForward.Controls.Add(this.lblFTMA_PF);
+            this.grpPowerForward.Controls.Add(this.lbl2PTATMP_PF);
+            this.grpPowerForward.Controls.Add(this.lblFDRWCMT_PF);
+            this.grpPowerForward.Controls.Add(this.lblMIN_PF);
+            this.grpPowerForward.Controls.Add(this.lblPTS_PF);
+            this.grpPowerForward.Controls.Add(this.lblTO_PF);
+            this.grpPowerForward.Controls.Add(this.lbl3PT_PF);
+            this.grpPowerForward.Controls.Add(this.lbl2PT_PF);
+            this.grpPowerForward.Controls.Add(this.lblSTL_PF);
+            this.grpPowerForward.Controls.Add(this.lblREB_PF);
+            this.grpPowerForward.Controls.Add(this.lblBLK_PF);
+            this.grpPowerForward.Controls.Add(this.lblAST_PF);
+            this.grpPowerForward.Controls.Add(this.picPowerForward);
+            this.grpPowerForward.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpPowerForward.Location = new System.Drawing.Point(10, 315);
+            this.grpPowerForward.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpPowerForward.Name = "grpPowerForward";
+            this.grpPowerForward.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpPowerForward.Size = new System.Drawing.Size(220, 274);
+            this.grpPowerForward.TabIndex = 3;
+            this.grpPowerForward.TabStop = false;
+            this.grpPowerForward.Text = "Power Forward";
+            // 
+            // nmcTIPP_PF
+            // 
+            this.nmcTIPP_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTIPP_PF.Location = new System.Drawing.Point(100, 249);
+            this.nmcTIPP_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTIPP_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTIPP_PF.Name = "nmcTIPP_PF";
+            this.nmcTIPP_PF.Size = new System.Drawing.Size(85, 20);
+            this.nmcTIPP_PF.TabIndex = 14;
+            this.nmcTIPP_PF.Tag = "TIPPASS;Power Forward";
+            this.nmcTIPP_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcMIN_PF
+            // 
+            this.nmcMIN_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcMIN_PF.Location = new System.Drawing.Point(5, 124);
+            this.nmcMIN_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcMIN_PF.Maximum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            this.nmcMIN_PF.Name = "nmcMIN_PF";
+            this.nmcMIN_PF.Size = new System.Drawing.Size(84, 20);
+            this.nmcMIN_PF.TabIndex = 3;
+            this.nmcMIN_PF.Tag = "MIN;Power Forward";
+            this.nmcMIN_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTIPP_PF
+            // 
+            this.lblTIPP_PF.AutoSize = true;
+            this.lblTIPP_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTIPP_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTIPP_PF.Location = new System.Drawing.Point(100, 230);
+            this.lblTIPP_PF.Name = "lblTIPP_PF";
+            this.lblTIPP_PF.Size = new System.Drawing.Size(76, 15);
+            this.lblTIPP_PF.TabIndex = 29;
+            this.lblTIPP_PF.Tag = "Power Forward";
+            this.lblTIPP_PF.Text = "TIPPED PASSES";
+            // 
+            // nmcFCMT_PF
+            // 
+            this.nmcFCMT_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFCMT_PF.Location = new System.Drawing.Point(50, 165);
+            this.nmcFCMT_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFCMT_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFCMT_PF.Name = "nmcFCMT_PF";
+            this.nmcFCMT_PF.Size = new System.Drawing.Size(40, 20);
+            this.nmcFCMT_PF.TabIndex = 7;
+            this.nmcFCMT_PF.Tag = "FCMT;Power Forward";
+            this.nmcFCMT_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc3PTATMP_PF
+            // 
+            this.nmc3PTATMP_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PTATMP_PF.Location = new System.Drawing.Point(6, 249);
+            this.nmc3PTATMP_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PTATMP_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PTATMP_PF.Name = "nmc3PTATMP_PF";
+            this.nmc3PTATMP_PF.Size = new System.Drawing.Size(85, 20);
+            this.nmc3PTATMP_PF.TabIndex = 13;
+            this.nmc3PTATMP_PF.Tag = "THREEPTSATMP;Power Forward";
+            this.nmc3PTATMP_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTA_PF
+            // 
+            this.nmcFTA_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTA_PF.Location = new System.Drawing.Point(163, 206);
+            this.nmcFTA_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTA_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTA_PF.Name = "nmcFTA_PF";
+            this.nmcFTA_PF.Size = new System.Drawing.Size(51, 20);
+            this.nmcFTA_PF.TabIndex = 12;
+            this.nmcFTA_PF.Tag = "FTATMP;Power Forward";
+            this.nmcFTA_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl3PTATMP_PF
+            // 
+            this.lbl3PTATMP_PF.AutoSize = true;
+            this.lbl3PTATMP_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PTATMP_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PTATMP_PF.Location = new System.Drawing.Point(6, 230);
+            this.lbl3PTATMP_PF.Name = "lbl3PTATMP_PF";
+            this.lbl3PTATMP_PF.Size = new System.Drawing.Size(55, 15);
+            this.lbl3PTATMP_PF.TabIndex = 28;
+            this.lbl3PTATMP_PF.Tag = "Power Forward";
+            this.lbl3PTATMP_PF.Text = "3PT/ATMP";
+            // 
+            // txtPTS_PF
+            // 
+            this.txtPTS_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPTS_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtPTS_PF.Location = new System.Drawing.Point(98, 39);
+            this.txtPTS_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPTS_PF.Name = "txtPTS_PF";
+            this.txtPTS_PF.ReadOnly = true;
+            this.txtPTS_PF.Size = new System.Drawing.Size(58, 20);
+            this.txtPTS_PF.TabIndex = 15;
+            this.txtPTS_PF.Tag = "Power Forward";
+            this.txtPTS_PF.Text = "0";
+            this.txtPTS_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFDRW_PF
+            // 
+            this.nmcFDRW_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFDRW_PF.Location = new System.Drawing.Point(6, 165);
+            this.nmcFDRW_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFDRW_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFDRW_PF.Name = "nmcFDRW_PF";
+            this.nmcFDRW_PF.Size = new System.Drawing.Size(40, 20);
+            this.nmcFDRW_PF.TabIndex = 6;
+            this.nmcFDRW_PF.Tag = "FDRW;Power Forward";
+            this.nmcFDRW_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PTATMP_PF
+            // 
+            this.nmc2PTATMP_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PTATMP_PF.Location = new System.Drawing.Point(5, 207);
+            this.nmc2PTATMP_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PTATMP_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PTATMP_PF.Name = "nmc2PTATMP_PF";
+            this.nmc2PTATMP_PF.Size = new System.Drawing.Size(85, 20);
+            this.nmc2PTATMP_PF.TabIndex = 10;
+            this.nmc2PTATMP_PF.Tag = "TWOPTSATMP;Power Forward";
+            this.nmc2PTATMP_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTM_PF
+            // 
+            this.nmcFTM_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTM_PF.Location = new System.Drawing.Point(99, 206);
+            this.nmcFTM_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTM_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTM_PF.Name = "nmcFTM_PF";
+            this.nmcFTM_PF.Size = new System.Drawing.Size(57, 20);
+            this.nmcFTM_PF.TabIndex = 11;
+            this.nmcFTM_PF.Tag = "FTMADE;Power Forward";
+            this.nmcFTM_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc3PT_PF
+            // 
+            this.nmc3PT_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PT_PF.Location = new System.Drawing.Point(162, 165);
+            this.nmc3PT_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PT_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PT_PF.Name = "nmc3PT_PF";
+            this.nmc3PT_PF.Size = new System.Drawing.Size(52, 20);
+            this.nmc3PT_PF.TabIndex = 9;
+            this.nmc3PT_PF.Tag = "THREEPTSMADE;Power Forward";
+            this.nmc3PT_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcTO_PF
+            // 
+            this.nmcTO_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTO_PF.Location = new System.Drawing.Point(99, 165);
+            this.nmcTO_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTO_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTO_PF.Name = "nmcTO_PF";
+            this.nmcTO_PF.Size = new System.Drawing.Size(57, 20);
+            this.nmcTO_PF.TabIndex = 8;
+            this.nmcTO_PF.Tag = "TO;Power Forward";
+            this.nmcTO_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PT_PF
+            // 
+            this.nmc2PT_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PT_PF.Location = new System.Drawing.Point(162, 123);
+            this.nmc2PT_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PT_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PT_PF.Name = "nmc2PT_PF";
+            this.nmc2PT_PF.Size = new System.Drawing.Size(52, 20);
+            this.nmc2PT_PF.TabIndex = 5;
+            this.nmc2PT_PF.Tag = "TWOPTSMADE;Power Forward";
+            this.nmc2PT_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcSTL_PF
+            // 
+            this.nmcSTL_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcSTL_PF.Location = new System.Drawing.Point(99, 123);
+            this.nmcSTL_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcSTL_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcSTL_PF.Name = "nmcSTL_PF";
+            this.nmcSTL_PF.Size = new System.Drawing.Size(57, 20);
+            this.nmcSTL_PF.TabIndex = 4;
+            this.nmcSTL_PF.Tag = "STL;Power Forward";
+            this.nmcSTL_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcBLK_PF
+            // 
+            this.nmcBLK_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcBLK_PF.Location = new System.Drawing.Point(162, 81);
+            this.nmcBLK_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcBLK_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcBLK_PF.Name = "nmcBLK_PF";
+            this.nmcBLK_PF.Size = new System.Drawing.Size(52, 20);
+            this.nmcBLK_PF.TabIndex = 2;
+            this.nmcBLK_PF.Tag = "BLK;Power Forward";
+            this.nmcBLK_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcAST_PF
+            // 
+            this.nmcAST_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcAST_PF.Location = new System.Drawing.Point(98, 81);
+            this.nmcAST_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcAST_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcAST_PF.Name = "nmcAST_PF";
+            this.nmcAST_PF.Size = new System.Drawing.Size(58, 20);
+            this.nmcAST_PF.TabIndex = 1;
+            this.nmcAST_PF.Tag = "AST;Power Forward";
+            this.nmcAST_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcREB_PF
+            // 
+            this.nmcREB_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcREB_PF.Location = new System.Drawing.Point(162, 39);
+            this.nmcREB_PF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcREB_PF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcREB_PF.Name = "nmcREB_PF";
+            this.nmcREB_PF.Size = new System.Drawing.Size(52, 20);
+            this.nmcREB_PF.TabIndex = 0;
+            this.nmcREB_PF.Tag = "REB;Power Forward";
+            this.nmcREB_PF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblFTMA_PF
+            // 
+            this.lblFTMA_PF.AutoSize = true;
+            this.lblFTMA_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFTMA_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFTMA_PF.Location = new System.Drawing.Point(99, 190);
+            this.lblFTMA_PF.Name = "lblFTMA_PF";
+            this.lblFTMA_PF.Size = new System.Drawing.Size(115, 15);
+            this.lblFTMA_PF.TabIndex = 27;
+            this.lblFTMA_PF.Tag = "Power Forward";
+            this.lblFTMA_PF.Text = "FTHROW [MADE/ATMP]";
+            // 
+            // lbl2PTATMP_PF
+            // 
+            this.lbl2PTATMP_PF.AutoSize = true;
+            this.lbl2PTATMP_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PTATMP_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PTATMP_PF.Location = new System.Drawing.Point(5, 190);
+            this.lbl2PTATMP_PF.Name = "lbl2PTATMP_PF";
+            this.lbl2PTATMP_PF.Size = new System.Drawing.Size(55, 15);
+            this.lbl2PTATMP_PF.TabIndex = 26;
+            this.lbl2PTATMP_PF.Tag = "Power Forward";
+            this.lbl2PTATMP_PF.Text = "2PT/ATMP";
+            // 
+            // lblFDRWCMT_PF
+            // 
+            this.lblFDRWCMT_PF.AutoSize = true;
+            this.lblFDRWCMT_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFDRWCMT_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFDRWCMT_PF.Location = new System.Drawing.Point(6, 146);
+            this.lblFDRWCMT_PF.Name = "lblFDRWCMT_PF";
+            this.lblFDRWCMT_PF.Size = new System.Drawing.Size(88, 15);
+            this.lblFDRWCMT_PF.TabIndex = 23;
+            this.lblFDRWCMT_PF.Tag = "Power Forward";
+            this.lblFDRWCMT_PF.Text = "FOULS DRW/CMT";
+            // 
+            // lblMIN_PF
+            // 
+            this.lblMIN_PF.AutoSize = true;
+            this.lblMIN_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMIN_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMIN_PF.Location = new System.Drawing.Point(6, 105);
+            this.lblMIN_PF.Name = "lblMIN_PF";
+            this.lblMIN_PF.Size = new System.Drawing.Size(82, 15);
+            this.lblMIN_PF.TabIndex = 20;
+            this.lblMIN_PF.Tag = "Power Forward";
+            this.lblMIN_PF.Text = "TOTAL MINUTES";
+            // 
+            // lblPTS_PF
+            // 
+            this.lblPTS_PF.AutoSize = true;
+            this.lblPTS_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPTS_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTS_PF.Location = new System.Drawing.Point(98, 22);
+            this.lblPTS_PF.Name = "lblPTS_PF";
+            this.lblPTS_PF.Size = new System.Drawing.Size(25, 15);
+            this.lblPTS_PF.TabIndex = 16;
+            this.lblPTS_PF.Tag = "Power Forward";
+            this.lblPTS_PF.Text = "PTS";
+            // 
+            // lblTO_PF
+            // 
+            this.lblTO_PF.AutoSize = true;
+            this.lblTO_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTO_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTO_PF.Location = new System.Drawing.Point(99, 146);
+            this.lblTO_PF.Name = "lblTO_PF";
+            this.lblTO_PF.Size = new System.Drawing.Size(51, 15);
+            this.lblTO_PF.TabIndex = 24;
+            this.lblTO_PF.Tag = "Power Forward";
+            this.lblTO_PF.Text = "TO (OPP)";
+            // 
+            // lbl3PT_PF
+            // 
+            this.lbl3PT_PF.AutoSize = true;
+            this.lbl3PT_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PT_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PT_PF.Location = new System.Drawing.Point(162, 146);
+            this.lbl3PT_PF.Name = "lbl3PT_PF";
+            this.lbl3PT_PF.Size = new System.Drawing.Size(25, 15);
+            this.lbl3PT_PF.TabIndex = 25;
+            this.lbl3PT_PF.Tag = "Power Forward";
+            this.lbl3PT_PF.Text = "3PT";
+            // 
+            // lbl2PT_PF
+            // 
+            this.lbl2PT_PF.AutoSize = true;
+            this.lbl2PT_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PT_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PT_PF.Location = new System.Drawing.Point(163, 105);
+            this.lbl2PT_PF.Name = "lbl2PT_PF";
+            this.lbl2PT_PF.Size = new System.Drawing.Size(25, 15);
+            this.lbl2PT_PF.TabIndex = 22;
+            this.lbl2PT_PF.Tag = "Power Forward";
+            this.lbl2PT_PF.Text = "2PT";
+            // 
+            // lblSTL_PF
+            // 
+            this.lblSTL_PF.AutoSize = true;
+            this.lblSTL_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSTL_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSTL_PF.Location = new System.Drawing.Point(99, 105);
+            this.lblSTL_PF.Name = "lblSTL_PF";
+            this.lblSTL_PF.Size = new System.Drawing.Size(24, 15);
+            this.lblSTL_PF.TabIndex = 21;
+            this.lblSTL_PF.Tag = "Power Forward";
+            this.lblSTL_PF.Text = "STL";
+            // 
+            // lblREB_PF
+            // 
+            this.lblREB_PF.AutoSize = true;
+            this.lblREB_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblREB_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblREB_PF.Location = new System.Drawing.Point(162, 22);
+            this.lblREB_PF.Name = "lblREB_PF";
+            this.lblREB_PF.Size = new System.Drawing.Size(26, 15);
+            this.lblREB_PF.TabIndex = 17;
+            this.lblREB_PF.Tag = "Power Forward";
+            this.lblREB_PF.Text = "REB";
+            // 
+            // lblBLK_PF
+            // 
+            this.lblBLK_PF.AutoSize = true;
+            this.lblBLK_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBLK_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBLK_PF.Location = new System.Drawing.Point(162, 63);
+            this.lblBLK_PF.Name = "lblBLK_PF";
+            this.lblBLK_PF.Size = new System.Drawing.Size(26, 15);
+            this.lblBLK_PF.TabIndex = 19;
+            this.lblBLK_PF.Tag = "Power Forward";
+            this.lblBLK_PF.Text = "BLK";
+            // 
+            // lblAST_PF
+            // 
+            this.lblAST_PF.AutoSize = true;
+            this.lblAST_PF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAST_PF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAST_PF.Location = new System.Drawing.Point(98, 63);
+            this.lblAST_PF.Name = "lblAST_PF";
+            this.lblAST_PF.Size = new System.Drawing.Size(25, 15);
+            this.lblAST_PF.TabIndex = 18;
+            this.lblAST_PF.Tag = "Power Forward";
+            this.lblAST_PF.Text = "AST";
+            // 
+            // picPowerForward
+            // 
+            this.picPowerForward.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picPowerForward.Location = new System.Drawing.Point(6, 22);
+            this.picPowerForward.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picPowerForward.Name = "picPowerForward";
+            this.picPowerForward.Size = new System.Drawing.Size(82, 79);
+            this.picPowerForward.TabIndex = 0;
+            this.picPowerForward.TabStop = false;
+            this.picPowerForward.Tag = "Power Forward";
+            // 
+            // grpCenter
+            // 
+            this.grpCenter.Controls.Add(this.nmcTIPP_CT);
+            this.grpCenter.Controls.Add(this.nmcMIN_CT);
+            this.grpCenter.Controls.Add(this.lblTIPP_CT);
+            this.grpCenter.Controls.Add(this.nmcFCMT_CT);
+            this.grpCenter.Controls.Add(this.nmc3PTATMP_CT);
+            this.grpCenter.Controls.Add(this.nmcFTA_CT);
+            this.grpCenter.Controls.Add(this.lbl3PTATMP_CT);
+            this.grpCenter.Controls.Add(this.txtPTS_CT);
+            this.grpCenter.Controls.Add(this.nmcFDRW_CT);
+            this.grpCenter.Controls.Add(this.nmc2PTATMP_CT);
+            this.grpCenter.Controls.Add(this.nmcFTM_CT);
+            this.grpCenter.Controls.Add(this.nmc3PT_CT);
+            this.grpCenter.Controls.Add(this.nmcTO_CT);
+            this.grpCenter.Controls.Add(this.nmc2PT_CT);
+            this.grpCenter.Controls.Add(this.nmcSTL_CT);
+            this.grpCenter.Controls.Add(this.nmcBLK_CT);
+            this.grpCenter.Controls.Add(this.nmcAST_CT);
+            this.grpCenter.Controls.Add(this.nmcREB_CT);
+            this.grpCenter.Controls.Add(this.lblFTMA_CT);
+            this.grpCenter.Controls.Add(this.lbl2PTATMP_CT);
+            this.grpCenter.Controls.Add(this.lblFDRWCMT_CT);
+            this.grpCenter.Controls.Add(this.lblMIN_CT);
+            this.grpCenter.Controls.Add(this.lblPTS_CT);
+            this.grpCenter.Controls.Add(this.lblTO_CT);
+            this.grpCenter.Controls.Add(this.lbl3PT_CT);
+            this.grpCenter.Controls.Add(this.lbl2PT_CT);
+            this.grpCenter.Controls.Add(this.lblSTL_CT);
+            this.grpCenter.Controls.Add(this.lblREB_CT);
+            this.grpCenter.Controls.Add(this.lblBLK_CT);
+            this.grpCenter.Controls.Add(this.lblAST_CT);
+            this.grpCenter.Controls.Add(this.picCenter);
+            this.grpCenter.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpCenter.Location = new System.Drawing.Point(237, 315);
+            this.grpCenter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpCenter.Name = "grpCenter";
+            this.grpCenter.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpCenter.Size = new System.Drawing.Size(220, 274);
+            this.grpCenter.TabIndex = 4;
+            this.grpCenter.TabStop = false;
+            this.grpCenter.Text = "Center";
+            // 
+            // nmcTIPP_CT
+            // 
+            this.nmcTIPP_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTIPP_CT.Location = new System.Drawing.Point(100, 249);
+            this.nmcTIPP_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTIPP_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTIPP_CT.Name = "nmcTIPP_CT";
+            this.nmcTIPP_CT.Size = new System.Drawing.Size(85, 20);
+            this.nmcTIPP_CT.TabIndex = 14;
+            this.nmcTIPP_CT.Tag = "TIPPASS;Center";
+            this.nmcTIPP_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcMIN_CT
+            // 
+            this.nmcMIN_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcMIN_CT.Location = new System.Drawing.Point(5, 124);
+            this.nmcMIN_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcMIN_CT.Maximum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            this.nmcMIN_CT.Name = "nmcMIN_CT";
+            this.nmcMIN_CT.Size = new System.Drawing.Size(84, 20);
+            this.nmcMIN_CT.TabIndex = 3;
+            this.nmcMIN_CT.Tag = "MIN;Center";
+            this.nmcMIN_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTIPP_CT
+            // 
+            this.lblTIPP_CT.AutoSize = true;
+            this.lblTIPP_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTIPP_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTIPP_CT.Location = new System.Drawing.Point(100, 230);
+            this.lblTIPP_CT.Name = "lblTIPP_CT";
+            this.lblTIPP_CT.Size = new System.Drawing.Size(76, 15);
+            this.lblTIPP_CT.TabIndex = 29;
+            this.lblTIPP_CT.Tag = "Center";
+            this.lblTIPP_CT.Text = "TIPPED PASSES";
+            // 
+            // nmcFCMT_CT
+            // 
+            this.nmcFCMT_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFCMT_CT.Location = new System.Drawing.Point(50, 165);
+            this.nmcFCMT_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFCMT_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFCMT_CT.Name = "nmcFCMT_CT";
+            this.nmcFCMT_CT.Size = new System.Drawing.Size(40, 20);
+            this.nmcFCMT_CT.TabIndex = 7;
+            this.nmcFCMT_CT.Tag = "FCMT;Center";
+            this.nmcFCMT_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc3PTATMP_CT
+            // 
+            this.nmc3PTATMP_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PTATMP_CT.Location = new System.Drawing.Point(6, 249);
+            this.nmc3PTATMP_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PTATMP_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PTATMP_CT.Name = "nmc3PTATMP_CT";
+            this.nmc3PTATMP_CT.Size = new System.Drawing.Size(85, 20);
+            this.nmc3PTATMP_CT.TabIndex = 13;
+            this.nmc3PTATMP_CT.Tag = "THREEPTSATMP;Center";
+            this.nmc3PTATMP_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTA_CT
+            // 
+            this.nmcFTA_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTA_CT.Location = new System.Drawing.Point(163, 206);
+            this.nmcFTA_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTA_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTA_CT.Name = "nmcFTA_CT";
+            this.nmcFTA_CT.Size = new System.Drawing.Size(51, 20);
+            this.nmcFTA_CT.TabIndex = 12;
+            this.nmcFTA_CT.Tag = "FTATMP;Center";
+            this.nmcFTA_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl3PTATMP_CT
+            // 
+            this.lbl3PTATMP_CT.AutoSize = true;
+            this.lbl3PTATMP_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PTATMP_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PTATMP_CT.Location = new System.Drawing.Point(6, 230);
+            this.lbl3PTATMP_CT.Name = "lbl3PTATMP_CT";
+            this.lbl3PTATMP_CT.Size = new System.Drawing.Size(55, 15);
+            this.lbl3PTATMP_CT.TabIndex = 28;
+            this.lbl3PTATMP_CT.Tag = "Center";
+            this.lbl3PTATMP_CT.Text = "3PT/ATMP";
+            // 
+            // txtPTS_CT
+            // 
+            this.txtPTS_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPTS_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtPTS_CT.Location = new System.Drawing.Point(98, 39);
+            this.txtPTS_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPTS_CT.Name = "txtPTS_CT";
+            this.txtPTS_CT.ReadOnly = true;
+            this.txtPTS_CT.Size = new System.Drawing.Size(58, 20);
+            this.txtPTS_CT.TabIndex = 15;
+            this.txtPTS_CT.Tag = "Center";
+            this.txtPTS_CT.Text = "0";
+            this.txtPTS_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFDRW_CT
+            // 
+            this.nmcFDRW_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFDRW_CT.Location = new System.Drawing.Point(6, 165);
+            this.nmcFDRW_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFDRW_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFDRW_CT.Name = "nmcFDRW_CT";
+            this.nmcFDRW_CT.Size = new System.Drawing.Size(40, 20);
+            this.nmcFDRW_CT.TabIndex = 6;
+            this.nmcFDRW_CT.Tag = "FDRW;Center";
+            this.nmcFDRW_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PTATMP_CT
+            // 
+            this.nmc2PTATMP_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PTATMP_CT.Location = new System.Drawing.Point(5, 207);
+            this.nmc2PTATMP_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PTATMP_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PTATMP_CT.Name = "nmc2PTATMP_CT";
+            this.nmc2PTATMP_CT.Size = new System.Drawing.Size(85, 20);
+            this.nmc2PTATMP_CT.TabIndex = 10;
+            this.nmc2PTATMP_CT.Tag = "TWOPTSATMP;Center";
+            this.nmc2PTATMP_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTM_CT
+            // 
+            this.nmcFTM_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTM_CT.Location = new System.Drawing.Point(99, 206);
+            this.nmcFTM_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTM_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTM_CT.Name = "nmcFTM_CT";
+            this.nmcFTM_CT.Size = new System.Drawing.Size(57, 20);
+            this.nmcFTM_CT.TabIndex = 11;
+            this.nmcFTM_CT.Tag = "FTMADE;Center";
+            this.nmcFTM_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc3PT_CT
+            // 
+            this.nmc3PT_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PT_CT.Location = new System.Drawing.Point(162, 165);
+            this.nmc3PT_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PT_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PT_CT.Name = "nmc3PT_CT";
+            this.nmc3PT_CT.Size = new System.Drawing.Size(52, 20);
+            this.nmc3PT_CT.TabIndex = 9;
+            this.nmc3PT_CT.Tag = "THREEPTSMADE;Center";
+            this.nmc3PT_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcTO_CT
+            // 
+            this.nmcTO_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTO_CT.Location = new System.Drawing.Point(99, 165);
+            this.nmcTO_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTO_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTO_CT.Name = "nmcTO_CT";
+            this.nmcTO_CT.Size = new System.Drawing.Size(57, 20);
+            this.nmcTO_CT.TabIndex = 8;
+            this.nmcTO_CT.Tag = "TO;Center";
+            this.nmcTO_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PT_CT
+            // 
+            this.nmc2PT_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PT_CT.Location = new System.Drawing.Point(162, 123);
+            this.nmc2PT_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PT_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PT_CT.Name = "nmc2PT_CT";
+            this.nmc2PT_CT.Size = new System.Drawing.Size(52, 20);
+            this.nmc2PT_CT.TabIndex = 5;
+            this.nmc2PT_CT.Tag = "TWOPTSMADE;Center";
+            this.nmc2PT_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcSTL_CT
+            // 
+            this.nmcSTL_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcSTL_CT.Location = new System.Drawing.Point(99, 123);
+            this.nmcSTL_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcSTL_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcSTL_CT.Name = "nmcSTL_CT";
+            this.nmcSTL_CT.Size = new System.Drawing.Size(57, 20);
+            this.nmcSTL_CT.TabIndex = 4;
+            this.nmcSTL_CT.Tag = "STL;Center";
+            this.nmcSTL_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcBLK_CT
+            // 
+            this.nmcBLK_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcBLK_CT.Location = new System.Drawing.Point(162, 81);
+            this.nmcBLK_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcBLK_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcBLK_CT.Name = "nmcBLK_CT";
+            this.nmcBLK_CT.Size = new System.Drawing.Size(52, 20);
+            this.nmcBLK_CT.TabIndex = 2;
+            this.nmcBLK_CT.Tag = "BLK;Center";
+            this.nmcBLK_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcAST_CT
+            // 
+            this.nmcAST_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcAST_CT.Location = new System.Drawing.Point(98, 81);
+            this.nmcAST_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcAST_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcAST_CT.Name = "nmcAST_CT";
+            this.nmcAST_CT.Size = new System.Drawing.Size(58, 20);
+            this.nmcAST_CT.TabIndex = 1;
+            this.nmcAST_CT.Tag = "AST;Center";
+            this.nmcAST_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcREB_CT
+            // 
+            this.nmcREB_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcREB_CT.Location = new System.Drawing.Point(162, 39);
+            this.nmcREB_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcREB_CT.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcREB_CT.Name = "nmcREB_CT";
+            this.nmcREB_CT.Size = new System.Drawing.Size(52, 20);
+            this.nmcREB_CT.TabIndex = 0;
+            this.nmcREB_CT.Tag = "REB;Center";
+            this.nmcREB_CT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblFTMA_CT
+            // 
+            this.lblFTMA_CT.AutoSize = true;
+            this.lblFTMA_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFTMA_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFTMA_CT.Location = new System.Drawing.Point(99, 190);
+            this.lblFTMA_CT.Name = "lblFTMA_CT";
+            this.lblFTMA_CT.Size = new System.Drawing.Size(115, 15);
+            this.lblFTMA_CT.TabIndex = 27;
+            this.lblFTMA_CT.Tag = "Center";
+            this.lblFTMA_CT.Text = "FTHROW [MADE/ATMP]";
+            // 
+            // lbl2PTATMP_CT
+            // 
+            this.lbl2PTATMP_CT.AutoSize = true;
+            this.lbl2PTATMP_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PTATMP_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PTATMP_CT.Location = new System.Drawing.Point(5, 190);
+            this.lbl2PTATMP_CT.Name = "lbl2PTATMP_CT";
+            this.lbl2PTATMP_CT.Size = new System.Drawing.Size(55, 15);
+            this.lbl2PTATMP_CT.TabIndex = 26;
+            this.lbl2PTATMP_CT.Tag = "Center";
+            this.lbl2PTATMP_CT.Text = "2PT/ATMP";
+            // 
+            // lblFDRWCMT_CT
+            // 
+            this.lblFDRWCMT_CT.AutoSize = true;
+            this.lblFDRWCMT_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFDRWCMT_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFDRWCMT_CT.Location = new System.Drawing.Point(6, 146);
+            this.lblFDRWCMT_CT.Name = "lblFDRWCMT_CT";
+            this.lblFDRWCMT_CT.Size = new System.Drawing.Size(88, 15);
+            this.lblFDRWCMT_CT.TabIndex = 23;
+            this.lblFDRWCMT_CT.Tag = "Center";
+            this.lblFDRWCMT_CT.Text = "FOULS DRW/CMT";
+            // 
+            // lblMIN_CT
+            // 
+            this.lblMIN_CT.AutoSize = true;
+            this.lblMIN_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMIN_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMIN_CT.Location = new System.Drawing.Point(6, 105);
+            this.lblMIN_CT.Name = "lblMIN_CT";
+            this.lblMIN_CT.Size = new System.Drawing.Size(82, 15);
+            this.lblMIN_CT.TabIndex = 20;
+            this.lblMIN_CT.Tag = "Center";
+            this.lblMIN_CT.Text = "TOTAL MINUTES";
+            // 
+            // lblPTS_CT
+            // 
+            this.lblPTS_CT.AutoSize = true;
+            this.lblPTS_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPTS_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTS_CT.Location = new System.Drawing.Point(98, 22);
+            this.lblPTS_CT.Name = "lblPTS_CT";
+            this.lblPTS_CT.Size = new System.Drawing.Size(25, 15);
+            this.lblPTS_CT.TabIndex = 16;
+            this.lblPTS_CT.Tag = "Center";
+            this.lblPTS_CT.Text = "PTS";
+            // 
+            // lblTO_CT
+            // 
+            this.lblTO_CT.AutoSize = true;
+            this.lblTO_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTO_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTO_CT.Location = new System.Drawing.Point(99, 146);
+            this.lblTO_CT.Name = "lblTO_CT";
+            this.lblTO_CT.Size = new System.Drawing.Size(51, 15);
+            this.lblTO_CT.TabIndex = 24;
+            this.lblTO_CT.Tag = "Center";
+            this.lblTO_CT.Text = "TO (OPP)";
+            // 
+            // lbl3PT_CT
+            // 
+            this.lbl3PT_CT.AutoSize = true;
+            this.lbl3PT_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PT_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PT_CT.Location = new System.Drawing.Point(162, 146);
+            this.lbl3PT_CT.Name = "lbl3PT_CT";
+            this.lbl3PT_CT.Size = new System.Drawing.Size(25, 15);
+            this.lbl3PT_CT.TabIndex = 25;
+            this.lbl3PT_CT.Tag = "Center";
+            this.lbl3PT_CT.Text = "3PT";
+            // 
+            // lbl2PT_CT
+            // 
+            this.lbl2PT_CT.AutoSize = true;
+            this.lbl2PT_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PT_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PT_CT.Location = new System.Drawing.Point(163, 105);
+            this.lbl2PT_CT.Name = "lbl2PT_CT";
+            this.lbl2PT_CT.Size = new System.Drawing.Size(25, 15);
+            this.lbl2PT_CT.TabIndex = 22;
+            this.lbl2PT_CT.Tag = "Center";
+            this.lbl2PT_CT.Text = "2PT";
+            // 
+            // lblSTL_CT
+            // 
+            this.lblSTL_CT.AutoSize = true;
+            this.lblSTL_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSTL_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSTL_CT.Location = new System.Drawing.Point(99, 105);
+            this.lblSTL_CT.Name = "lblSTL_CT";
+            this.lblSTL_CT.Size = new System.Drawing.Size(24, 15);
+            this.lblSTL_CT.TabIndex = 21;
+            this.lblSTL_CT.Tag = "Center";
+            this.lblSTL_CT.Text = "STL";
+            // 
+            // lblREB_CT
+            // 
+            this.lblREB_CT.AutoSize = true;
+            this.lblREB_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblREB_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblREB_CT.Location = new System.Drawing.Point(162, 22);
+            this.lblREB_CT.Name = "lblREB_CT";
+            this.lblREB_CT.Size = new System.Drawing.Size(26, 15);
+            this.lblREB_CT.TabIndex = 17;
+            this.lblREB_CT.Tag = "Center";
+            this.lblREB_CT.Text = "REB";
+            // 
+            // lblBLK_CT
+            // 
+            this.lblBLK_CT.AutoSize = true;
+            this.lblBLK_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBLK_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBLK_CT.Location = new System.Drawing.Point(162, 63);
+            this.lblBLK_CT.Name = "lblBLK_CT";
+            this.lblBLK_CT.Size = new System.Drawing.Size(26, 15);
+            this.lblBLK_CT.TabIndex = 19;
+            this.lblBLK_CT.Tag = "Center";
+            this.lblBLK_CT.Text = "BLK";
+            // 
+            // lblAST_CT
+            // 
+            this.lblAST_CT.AutoSize = true;
+            this.lblAST_CT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAST_CT.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAST_CT.Location = new System.Drawing.Point(98, 63);
+            this.lblAST_CT.Name = "lblAST_CT";
+            this.lblAST_CT.Size = new System.Drawing.Size(25, 15);
+            this.lblAST_CT.TabIndex = 18;
+            this.lblAST_CT.Tag = "Center";
+            this.lblAST_CT.Text = "AST";
+            // 
+            // picCenter
+            // 
+            this.picCenter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picCenter.Location = new System.Drawing.Point(6, 22);
+            this.picCenter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picCenter.Name = "picCenter";
+            this.picCenter.Size = new System.Drawing.Size(82, 79);
+            this.picCenter.TabIndex = 0;
+            this.picCenter.TabStop = false;
+            this.picCenter.Tag = "Center";
+            // 
+            // grpSmallForward
+            // 
+            this.grpSmallForward.Controls.Add(this.nmcTIPP_SF);
+            this.grpSmallForward.Controls.Add(this.lblTIPP_SF);
+            this.grpSmallForward.Controls.Add(this.nmc3PTATMP_SF);
+            this.grpSmallForward.Controls.Add(this.lbl3PTATMP_SF);
+            this.grpSmallForward.Controls.Add(this.nmcMIN_SF);
+            this.grpSmallForward.Controls.Add(this.nmcFCMT_SF);
+            this.grpSmallForward.Controls.Add(this.nmcFTA_SF);
+            this.grpSmallForward.Controls.Add(this.txtPTS_SF);
+            this.grpSmallForward.Controls.Add(this.nmcFDRW_SF);
+            this.grpSmallForward.Controls.Add(this.nmc2PTATMP_SF);
+            this.grpSmallForward.Controls.Add(this.nmcFTM_SF);
+            this.grpSmallForward.Controls.Add(this.nmc3PT_SF);
+            this.grpSmallForward.Controls.Add(this.nmcTO_SF);
+            this.grpSmallForward.Controls.Add(this.nmc2PT_SF);
+            this.grpSmallForward.Controls.Add(this.nmcSTL_SF);
+            this.grpSmallForward.Controls.Add(this.nmcBLK_SF);
+            this.grpSmallForward.Controls.Add(this.nmcAST_SF);
+            this.grpSmallForward.Controls.Add(this.nmcREB_SF);
+            this.grpSmallForward.Controls.Add(this.lblFTMA_SF);
+            this.grpSmallForward.Controls.Add(this.lbl2PTATMP_SF);
+            this.grpSmallForward.Controls.Add(this.lblFDRWCMT_SF);
+            this.grpSmallForward.Controls.Add(this.lblMIN_SF);
+            this.grpSmallForward.Controls.Add(this.lblPTS_SF);
+            this.grpSmallForward.Controls.Add(this.lblTO_SF);
+            this.grpSmallForward.Controls.Add(this.lbl3PT_SF);
+            this.grpSmallForward.Controls.Add(this.lbl2PT_SF);
+            this.grpSmallForward.Controls.Add(this.lblSTL_SF);
+            this.grpSmallForward.Controls.Add(this.lblREB_SF);
+            this.grpSmallForward.Controls.Add(this.lblBLK_SF);
+            this.grpSmallForward.Controls.Add(this.lblAST_SF);
+            this.grpSmallForward.Controls.Add(this.picSmallForward);
+            this.grpSmallForward.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSmallForward.Location = new System.Drawing.Point(464, 33);
+            this.grpSmallForward.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpSmallForward.Name = "grpSmallForward";
+            this.grpSmallForward.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpSmallForward.Size = new System.Drawing.Size(220, 277);
+            this.grpSmallForward.TabIndex = 2;
+            this.grpSmallForward.TabStop = false;
+            this.grpSmallForward.Text = "Small Forward";
+            // 
+            // nmcTIPP_SF
+            // 
+            this.nmcTIPP_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTIPP_SF.Location = new System.Drawing.Point(99, 249);
+            this.nmcTIPP_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTIPP_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTIPP_SF.Name = "nmcTIPP_SF";
+            this.nmcTIPP_SF.Size = new System.Drawing.Size(85, 20);
+            this.nmcTIPP_SF.TabIndex = 14;
+            this.nmcTIPP_SF.Tag = "TIPPASS;Small Forward";
+            this.nmcTIPP_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTIPP_SF
+            // 
+            this.lblTIPP_SF.AutoSize = true;
+            this.lblTIPP_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTIPP_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTIPP_SF.Location = new System.Drawing.Point(99, 230);
+            this.lblTIPP_SF.Name = "lblTIPP_SF";
+            this.lblTIPP_SF.Size = new System.Drawing.Size(76, 15);
+            this.lblTIPP_SF.TabIndex = 29;
+            this.lblTIPP_SF.Tag = "Small Forward";
+            this.lblTIPP_SF.Text = "TIPPED PASSES";
+            // 
+            // nmc3PTATMP_SF
+            // 
+            this.nmc3PTATMP_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PTATMP_SF.Location = new System.Drawing.Point(5, 249);
+            this.nmc3PTATMP_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PTATMP_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PTATMP_SF.Name = "nmc3PTATMP_SF";
+            this.nmc3PTATMP_SF.Size = new System.Drawing.Size(85, 20);
+            this.nmc3PTATMP_SF.TabIndex = 13;
+            this.nmc3PTATMP_SF.Tag = "THREEPTSATMP;Small Forward";
+            this.nmc3PTATMP_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl3PTATMP_SF
+            // 
+            this.lbl3PTATMP_SF.AutoSize = true;
+            this.lbl3PTATMP_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PTATMP_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PTATMP_SF.Location = new System.Drawing.Point(5, 230);
+            this.lbl3PTATMP_SF.Name = "lbl3PTATMP_SF";
+            this.lbl3PTATMP_SF.Size = new System.Drawing.Size(55, 15);
+            this.lbl3PTATMP_SF.TabIndex = 28;
+            this.lbl3PTATMP_SF.Tag = "Small Forward";
+            this.lbl3PTATMP_SF.Text = "3PT/ATMP";
+            // 
+            // nmcMIN_SF
+            // 
+            this.nmcMIN_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcMIN_SF.Location = new System.Drawing.Point(6, 124);
+            this.nmcMIN_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcMIN_SF.Maximum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            this.nmcMIN_SF.Name = "nmcMIN_SF";
+            this.nmcMIN_SF.Size = new System.Drawing.Size(84, 20);
+            this.nmcMIN_SF.TabIndex = 3;
+            this.nmcMIN_SF.Tag = "MIN;Small Forward";
+            this.nmcMIN_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFCMT_SF
+            // 
+            this.nmcFCMT_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFCMT_SF.Location = new System.Drawing.Point(50, 165);
+            this.nmcFCMT_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFCMT_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFCMT_SF.Name = "nmcFCMT_SF";
+            this.nmcFCMT_SF.Size = new System.Drawing.Size(40, 20);
+            this.nmcFCMT_SF.TabIndex = 7;
+            this.nmcFCMT_SF.Tag = "FCMT;Small Forward";
+            this.nmcFCMT_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTA_SF
+            // 
+            this.nmcFTA_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTA_SF.Location = new System.Drawing.Point(163, 206);
+            this.nmcFTA_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTA_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTA_SF.Name = "nmcFTA_SF";
+            this.nmcFTA_SF.Size = new System.Drawing.Size(51, 20);
+            this.nmcFTA_SF.TabIndex = 12;
+            this.nmcFTA_SF.Tag = "FTATMP;Small Forward";
+            this.nmcFTA_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtPTS_SF
+            // 
+            this.txtPTS_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPTS_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtPTS_SF.Location = new System.Drawing.Point(98, 39);
+            this.txtPTS_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPTS_SF.Name = "txtPTS_SF";
+            this.txtPTS_SF.ReadOnly = true;
+            this.txtPTS_SF.Size = new System.Drawing.Size(58, 20);
+            this.txtPTS_SF.TabIndex = 15;
+            this.txtPTS_SF.Tag = "Small Forward";
+            this.txtPTS_SF.Text = "0";
+            this.txtPTS_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFDRW_SF
+            // 
+            this.nmcFDRW_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFDRW_SF.Location = new System.Drawing.Point(6, 165);
+            this.nmcFDRW_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFDRW_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFDRW_SF.Name = "nmcFDRW_SF";
+            this.nmcFDRW_SF.Size = new System.Drawing.Size(40, 20);
+            this.nmcFDRW_SF.TabIndex = 6;
+            this.nmcFDRW_SF.Tag = "FDRW;Small Forward";
+            this.nmcFDRW_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PTATMP_SF
+            // 
+            this.nmc2PTATMP_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PTATMP_SF.Location = new System.Drawing.Point(5, 207);
+            this.nmc2PTATMP_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PTATMP_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PTATMP_SF.Name = "nmc2PTATMP_SF";
+            this.nmc2PTATMP_SF.Size = new System.Drawing.Size(85, 20);
+            this.nmc2PTATMP_SF.TabIndex = 10;
+            this.nmc2PTATMP_SF.Tag = "TWOPTSATMP;Small Forward";
+            this.nmc2PTATMP_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcFTM_SF
+            // 
+            this.nmcFTM_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcFTM_SF.Location = new System.Drawing.Point(99, 206);
+            this.nmcFTM_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcFTM_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcFTM_SF.Name = "nmcFTM_SF";
+            this.nmcFTM_SF.Size = new System.Drawing.Size(57, 20);
+            this.nmcFTM_SF.TabIndex = 11;
+            this.nmcFTM_SF.Tag = "FTMADE;Small Forward";
+            this.nmcFTM_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc3PT_SF
+            // 
+            this.nmc3PT_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc3PT_SF.Location = new System.Drawing.Point(162, 165);
+            this.nmc3PT_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc3PT_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc3PT_SF.Name = "nmc3PT_SF";
+            this.nmc3PT_SF.Size = new System.Drawing.Size(52, 20);
+            this.nmc3PT_SF.TabIndex = 9;
+            this.nmc3PT_SF.Tag = "THREEPTSMADE;Small Forward";
+            this.nmc3PT_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcTO_SF
+            // 
+            this.nmcTO_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcTO_SF.Location = new System.Drawing.Point(99, 165);
+            this.nmcTO_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcTO_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcTO_SF.Name = "nmcTO_SF";
+            this.nmcTO_SF.Size = new System.Drawing.Size(57, 20);
+            this.nmcTO_SF.TabIndex = 8;
+            this.nmcTO_SF.Tag = "TO;Small Forward";
+            this.nmcTO_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmc2PT_SF
+            // 
+            this.nmc2PT_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmc2PT_SF.Location = new System.Drawing.Point(162, 123);
+            this.nmc2PT_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmc2PT_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmc2PT_SF.Name = "nmc2PT_SF";
+            this.nmc2PT_SF.Size = new System.Drawing.Size(52, 20);
+            this.nmc2PT_SF.TabIndex = 5;
+            this.nmc2PT_SF.Tag = "TWOPTSMADE;Small Forward";
+            this.nmc2PT_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcSTL_SF
+            // 
+            this.nmcSTL_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcSTL_SF.Location = new System.Drawing.Point(99, 123);
+            this.nmcSTL_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcSTL_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcSTL_SF.Name = "nmcSTL_SF";
+            this.nmcSTL_SF.Size = new System.Drawing.Size(57, 20);
+            this.nmcSTL_SF.TabIndex = 4;
+            this.nmcSTL_SF.Tag = "STL;Small Forward";
+            this.nmcSTL_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcBLK_SF
+            // 
+            this.nmcBLK_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcBLK_SF.Location = new System.Drawing.Point(162, 81);
+            this.nmcBLK_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcBLK_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcBLK_SF.Name = "nmcBLK_SF";
+            this.nmcBLK_SF.Size = new System.Drawing.Size(52, 20);
+            this.nmcBLK_SF.TabIndex = 2;
+            this.nmcBLK_SF.Tag = "BLK;Small Forward";
+            this.nmcBLK_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcAST_SF
+            // 
+            this.nmcAST_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcAST_SF.Location = new System.Drawing.Point(98, 81);
+            this.nmcAST_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcAST_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcAST_SF.Name = "nmcAST_SF";
+            this.nmcAST_SF.Size = new System.Drawing.Size(58, 20);
+            this.nmcAST_SF.TabIndex = 1;
+            this.nmcAST_SF.Tag = "AST;Small Forward";
+            this.nmcAST_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nmcREB_SF
+            // 
+            this.nmcREB_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.nmcREB_SF.Location = new System.Drawing.Point(162, 39);
+            this.nmcREB_SF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmcREB_SF.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmcREB_SF.Name = "nmcREB_SF";
+            this.nmcREB_SF.Size = new System.Drawing.Size(52, 20);
+            this.nmcREB_SF.TabIndex = 0;
+            this.nmcREB_SF.Tag = "REB;Small Forward";
+            this.nmcREB_SF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblFTMA_SF
+            // 
+            this.lblFTMA_SF.AutoSize = true;
+            this.lblFTMA_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFTMA_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFTMA_SF.Location = new System.Drawing.Point(99, 190);
+            this.lblFTMA_SF.Name = "lblFTMA_SF";
+            this.lblFTMA_SF.Size = new System.Drawing.Size(115, 15);
+            this.lblFTMA_SF.TabIndex = 27;
+            this.lblFTMA_SF.Tag = "Small Forward";
+            this.lblFTMA_SF.Text = "FTHROW [MADE/ATMP]";
+            // 
+            // lbl2PTATMP_SF
+            // 
+            this.lbl2PTATMP_SF.AutoSize = true;
+            this.lbl2PTATMP_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PTATMP_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PTATMP_SF.Location = new System.Drawing.Point(5, 190);
+            this.lbl2PTATMP_SF.Name = "lbl2PTATMP_SF";
+            this.lbl2PTATMP_SF.Size = new System.Drawing.Size(55, 15);
+            this.lbl2PTATMP_SF.TabIndex = 26;
+            this.lbl2PTATMP_SF.Tag = "Small Forward";
+            this.lbl2PTATMP_SF.Text = "2PT/ATMP";
+            // 
+            // lblFDRWCMT_SF
+            // 
+            this.lblFDRWCMT_SF.AutoSize = true;
+            this.lblFDRWCMT_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFDRWCMT_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFDRWCMT_SF.Location = new System.Drawing.Point(6, 146);
+            this.lblFDRWCMT_SF.Name = "lblFDRWCMT_SF";
+            this.lblFDRWCMT_SF.Size = new System.Drawing.Size(88, 15);
+            this.lblFDRWCMT_SF.TabIndex = 23;
+            this.lblFDRWCMT_SF.Tag = "Small Forward";
+            this.lblFDRWCMT_SF.Text = "FOULS DRW/CMT";
+            // 
+            // lblMIN_SF
+            // 
+            this.lblMIN_SF.AutoSize = true;
+            this.lblMIN_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMIN_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMIN_SF.Location = new System.Drawing.Point(6, 105);
+            this.lblMIN_SF.Name = "lblMIN_SF";
+            this.lblMIN_SF.Size = new System.Drawing.Size(82, 15);
+            this.lblMIN_SF.TabIndex = 20;
+            this.lblMIN_SF.Tag = "Small Forward";
+            this.lblMIN_SF.Text = "TOTAL MINUTES";
+            // 
+            // lblPTS_SF
+            // 
+            this.lblPTS_SF.AutoSize = true;
+            this.lblPTS_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPTS_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTS_SF.Location = new System.Drawing.Point(98, 22);
+            this.lblPTS_SF.Name = "lblPTS_SF";
+            this.lblPTS_SF.Size = new System.Drawing.Size(25, 15);
+            this.lblPTS_SF.TabIndex = 16;
+            this.lblPTS_SF.Tag = "Small Forward";
+            this.lblPTS_SF.Text = "PTS";
+            // 
+            // lblTO_SF
+            // 
+            this.lblTO_SF.AutoSize = true;
+            this.lblTO_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTO_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTO_SF.Location = new System.Drawing.Point(99, 146);
+            this.lblTO_SF.Name = "lblTO_SF";
+            this.lblTO_SF.Size = new System.Drawing.Size(51, 15);
+            this.lblTO_SF.TabIndex = 24;
+            this.lblTO_SF.Tag = "Small Forward";
+            this.lblTO_SF.Text = "TO (OPP)";
+            // 
+            // lbl3PT_SF
+            // 
+            this.lbl3PT_SF.AutoSize = true;
+            this.lbl3PT_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl3PT_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3PT_SF.Location = new System.Drawing.Point(162, 146);
+            this.lbl3PT_SF.Name = "lbl3PT_SF";
+            this.lbl3PT_SF.Size = new System.Drawing.Size(25, 15);
+            this.lbl3PT_SF.TabIndex = 25;
+            this.lbl3PT_SF.Tag = "Small Forward";
+            this.lbl3PT_SF.Text = "3PT";
+            // 
+            // lbl2PT_SF
+            // 
+            this.lbl2PT_SF.AutoSize = true;
+            this.lbl2PT_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl2PT_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2PT_SF.Location = new System.Drawing.Point(163, 105);
+            this.lbl2PT_SF.Name = "lbl2PT_SF";
+            this.lbl2PT_SF.Size = new System.Drawing.Size(25, 15);
+            this.lbl2PT_SF.TabIndex = 22;
+            this.lbl2PT_SF.Tag = "Small Forward";
+            this.lbl2PT_SF.Text = "2PT";
+            // 
+            // lblSTL_SF
+            // 
+            this.lblSTL_SF.AutoSize = true;
+            this.lblSTL_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSTL_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSTL_SF.Location = new System.Drawing.Point(99, 105);
+            this.lblSTL_SF.Name = "lblSTL_SF";
+            this.lblSTL_SF.Size = new System.Drawing.Size(24, 15);
+            this.lblSTL_SF.TabIndex = 21;
+            this.lblSTL_SF.Tag = "Small Forward";
+            this.lblSTL_SF.Text = "STL";
+            // 
+            // lblREB_SF
+            // 
+            this.lblREB_SF.AutoSize = true;
+            this.lblREB_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblREB_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblREB_SF.Location = new System.Drawing.Point(162, 22);
+            this.lblREB_SF.Name = "lblREB_SF";
+            this.lblREB_SF.Size = new System.Drawing.Size(26, 15);
+            this.lblREB_SF.TabIndex = 17;
+            this.lblREB_SF.Tag = "Small Forward";
+            this.lblREB_SF.Text = "REB";
+            // 
+            // lblBLK_SF
+            // 
+            this.lblBLK_SF.AutoSize = true;
+            this.lblBLK_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBLK_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBLK_SF.Location = new System.Drawing.Point(162, 63);
+            this.lblBLK_SF.Name = "lblBLK_SF";
+            this.lblBLK_SF.Size = new System.Drawing.Size(26, 15);
+            this.lblBLK_SF.TabIndex = 19;
+            this.lblBLK_SF.Tag = "Small Forward";
+            this.lblBLK_SF.Text = "BLK";
+            // 
+            // lblAST_SF
+            // 
+            this.lblAST_SF.AutoSize = true;
+            this.lblAST_SF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAST_SF.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAST_SF.Location = new System.Drawing.Point(98, 63);
+            this.lblAST_SF.Name = "lblAST_SF";
+            this.lblAST_SF.Size = new System.Drawing.Size(25, 15);
+            this.lblAST_SF.TabIndex = 18;
+            this.lblAST_SF.Tag = "Small Forward";
+            this.lblAST_SF.Text = "AST";
+            // 
+            // picSmallForward
+            // 
+            this.picSmallForward.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picSmallForward.Location = new System.Drawing.Point(6, 22);
+            this.picSmallForward.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picSmallForward.Name = "picSmallForward";
+            this.picSmallForward.Size = new System.Drawing.Size(82, 79);
+            this.picSmallForward.TabIndex = 0;
+            this.picSmallForward.TabStop = false;
+            this.picSmallForward.Tag = "Small Forward";
+            // 
+            // grpOVRL
+            // 
+            this.grpOVRL.Controls.Add(this.cmbFVRD_OVRL);
+            this.grpOVRL.Controls.Add(this.lblFVRD_OVRL);
+            this.grpOVRL.Controls.Add(this.txtTPTS_OVRL);
+            this.grpOVRL.Controls.Add(this.lblTPTS_OVRL);
+            this.grpOVRL.Controls.Add(this.lblRoyals_OVRL);
+            this.grpOVRL.Controls.Add(this.picBRLogo_OVRL);
+            this.grpOVRL.Location = new System.Drawing.Point(469, 372);
+            this.grpOVRL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpOVRL.Name = "grpOVRL";
+            this.grpOVRL.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpOVRL.Size = new System.Drawing.Size(216, 139);
+            this.grpOVRL.TabIndex = 5;
+            this.grpOVRL.TabStop = false;
+            this.grpOVRL.Text = "Overall Stats";
+            // 
+            // cmbFVRD_OVRL
+            // 
+            this.cmbFVRD_OVRL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFVRD_OVRL.FormattingEnabled = true;
+            this.cmbFVRD_OVRL.Location = new System.Drawing.Point(78, 107);
+            this.cmbFVRD_OVRL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbFVRD_OVRL.Name = "cmbFVRD_OVRL";
+            this.cmbFVRD_OVRL.Size = new System.Drawing.Size(105, 24);
+            this.cmbFVRD_OVRL.TabIndex = 0;
+            // 
+            // lblFVRD_OVRL
+            // 
+            this.lblFVRD_OVRL.AutoSize = true;
+            this.lblFVRD_OVRL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFVRD_OVRL.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFVRD_OVRL.Location = new System.Drawing.Point(78, 89);
+            this.lblFVRD_OVRL.Name = "lblFVRD_OVRL";
+            this.lblFVRD_OVRL.Size = new System.Drawing.Size(76, 15);
+            this.lblFVRD_OVRL.TabIndex = 4;
+            this.lblFVRD_OVRL.Text = "FINAL VERDICT";
+            // 
+            // txtTPTS_OVRL
+            // 
+            this.txtTPTS_OVRL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTPTS_OVRL.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtTPTS_OVRL.Location = new System.Drawing.Point(78, 66);
+            this.txtTPTS_OVRL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTPTS_OVRL.Name = "txtTPTS_OVRL";
+            this.txtTPTS_OVRL.ReadOnly = true;
+            this.txtTPTS_OVRL.Size = new System.Drawing.Size(101, 20);
+            this.txtTPTS_OVRL.TabIndex = 1;
+            this.txtTPTS_OVRL.Text = "0";
+            this.txtTPTS_OVRL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblTPTS_OVRL
+            // 
+            this.lblTPTS_OVRL.AutoSize = true;
+            this.lblTPTS_OVRL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTPTS_OVRL.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTPTS_OVRL.Location = new System.Drawing.Point(78, 47);
+            this.lblTPTS_OVRL.Name = "lblTPTS_OVRL";
+            this.lblTPTS_OVRL.Size = new System.Drawing.Size(75, 15);
+            this.lblTPTS_OVRL.TabIndex = 3;
+            this.lblTPTS_OVRL.Text = "TOTAL POINTS";
+            // 
+            // lblRoyals_OVRL
+            // 
+            this.lblRoyals_OVRL.AutoSize = true;
+            this.lblRoyals_OVRL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRoyals_OVRL.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoyals_OVRL.Location = new System.Drawing.Point(78, 20);
+            this.lblRoyals_OVRL.Name = "lblRoyals_OVRL";
+            this.lblRoyals_OVRL.Size = new System.Drawing.Size(121, 15);
+            this.lblRoyals_OVRL.TabIndex = 2;
+            this.lblRoyals_OVRL.Text = "BISHOP REDING ROYALS";
+            // 
+            // picBRLogo_OVRL
+            // 
+            this.picBRLogo_OVRL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picBRLogo_OVRL.Image = global::BRCSS_BasketballStats.Properties.Resources.brLogo;
+            this.picBRLogo_OVRL.Location = new System.Drawing.Point(9, 20);
+            this.picBRLogo_OVRL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picBRLogo_OVRL.Name = "picBRLogo_OVRL";
+            this.picBRLogo_OVRL.Size = new System.Drawing.Size(63, 111);
+            this.picBRLogo_OVRL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBRLogo_OVRL.TabIndex = 0;
+            this.picBRLogo_OVRL.TabStop = false;
+            // 
+            // tmrTimeout
+            // 
+            this.tmrTimeout.Interval = 60000;
+            this.tmrTimeout.Tick += new System.EventHandler(this.tmrTimeout_Tick);
+            // 
+            // tabSubstitutes
+            // 
+            this.tabSubstitutes.Controls.Add(this.txtSubstitutesSearchBar);
+            this.tabSubstitutes.Controls.Add(this.listSubstitutes);
+            this.tabSubstitutes.Location = new System.Drawing.Point(4, 25);
+            this.tabSubstitutes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabSubstitutes.Name = "tabSubstitutes";
+            this.tabSubstitutes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabSubstitutes.Size = new System.Drawing.Size(376, 530);
+            this.tabSubstitutes.TabIndex = 0;
+            this.tabSubstitutes.Text = "Substitutes";
+            this.tabSubstitutes.UseVisualStyleBackColor = true;
+            // 
+            // txtSubstitutesSearchBar
+            // 
+            this.txtSubstitutesSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSubstitutesSearchBar.Location = new System.Drawing.Point(6, 4);
+            this.txtSubstitutesSearchBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSubstitutesSearchBar.Name = "txtSubstitutesSearchBar";
+            this.txtSubstitutesSearchBar.Size = new System.Drawing.Size(366, 24);
+            this.txtSubstitutesSearchBar.TabIndex = 1;
+            this.txtSubstitutesSearchBar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubstitutesSearchBar_KeyPress);
+            // 
+            // listSubstitutes
+            // 
+            this.listSubstitutes.FormattingEnabled = true;
+            this.listSubstitutes.ItemHeight = 16;
+            this.listSubstitutes.Location = new System.Drawing.Point(6, 33);
+            this.listSubstitutes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listSubstitutes.Name = "listSubstitutes";
+            this.listSubstitutes.ScrollAlwaysVisible = true;
+            this.listSubstitutes.Size = new System.Drawing.Size(366, 484);
+            this.listSubstitutes.TabIndex = 2;
+            // 
+            // tabTeamPlayers
+            // 
+            this.tabTeamPlayers.Controls.Add(this.tabSubstitutes);
+            this.tabTeamPlayers.Location = new System.Drawing.Point(689, 31);
+            this.tabTeamPlayers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabTeamPlayers.Name = "tabTeamPlayers";
+            this.tabTeamPlayers.SelectedIndex = 0;
+            this.tabTeamPlayers.Size = new System.Drawing.Size(384, 559);
+            this.tabTeamPlayers.TabIndex = 6;
+            // 
+            // mnuFileBorder
+            // 
+            this.mnuFileBorder.Name = "mnuFileBorder";
+            this.mnuFileBorder.Size = new System.Drawing.Size(213, 6);
+            // 
+            // mnuExit
+            // 
+            this.mnuExit.Name = "mnuExit";
+            this.mnuExit.Size = new System.Drawing.Size(216, 26);
+            this.mnuExit.Text = "Exit / Cancel Match";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
+            // 
+            // frmMatch
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1085, 601);
+            this.Controls.Add(this.grpOVRL);
+            this.Controls.Add(this.grpSmallForward);
+            this.Controls.Add(this.grpCenter);
+            this.Controls.Add(this.grpPowerForward);
+            this.Controls.Add(this.grpShootingGuard);
+            this.Controls.Add(this.tabTeamPlayers);
+            this.Controls.Add(this.grpPointGuard);
+            this.Controls.Add(this.mnuStrip);
+            this.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.mnuStrip;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmMatch";
+            this.Text = "(TEAM BRACKET & TYPE) ; Royals Vs. (TEAM NAME) ; (DATE) ; (COURT)";
+            this.Load += new System.EventHandler(this.frmMatch_Load);
+            this.mnuStrip.ResumeLayout(false);
+            this.mnuStrip.PerformLayout();
+            this.grpPointGuard.ResumeLayout(false);
+            this.grpPointGuard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTP_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_PG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPointGuard)).EndInit();
+            this.grpShootingGuard.ResumeLayout(false);
+            this.grpShootingGuard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTIPP_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_SG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShootingGuard)).EndInit();
+            this.grpPowerForward.ResumeLayout(false);
+            this.grpPowerForward.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTIPP_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_PF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPowerForward)).EndInit();
+            this.grpCenter.ResumeLayout(false);
+            this.grpCenter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTIPP_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_CT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCenter)).EndInit();
+            this.grpSmallForward.ResumeLayout(false);
+            this.grpSmallForward.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTIPP_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PTATMP_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcMIN_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFCMT_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTA_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFDRW_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PTATMP_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcFTM_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc3PT_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcTO_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmc2PT_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcSTL_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBLK_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcAST_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcREB_SF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSmallForward)).EndInit();
+            this.grpOVRL.ResumeLayout(false);
+            this.grpOVRL.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBRLogo_OVRL)).EndInit();
+            this.tabSubstitutes.ResumeLayout(false);
+            this.tabSubstitutes.PerformLayout();
+            this.tabTeamPlayers.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.MenuStrip mnuStrip;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileEndMatch;
+        private System.Windows.Forms.GroupBox grpPointGuard;
+        private System.Windows.Forms.PictureBox picPointGuard;
+        private System.Windows.Forms.Label lblBLK_PG;
+        private System.Windows.Forms.Label lblAST_PG;
+        private System.Windows.Forms.Label lblREB_PG;
+        private System.Windows.Forms.Label lbl3PT_PG;
+        private System.Windows.Forms.Label lbl2PT_PG;
+        private System.Windows.Forms.Label lblSTL_PG;
+        private System.Windows.Forms.Label lblPTS_PG;
+        private System.Windows.Forms.Label lblTO_PG;
+        private System.Windows.Forms.Label lblFDRWCMT_PG;
+        private System.Windows.Forms.Label lblMIN_PG;
+        private System.Windows.Forms.Label lblFTMA_PG;
+        private System.Windows.Forms.Label lbl2PTATMP_PG;
+        private System.Windows.Forms.NumericUpDown nmcREB_PG;
+        private System.Windows.Forms.NumericUpDown nmcFTA_PG;
+        private System.Windows.Forms.TextBox txtPTS_PG;
+        private System.Windows.Forms.NumericUpDown nmc2PTATMP_PG;
+        private System.Windows.Forms.NumericUpDown nmcFTM_PG;
+        private System.Windows.Forms.NumericUpDown nmc3PT_PG;
+        private System.Windows.Forms.NumericUpDown nmcTO_PG;
+        private System.Windows.Forms.NumericUpDown nmc2PT_PG;
+        private System.Windows.Forms.NumericUpDown nmcSTL_PG;
+        private System.Windows.Forms.NumericUpDown nmcBLK_PG;
+        private System.Windows.Forms.NumericUpDown nmcAST_PG;
+        private System.Windows.Forms.NumericUpDown nmcFCMT_PG;
+        private System.Windows.Forms.NumericUpDown nmcFDRW_PG;
+        private System.Windows.Forms.GroupBox grpShootingGuard;
+        private System.Windows.Forms.NumericUpDown nmcFCMT_SG;
+        private System.Windows.Forms.NumericUpDown nmcFTA_SG;
+        private System.Windows.Forms.TextBox txtPTS_SG;
+        private System.Windows.Forms.NumericUpDown nmcFDRW_SG;
+        private System.Windows.Forms.NumericUpDown nmc2PTATMP_SG;
+        private System.Windows.Forms.NumericUpDown nmcFTM_SG;
+        private System.Windows.Forms.NumericUpDown nmc3PT_SG;
+        private System.Windows.Forms.NumericUpDown nmcTO_SG;
+        private System.Windows.Forms.NumericUpDown nmc2PT_SG;
+        private System.Windows.Forms.NumericUpDown nmcSTL_SG;
+        private System.Windows.Forms.NumericUpDown nmcBLK_SG;
+        private System.Windows.Forms.NumericUpDown nmcAST_SG;
+        private System.Windows.Forms.NumericUpDown nmcREB_SG;
+        private System.Windows.Forms.Label lblFTMA_SG;
+        private System.Windows.Forms.Label lbl2PTATMP_SG;
+        private System.Windows.Forms.Label lblFDRWCMT_SG;
+        private System.Windows.Forms.Label lblMIN_SG;
+        private System.Windows.Forms.Label lblPTS_SG;
+        private System.Windows.Forms.Label lblTO_SG;
+        private System.Windows.Forms.Label lbl3PT_SG;
+        private System.Windows.Forms.Label lbl2PT_SG;
+        private System.Windows.Forms.Label lblSTL_SG;
+        private System.Windows.Forms.Label lblREB_SG;
+        private System.Windows.Forms.Label lblBLK_SG;
+        private System.Windows.Forms.Label lblAST_SG;
+        private System.Windows.Forms.PictureBox picShootingGuard;
+        private System.Windows.Forms.NumericUpDown nmcMIN_PG;
+        private System.Windows.Forms.NumericUpDown nmcMIN_SG;
+        private System.Windows.Forms.GroupBox grpPowerForward;
+        private System.Windows.Forms.NumericUpDown nmcMIN_PF;
+        private System.Windows.Forms.NumericUpDown nmcFCMT_PF;
+        private System.Windows.Forms.NumericUpDown nmcFTA_PF;
+        private System.Windows.Forms.TextBox txtPTS_PF;
+        private System.Windows.Forms.NumericUpDown nmcFDRW_PF;
+        private System.Windows.Forms.NumericUpDown nmc2PTATMP_PF;
+        private System.Windows.Forms.NumericUpDown nmcFTM_PF;
+        private System.Windows.Forms.NumericUpDown nmc3PT_PF;
+        private System.Windows.Forms.NumericUpDown nmcTO_PF;
+        private System.Windows.Forms.NumericUpDown nmc2PT_PF;
+        private System.Windows.Forms.NumericUpDown nmcSTL_PF;
+        private System.Windows.Forms.NumericUpDown nmcBLK_PF;
+        private System.Windows.Forms.NumericUpDown nmcAST_PF;
+        private System.Windows.Forms.NumericUpDown nmcREB_PF;
+        private System.Windows.Forms.Label lblFTMA_PF;
+        private System.Windows.Forms.Label lbl2PTATMP_PF;
+        private System.Windows.Forms.Label lblFDRWCMT_PF;
+        private System.Windows.Forms.Label lblMIN_PF;
+        private System.Windows.Forms.Label lblPTS_PF;
+        private System.Windows.Forms.Label lblTO_PF;
+        private System.Windows.Forms.Label lbl3PT_PF;
+        private System.Windows.Forms.Label lbl2PT_PF;
+        private System.Windows.Forms.Label lblSTL_PF;
+        private System.Windows.Forms.Label lblREB_PF;
+        private System.Windows.Forms.Label lblBLK_PF;
+        private System.Windows.Forms.Label lblAST_PF;
+        private System.Windows.Forms.PictureBox picPowerForward;
+        private System.Windows.Forms.GroupBox grpCenter;
+        private System.Windows.Forms.NumericUpDown nmcMIN_CT;
+        private System.Windows.Forms.NumericUpDown nmcFCMT_CT;
+        private System.Windows.Forms.NumericUpDown nmcFTA_CT;
+        private System.Windows.Forms.TextBox txtPTS_CT;
+        private System.Windows.Forms.NumericUpDown nmcFDRW_CT;
+        private System.Windows.Forms.NumericUpDown nmc2PTATMP_CT;
+        private System.Windows.Forms.NumericUpDown nmcFTM_CT;
+        private System.Windows.Forms.NumericUpDown nmc3PT_CT;
+        private System.Windows.Forms.NumericUpDown nmcTO_CT;
+        private System.Windows.Forms.NumericUpDown nmc2PT_CT;
+        private System.Windows.Forms.NumericUpDown nmcSTL_CT;
+        private System.Windows.Forms.NumericUpDown nmcBLK_CT;
+        private System.Windows.Forms.NumericUpDown nmcAST_CT;
+        private System.Windows.Forms.NumericUpDown nmcREB_CT;
+        private System.Windows.Forms.Label lblFTMA_CT;
+        private System.Windows.Forms.Label lbl2PTATMP_CT;
+        private System.Windows.Forms.Label lblFDRWCMT_CT;
+        private System.Windows.Forms.Label lblMIN_CT;
+        private System.Windows.Forms.Label lblPTS_CT;
+        private System.Windows.Forms.Label lblTO_CT;
+        private System.Windows.Forms.Label lbl3PT_CT;
+        private System.Windows.Forms.Label lbl2PT_CT;
+        private System.Windows.Forms.Label lblSTL_CT;
+        private System.Windows.Forms.Label lblREB_CT;
+        private System.Windows.Forms.Label lblBLK_CT;
+        private System.Windows.Forms.Label lblAST_CT;
+        private System.Windows.Forms.PictureBox picCenter;
+        private System.Windows.Forms.GroupBox grpSmallForward;
+        private System.Windows.Forms.NumericUpDown nmcMIN_SF;
+        private System.Windows.Forms.NumericUpDown nmcFCMT_SF;
+        private System.Windows.Forms.NumericUpDown nmcFTA_SF;
+        private System.Windows.Forms.TextBox txtPTS_SF;
+        private System.Windows.Forms.NumericUpDown nmcFDRW_SF;
+        private System.Windows.Forms.NumericUpDown nmc2PTATMP_SF;
+        private System.Windows.Forms.NumericUpDown nmcFTM_SF;
+        private System.Windows.Forms.NumericUpDown nmc3PT_SF;
+        private System.Windows.Forms.NumericUpDown nmcTO_SF;
+        private System.Windows.Forms.NumericUpDown nmc2PT_SF;
+        private System.Windows.Forms.NumericUpDown nmcSTL_SF;
+        private System.Windows.Forms.NumericUpDown nmcBLK_SF;
+        private System.Windows.Forms.NumericUpDown nmcAST_SF;
+        private System.Windows.Forms.Label lblFTMA_SF;
+        private System.Windows.Forms.Label lbl2PTATMP_SF;
+        private System.Windows.Forms.Label lblFDRWCMT_SF;
+        private System.Windows.Forms.Label lblMIN_SF;
+        private System.Windows.Forms.Label lblPTS_SF;
+        private System.Windows.Forms.Label lblTO_SF;
+        private System.Windows.Forms.Label lbl3PT_SF;
+        private System.Windows.Forms.Label lbl2PT_SF;
+        private System.Windows.Forms.Label lblSTL_SF;
+        private System.Windows.Forms.Label lblREB_SF;
+        private System.Windows.Forms.Label lblBLK_SF;
+        private System.Windows.Forms.Label lblAST_SF;
+        private System.Windows.Forms.PictureBox picSmallForward;
+        private System.Windows.Forms.GroupBox grpOVRL;
+        private System.Windows.Forms.Label lblRoyals_OVRL;
+        private System.Windows.Forms.PictureBox picBRLogo_OVRL;
+        private System.Windows.Forms.Label lblTPTS_OVRL;
+        private System.Windows.Forms.Label lblFVRD_OVRL;
+        private System.Windows.Forms.TextBox txtTPTS_OVRL;
+        private System.Windows.Forms.NumericUpDown nmcTP_PG;
+        private System.Windows.Forms.Label lblTIPP_PG;
+        private System.Windows.Forms.NumericUpDown nmc3PTATMP_PG;
+        private System.Windows.Forms.Label lbl3PTATMP_PG;
+        private System.Windows.Forms.NumericUpDown nmcTIPP_SG;
+        private System.Windows.Forms.Label lblTIPP_SG;
+        private System.Windows.Forms.NumericUpDown nmc3PTATMP_SG;
+        private System.Windows.Forms.Label lbl3PTATMP_SG;
+        private System.Windows.Forms.NumericUpDown nmcTIPP_PF;
+        private System.Windows.Forms.Label lblTIPP_PF;
+        private System.Windows.Forms.NumericUpDown nmc3PTATMP_PF;
+        private System.Windows.Forms.Label lbl3PTATMP_PF;
+        private System.Windows.Forms.NumericUpDown nmcTIPP_CT;
+        private System.Windows.Forms.Label lblTIPP_CT;
+        private System.Windows.Forms.NumericUpDown nmc3PTATMP_CT;
+        private System.Windows.Forms.Label lbl3PTATMP_CT;
+        private System.Windows.Forms.NumericUpDown nmcTIPP_SF;
+        private System.Windows.Forms.Label lblTIPP_SF;
+        private System.Windows.Forms.NumericUpDown nmc3PTATMP_SF;
+        private System.Windows.Forms.Label lbl3PTATMP_SF;
+        private System.Windows.Forms.ComboBox cmbFVRD_OVRL;
+        private System.Windows.Forms.NumericUpDown nmcREB_SF;
+        private System.Windows.Forms.ToolStripMenuItem mnuTimeout;
+        private System.Windows.Forms.ToolStripMenuItem mnuCallTimeout;
+        private System.Windows.Forms.ToolStripMenuItem mnuStartContGameTimer;
+        private System.Windows.Forms.Timer tmrTimeout;
+        private System.Windows.Forms.TabPage tabSubstitutes;
+        private System.Windows.Forms.TextBox txtSubstitutesSearchBar;
+        private System.Windows.Forms.ListBox listSubstitutes;
+        private System.Windows.Forms.TabControl tabTeamPlayers;
+        private System.Windows.Forms.ToolStripSeparator mnuFileBorder;
+        private System.Windows.Forms.ToolStripMenuItem mnuExit;
+    }
+}

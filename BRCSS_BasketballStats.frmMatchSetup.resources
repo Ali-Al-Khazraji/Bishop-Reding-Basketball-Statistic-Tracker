@@ -1,0 +1,592 @@
+﻿namespace BRCSS_BasketballStats
+{
+    partial class frmTeamCreation
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.btnSubmit_CS = new System.Windows.Forms.Button();
+            this.grpTeamDetails_CS = new System.Windows.Forms.GroupBox();
+            this.btnDelete_CS = new System.Windows.Forms.Button();
+            this.listNewTeamPlayers = new System.Windows.Forms.ListBox();
+            this.cmbTeamBracket_CS = new System.Windows.Forms.ComboBox();
+            this.lblTeamBracket_CS = new System.Windows.Forms.Label();
+            this.lblRoyals_CS = new System.Windows.Forms.Label();
+            this.picBRLogo_CS = new System.Windows.Forms.PictureBox();
+            this.btnAdd_CS = new System.Windows.Forms.Button();
+            this.grpPlayerCreation = new System.Windows.Forms.GroupBox();
+            this.txtPlayerLName_CS = new System.Windows.Forms.TextBox();
+            this.lblPlayerLName_CS = new System.Windows.Forms.Label();
+            this.txtJerseyNumber_CS = new System.Windows.Forms.TextBox();
+            this.txtBasketballPosition_CS = new System.Windows.Forms.TextBox();
+            this.txtPlayerFName_CS = new System.Windows.Forms.TextBox();
+            this.lblJerseyNumber_CS = new System.Windows.Forms.Label();
+            this.lblPlayerFName_CS = new System.Windows.Forms.Label();
+            this.lblBasketballPosition_CS = new System.Windows.Forms.Label();
+            this.btnSavePhoto_CS = new System.Windows.Forms.Button();
+            this.picPlayer_CS = new System.Windows.Forms.PictureBox();
+            this.grpPhotoUpload = new System.Windows.Forms.GroupBox();
+            this.txtSelectedPlayerLName_CS = new System.Windows.Forms.TextBox();
+            this.lblSelectedPlayerLName = new System.Windows.Forms.Label();
+            this.txtSelectedPlayerFName_CS = new System.Windows.Forms.TextBox();
+            this.lblSelectedPlayerFName_CS = new System.Windows.Forms.Label();
+            this.grpPlayerEdit = new System.Windows.Forms.GroupBox();
+            this.txtNewTeam_CS = new System.Windows.Forms.TextBox();
+            this.lblNewTeam_CS = new System.Windows.Forms.Label();
+            this.txtPlayerLastName2_CS = new System.Windows.Forms.TextBox();
+            this.btnChangeTeam = new System.Windows.Forms.Button();
+            this.lblPlayerLastName2_CS = new System.Windows.Forms.Label();
+            this.txtJerseyNumber2_CS = new System.Windows.Forms.TextBox();
+            this.txtBasketballPosition2_CS = new System.Windows.Forms.TextBox();
+            this.txtPlayerFirstName2_CS = new System.Windows.Forms.TextBox();
+            this.lblJerseyNumber2_CS = new System.Windows.Forms.Label();
+            this.lblPlayerFirstName2_CS = new System.Windows.Forms.Label();
+            this.lblBasketballPosition2_CS = new System.Windows.Forms.Label();
+            this.txtCurrentTeam_CS = new System.Windows.Forms.TextBox();
+            this.lblCurrentTeam_CS = new System.Windows.Forms.Label();
+            this.grpTeamDetails_CS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBRLogo_CS)).BeginInit();
+            this.grpPlayerCreation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayer_CS)).BeginInit();
+            this.grpPhotoUpload.SuspendLayout();
+            this.grpPlayerEdit.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // btnSubmit_CS
+            // 
+            this.btnSubmit_CS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.btnSubmit_CS.Location = new System.Drawing.Point(191, 349);
+            this.btnSubmit_CS.Name = "btnSubmit_CS";
+            this.btnSubmit_CS.Size = new System.Drawing.Size(374, 38);
+            this.btnSubmit_CS.TabIndex = 2;
+            this.btnSubmit_CS.Text = "Submit / Exit";
+            this.btnSubmit_CS.UseVisualStyleBackColor = true;
+            this.btnSubmit_CS.Click += new System.EventHandler(this.btnSubmit_CS_Click);
+            // 
+            // grpTeamDetails_CS
+            // 
+            this.grpTeamDetails_CS.Controls.Add(this.btnDelete_CS);
+            this.grpTeamDetails_CS.Controls.Add(this.listNewTeamPlayers);
+            this.grpTeamDetails_CS.Controls.Add(this.cmbTeamBracket_CS);
+            this.grpTeamDetails_CS.Controls.Add(this.lblTeamBracket_CS);
+            this.grpTeamDetails_CS.Controls.Add(this.lblRoyals_CS);
+            this.grpTeamDetails_CS.Controls.Add(this.picBRLogo_CS);
+            this.grpTeamDetails_CS.Location = new System.Drawing.Point(10, 10);
+            this.grpTeamDetails_CS.Name = "grpTeamDetails_CS";
+            this.grpTeamDetails_CS.Size = new System.Drawing.Size(175, 575);
+            this.grpTeamDetails_CS.TabIndex = 0;
+            this.grpTeamDetails_CS.TabStop = false;
+            this.grpTeamDetails_CS.Text = "Royals Details";
+            // 
+            // btnDelete_CS
+            // 
+            this.btnDelete_CS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.btnDelete_CS.Location = new System.Drawing.Point(8, 476);
+            this.btnDelete_CS.Name = "btnDelete_CS";
+            this.btnDelete_CS.Size = new System.Drawing.Size(159, 93);
+            this.btnDelete_CS.TabIndex = 3;
+            this.btnDelete_CS.Text = "Delete...";
+            this.btnDelete_CS.UseVisualStyleBackColor = true;
+            this.btnDelete_CS.Click += new System.EventHandler(this.btnDelete_CS_Click);
+            // 
+            // listNewTeamPlayers
+            // 
+            this.listNewTeamPlayers.FormattingEnabled = true;
+            this.listNewTeamPlayers.ItemHeight = 16;
+            this.listNewTeamPlayers.Location = new System.Drawing.Point(8, 97);
+            this.listNewTeamPlayers.Name = "listNewTeamPlayers";
+            this.listNewTeamPlayers.Size = new System.Drawing.Size(159, 372);
+            this.listNewTeamPlayers.TabIndex = 1;
+            this.listNewTeamPlayers.SelectedIndexChanged += new System.EventHandler(this.listNewTeamPlayers_SelectedIndexChanged);
+            // 
+            // cmbTeamBracket_CS
+            // 
+            this.cmbTeamBracket_CS.FormattingEnabled = true;
+            this.cmbTeamBracket_CS.Location = new System.Drawing.Point(60, 70);
+            this.cmbTeamBracket_CS.Name = "cmbTeamBracket_CS";
+            this.cmbTeamBracket_CS.Size = new System.Drawing.Size(106, 24);
+            this.cmbTeamBracket_CS.TabIndex = 0;
+            this.cmbTeamBracket_CS.SelectedIndexChanged += new System.EventHandler(this.cmbTeamBracket_CS_SelectedIndexChanged);
+            // 
+            // lblTeamBracket_CS
+            // 
+            this.lblTeamBracket_CS.AutoSize = true;
+            this.lblTeamBracket_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTeamBracket_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTeamBracket_CS.Location = new System.Drawing.Point(60, 52);
+            this.lblTeamBracket_CS.Name = "lblTeamBracket_CS";
+            this.lblTeamBracket_CS.Size = new System.Drawing.Size(77, 15);
+            this.lblTeamBracket_CS.TabIndex = 29;
+            this.lblTeamBracket_CS.Text = "TEAM BRACKET";
+            // 
+            // lblRoyals_CS
+            // 
+            this.lblRoyals_CS.AutoSize = true;
+            this.lblRoyals_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRoyals_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoyals_CS.Location = new System.Drawing.Point(60, 22);
+            this.lblRoyals_CS.Name = "lblRoyals_CS";
+            this.lblRoyals_CS.Size = new System.Drawing.Size(82, 28);
+            this.lblRoyals_CS.TabIndex = 30;
+            this.lblRoyals_CS.Text = "BISHOP REDING\r\nROYALS";
+            // 
+            // picBRLogo_CS
+            // 
+            this.picBRLogo_CS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picBRLogo_CS.Image = global::BRCSS_BasketballStats.Properties.Resources.brLogo;
+            this.picBRLogo_CS.Location = new System.Drawing.Point(8, 21);
+            this.picBRLogo_CS.Name = "picBRLogo_CS";
+            this.picBRLogo_CS.Size = new System.Drawing.Size(48, 74);
+            this.picBRLogo_CS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBRLogo_CS.TabIndex = 0;
+            this.picBRLogo_CS.TabStop = false;
+            // 
+            // btnAdd_CS
+            // 
+            this.btnAdd_CS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.btnAdd_CS.Location = new System.Drawing.Point(6, 106);
+            this.btnAdd_CS.Name = "btnAdd_CS";
+            this.btnAdd_CS.Size = new System.Drawing.Size(362, 31);
+            this.btnAdd_CS.TabIndex = 4;
+            this.btnAdd_CS.Text = "Add Player...";
+            this.btnAdd_CS.UseVisualStyleBackColor = true;
+            this.btnAdd_CS.Click += new System.EventHandler(this.btnAdd_CS_Click);
+            // 
+            // grpPlayerCreation
+            // 
+            this.grpPlayerCreation.Controls.Add(this.txtPlayerLName_CS);
+            this.grpPlayerCreation.Controls.Add(this.btnAdd_CS);
+            this.grpPlayerCreation.Controls.Add(this.lblPlayerLName_CS);
+            this.grpPlayerCreation.Controls.Add(this.txtJerseyNumber_CS);
+            this.grpPlayerCreation.Controls.Add(this.txtBasketballPosition_CS);
+            this.grpPlayerCreation.Controls.Add(this.txtPlayerFName_CS);
+            this.grpPlayerCreation.Controls.Add(this.lblJerseyNumber_CS);
+            this.grpPlayerCreation.Controls.Add(this.lblPlayerFName_CS);
+            this.grpPlayerCreation.Controls.Add(this.lblBasketballPosition_CS);
+            this.grpPlayerCreation.Location = new System.Drawing.Point(191, 10);
+            this.grpPlayerCreation.Name = "grpPlayerCreation";
+            this.grpPlayerCreation.Size = new System.Drawing.Size(374, 149);
+            this.grpPlayerCreation.TabIndex = 1;
+            this.grpPlayerCreation.TabStop = false;
+            this.grpPlayerCreation.Text = "Player Creation";
+            // 
+            // txtPlayerLName_CS
+            // 
+            this.txtPlayerLName_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPlayerLName_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtPlayerLName_CS.Location = new System.Drawing.Point(203, 39);
+            this.txtPlayerLName_CS.Name = "txtPlayerLName_CS";
+            this.txtPlayerLName_CS.Size = new System.Drawing.Size(165, 20);
+            this.txtPlayerLName_CS.TabIndex = 1;
+            this.txtPlayerLName_CS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlayerLName_CS_KeyPress);
+            // 
+            // lblPlayerLName_CS
+            // 
+            this.lblPlayerLName_CS.AutoSize = true;
+            this.lblPlayerLName_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPlayerLName_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblPlayerLName_CS.Location = new System.Drawing.Point(203, 21);
+            this.lblPlayerLName_CS.Name = "lblPlayerLName_CS";
+            this.lblPlayerLName_CS.Size = new System.Drawing.Size(97, 15);
+            this.lblPlayerLName_CS.TabIndex = 6;
+            this.lblPlayerLName_CS.Text = "PLAYER LAST NAME";
+            // 
+            // txtJerseyNumber_CS
+            // 
+            this.txtJerseyNumber_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJerseyNumber_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtJerseyNumber_CS.Location = new System.Drawing.Point(203, 80);
+            this.txtJerseyNumber_CS.Name = "txtJerseyNumber_CS";
+            this.txtJerseyNumber_CS.Size = new System.Drawing.Size(165, 20);
+            this.txtJerseyNumber_CS.TabIndex = 3;
+            this.txtJerseyNumber_CS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJerseyNumber_CS_KeyPress);
+            // 
+            // txtBasketballPosition_CS
+            // 
+            this.txtBasketballPosition_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBasketballPosition_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtBasketballPosition_CS.Location = new System.Drawing.Point(5, 80);
+            this.txtBasketballPosition_CS.Name = "txtBasketballPosition_CS";
+            this.txtBasketballPosition_CS.Size = new System.Drawing.Size(192, 20);
+            this.txtBasketballPosition_CS.TabIndex = 2;
+            this.txtBasketballPosition_CS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBasketballPosition_CS_KeyPress);
+            // 
+            // txtPlayerFName_CS
+            // 
+            this.txtPlayerFName_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPlayerFName_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtPlayerFName_CS.Location = new System.Drawing.Point(5, 39);
+            this.txtPlayerFName_CS.Name = "txtPlayerFName_CS";
+            this.txtPlayerFName_CS.Size = new System.Drawing.Size(192, 20);
+            this.txtPlayerFName_CS.TabIndex = 0;
+            this.txtPlayerFName_CS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlayerFName_CS_KeyPress);
+            // 
+            // lblJerseyNumber_CS
+            // 
+            this.lblJerseyNumber_CS.AutoSize = true;
+            this.lblJerseyNumber_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblJerseyNumber_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblJerseyNumber_CS.Location = new System.Drawing.Point(203, 62);
+            this.lblJerseyNumber_CS.Name = "lblJerseyNumber_CS";
+            this.lblJerseyNumber_CS.Size = new System.Drawing.Size(83, 15);
+            this.lblJerseyNumber_CS.TabIndex = 8;
+            this.lblJerseyNumber_CS.Text = "JERSEY NUMBER";
+            // 
+            // lblPlayerFName_CS
+            // 
+            this.lblPlayerFName_CS.AutoSize = true;
+            this.lblPlayerFName_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPlayerFName_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblPlayerFName_CS.Location = new System.Drawing.Point(5, 21);
+            this.lblPlayerFName_CS.Name = "lblPlayerFName_CS";
+            this.lblPlayerFName_CS.Size = new System.Drawing.Size(100, 15);
+            this.lblPlayerFName_CS.TabIndex = 5;
+            this.lblPlayerFName_CS.Text = "PLAYER FIRST NAME";
+            // 
+            // lblBasketballPosition_CS
+            // 
+            this.lblBasketballPosition_CS.AutoSize = true;
+            this.lblBasketballPosition_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBasketballPosition_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblBasketballPosition_CS.Location = new System.Drawing.Point(5, 62);
+            this.lblBasketballPosition_CS.Name = "lblBasketballPosition_CS";
+            this.lblBasketballPosition_CS.Size = new System.Drawing.Size(112, 15);
+            this.lblBasketballPosition_CS.TabIndex = 7;
+            this.lblBasketballPosition_CS.Text = "BASKETBALL POSITION";
+            // 
+            // btnSavePhoto_CS
+            // 
+            this.btnSavePhoto_CS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSavePhoto_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.btnSavePhoto_CS.Location = new System.Drawing.Point(170, 128);
+            this.btnSavePhoto_CS.Name = "btnSavePhoto_CS";
+            this.btnSavePhoto_CS.Size = new System.Drawing.Size(192, 42);
+            this.btnSavePhoto_CS.TabIndex = 4;
+            this.btnSavePhoto_CS.Text = "Save Photo";
+            this.btnSavePhoto_CS.UseVisualStyleBackColor = true;
+            this.btnSavePhoto_CS.Click += new System.EventHandler(this.btnPhotoUpload_CS_Click);
+            // 
+            // picPlayer_CS
+            // 
+            this.picPlayer_CS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picPlayer_CS.Location = new System.Drawing.Point(6, 22);
+            this.picPlayer_CS.Name = "picPlayer_CS";
+            this.picPlayer_CS.Size = new System.Drawing.Size(158, 148);
+            this.picPlayer_CS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPlayer_CS.TabIndex = 35;
+            this.picPlayer_CS.TabStop = false;
+            this.picPlayer_CS.Click += new System.EventHandler(this.picPlayer_CS_Click);
+            // 
+            // grpPhotoUpload
+            // 
+            this.grpPhotoUpload.Controls.Add(this.txtSelectedPlayerLName_CS);
+            this.grpPhotoUpload.Controls.Add(this.lblSelectedPlayerLName);
+            this.grpPhotoUpload.Controls.Add(this.txtSelectedPlayerFName_CS);
+            this.grpPhotoUpload.Controls.Add(this.picPlayer_CS);
+            this.grpPhotoUpload.Controls.Add(this.lblSelectedPlayerFName_CS);
+            this.grpPhotoUpload.Controls.Add(this.btnSavePhoto_CS);
+            this.grpPhotoUpload.Location = new System.Drawing.Point(191, 165);
+            this.grpPhotoUpload.Name = "grpPhotoUpload";
+            this.grpPhotoUpload.Size = new System.Drawing.Size(374, 180);
+            this.grpPhotoUpload.TabIndex = 9;
+            this.grpPhotoUpload.TabStop = false;
+            this.grpPhotoUpload.Text = "Photo Upload";
+            // 
+            // txtSelectedPlayerLName_CS
+            // 
+            this.txtSelectedPlayerLName_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSelectedPlayerLName_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtSelectedPlayerLName_CS.Location = new System.Drawing.Point(170, 81);
+            this.txtSelectedPlayerLName_CS.Name = "txtSelectedPlayerLName_CS";
+            this.txtSelectedPlayerLName_CS.ReadOnly = true;
+            this.txtSelectedPlayerLName_CS.Size = new System.Drawing.Size(192, 20);
+            this.txtSelectedPlayerLName_CS.TabIndex = 36;
+            // 
+            // lblSelectedPlayerLName
+            // 
+            this.lblSelectedPlayerLName.AutoSize = true;
+            this.lblSelectedPlayerLName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSelectedPlayerLName.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblSelectedPlayerLName.Location = new System.Drawing.Point(170, 63);
+            this.lblSelectedPlayerLName.Name = "lblSelectedPlayerLName";
+            this.lblSelectedPlayerLName.Size = new System.Drawing.Size(143, 15);
+            this.lblSelectedPlayerLName.TabIndex = 37;
+            this.lblSelectedPlayerLName.Text = "SELECTED PLAYER LAST NAME";
+            // 
+            // txtSelectedPlayerFName_CS
+            // 
+            this.txtSelectedPlayerFName_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSelectedPlayerFName_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtSelectedPlayerFName_CS.Location = new System.Drawing.Point(170, 40);
+            this.txtSelectedPlayerFName_CS.Name = "txtSelectedPlayerFName_CS";
+            this.txtSelectedPlayerFName_CS.ReadOnly = true;
+            this.txtSelectedPlayerFName_CS.Size = new System.Drawing.Size(192, 20);
+            this.txtSelectedPlayerFName_CS.TabIndex = 9;
+            // 
+            // lblSelectedPlayerFName_CS
+            // 
+            this.lblSelectedPlayerFName_CS.AutoSize = true;
+            this.lblSelectedPlayerFName_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSelectedPlayerFName_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblSelectedPlayerFName_CS.Location = new System.Drawing.Point(170, 22);
+            this.lblSelectedPlayerFName_CS.Name = "lblSelectedPlayerFName_CS";
+            this.lblSelectedPlayerFName_CS.Size = new System.Drawing.Size(146, 15);
+            this.lblSelectedPlayerFName_CS.TabIndex = 10;
+            this.lblSelectedPlayerFName_CS.Text = "SELECTED PLAYER FIRST NAME";
+            // 
+            // grpPlayerEdit
+            // 
+            this.grpPlayerEdit.Controls.Add(this.txtCurrentTeam_CS);
+            this.grpPlayerEdit.Controls.Add(this.lblCurrentTeam_CS);
+            this.grpPlayerEdit.Controls.Add(this.txtNewTeam_CS);
+            this.grpPlayerEdit.Controls.Add(this.lblNewTeam_CS);
+            this.grpPlayerEdit.Controls.Add(this.txtPlayerLastName2_CS);
+            this.grpPlayerEdit.Controls.Add(this.btnChangeTeam);
+            this.grpPlayerEdit.Controls.Add(this.lblPlayerLastName2_CS);
+            this.grpPlayerEdit.Controls.Add(this.txtJerseyNumber2_CS);
+            this.grpPlayerEdit.Controls.Add(this.txtBasketballPosition2_CS);
+            this.grpPlayerEdit.Controls.Add(this.txtPlayerFirstName2_CS);
+            this.grpPlayerEdit.Controls.Add(this.lblJerseyNumber2_CS);
+            this.grpPlayerEdit.Controls.Add(this.lblPlayerFirstName2_CS);
+            this.grpPlayerEdit.Controls.Add(this.lblBasketballPosition2_CS);
+            this.grpPlayerEdit.Location = new System.Drawing.Point(191, 395);
+            this.grpPlayerEdit.Name = "grpPlayerEdit";
+            this.grpPlayerEdit.Size = new System.Drawing.Size(374, 190);
+            this.grpPlayerEdit.TabIndex = 9;
+            this.grpPlayerEdit.TabStop = false;
+            this.grpPlayerEdit.Text = "Player Editing";
+            // 
+            // txtNewTeam_CS
+            // 
+            this.txtNewTeam_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNewTeam_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtNewTeam_CS.Location = new System.Drawing.Point(203, 121);
+            this.txtNewTeam_CS.Name = "txtNewTeam_CS";
+            this.txtNewTeam_CS.Size = new System.Drawing.Size(165, 20);
+            this.txtNewTeam_CS.TabIndex = 9;
+            this.txtNewTeam_CS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNewTeam_CS_KeyPress);
+            // 
+            // lblNewTeam_CS
+            // 
+            this.lblNewTeam_CS.AutoSize = true;
+            this.lblNewTeam_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNewTeam_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblNewTeam_CS.Location = new System.Drawing.Point(203, 103);
+            this.lblNewTeam_CS.Name = "lblNewTeam_CS";
+            this.lblNewTeam_CS.Size = new System.Drawing.Size(121, 15);
+            this.lblNewTeam_CS.TabIndex = 10;
+            this.lblNewTeam_CS.Text = "NEW TEAM (I.E. ARCHIVE)";
+            // 
+            // txtPlayerLastName2_CS
+            // 
+            this.txtPlayerLastName2_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPlayerLastName2_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtPlayerLastName2_CS.Location = new System.Drawing.Point(203, 39);
+            this.txtPlayerLastName2_CS.Name = "txtPlayerLastName2_CS";
+            this.txtPlayerLastName2_CS.Size = new System.Drawing.Size(165, 20);
+            this.txtPlayerLastName2_CS.TabIndex = 1;
+            this.txtPlayerLastName2_CS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlayerLastName2_CS_KeyPress);
+            // 
+            // btnChangeTeam
+            // 
+            this.btnChangeTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeTeam.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.btnChangeTeam.Location = new System.Drawing.Point(5, 147);
+            this.btnChangeTeam.Name = "btnChangeTeam";
+            this.btnChangeTeam.Size = new System.Drawing.Size(362, 37);
+            this.btnChangeTeam.TabIndex = 4;
+            this.btnChangeTeam.Text = "Change Team...";
+            this.btnChangeTeam.UseVisualStyleBackColor = true;
+            this.btnChangeTeam.Click += new System.EventHandler(this.btnChangeTeam_Click);
+            // 
+            // lblPlayerLastName2_CS
+            // 
+            this.lblPlayerLastName2_CS.AutoSize = true;
+            this.lblPlayerLastName2_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPlayerLastName2_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblPlayerLastName2_CS.Location = new System.Drawing.Point(203, 21);
+            this.lblPlayerLastName2_CS.Name = "lblPlayerLastName2_CS";
+            this.lblPlayerLastName2_CS.Size = new System.Drawing.Size(97, 15);
+            this.lblPlayerLastName2_CS.TabIndex = 6;
+            this.lblPlayerLastName2_CS.Text = "PLAYER LAST NAME";
+            // 
+            // txtJerseyNumber2_CS
+            // 
+            this.txtJerseyNumber2_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJerseyNumber2_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtJerseyNumber2_CS.Location = new System.Drawing.Point(203, 80);
+            this.txtJerseyNumber2_CS.Name = "txtJerseyNumber2_CS";
+            this.txtJerseyNumber2_CS.Size = new System.Drawing.Size(165, 20);
+            this.txtJerseyNumber2_CS.TabIndex = 3;
+            this.txtJerseyNumber2_CS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJerseyNumber2_CS_KeyPress);
+            // 
+            // txtBasketballPosition2_CS
+            // 
+            this.txtBasketballPosition2_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBasketballPosition2_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtBasketballPosition2_CS.Location = new System.Drawing.Point(5, 80);
+            this.txtBasketballPosition2_CS.Name = "txtBasketballPosition2_CS";
+            this.txtBasketballPosition2_CS.Size = new System.Drawing.Size(192, 20);
+            this.txtBasketballPosition2_CS.TabIndex = 2;
+            this.txtBasketballPosition2_CS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBasketballPosition2_CS_KeyPress);
+            // 
+            // txtPlayerFirstName2_CS
+            // 
+            this.txtPlayerFirstName2_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPlayerFirstName2_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtPlayerFirstName2_CS.Location = new System.Drawing.Point(5, 39);
+            this.txtPlayerFirstName2_CS.Name = "txtPlayerFirstName2_CS";
+            this.txtPlayerFirstName2_CS.Size = new System.Drawing.Size(192, 20);
+            this.txtPlayerFirstName2_CS.TabIndex = 0;
+            this.txtPlayerFirstName2_CS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlayerFirstName2_CS_KeyPress);
+            // 
+            // lblJerseyNumber2_CS
+            // 
+            this.lblJerseyNumber2_CS.AutoSize = true;
+            this.lblJerseyNumber2_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblJerseyNumber2_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblJerseyNumber2_CS.Location = new System.Drawing.Point(203, 62);
+            this.lblJerseyNumber2_CS.Name = "lblJerseyNumber2_CS";
+            this.lblJerseyNumber2_CS.Size = new System.Drawing.Size(83, 15);
+            this.lblJerseyNumber2_CS.TabIndex = 8;
+            this.lblJerseyNumber2_CS.Text = "JERSEY NUMBER";
+            // 
+            // lblPlayerFirstName2_CS
+            // 
+            this.lblPlayerFirstName2_CS.AutoSize = true;
+            this.lblPlayerFirstName2_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPlayerFirstName2_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblPlayerFirstName2_CS.Location = new System.Drawing.Point(5, 21);
+            this.lblPlayerFirstName2_CS.Name = "lblPlayerFirstName2_CS";
+            this.lblPlayerFirstName2_CS.Size = new System.Drawing.Size(100, 15);
+            this.lblPlayerFirstName2_CS.TabIndex = 5;
+            this.lblPlayerFirstName2_CS.Text = "PLAYER FIRST NAME";
+            // 
+            // lblBasketballPosition2_CS
+            // 
+            this.lblBasketballPosition2_CS.AutoSize = true;
+            this.lblBasketballPosition2_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBasketballPosition2_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblBasketballPosition2_CS.Location = new System.Drawing.Point(5, 62);
+            this.lblBasketballPosition2_CS.Name = "lblBasketballPosition2_CS";
+            this.lblBasketballPosition2_CS.Size = new System.Drawing.Size(112, 15);
+            this.lblBasketballPosition2_CS.TabIndex = 7;
+            this.lblBasketballPosition2_CS.Text = "BASKETBALL POSITION";
+            // 
+            // txtCurrentTeam_CS
+            // 
+            this.txtCurrentTeam_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCurrentTeam_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 5.8F);
+            this.txtCurrentTeam_CS.Location = new System.Drawing.Point(6, 121);
+            this.txtCurrentTeam_CS.Name = "txtCurrentTeam_CS";
+            this.txtCurrentTeam_CS.ReadOnly = true;
+            this.txtCurrentTeam_CS.Size = new System.Drawing.Size(191, 20);
+            this.txtCurrentTeam_CS.TabIndex = 11;
+            // 
+            // lblCurrentTeam_CS
+            // 
+            this.lblCurrentTeam_CS.AutoSize = true;
+            this.lblCurrentTeam_CS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCurrentTeam_CS.Font = new System.Drawing.Font("Microsoft Tai Le", 6F);
+            this.lblCurrentTeam_CS.Location = new System.Drawing.Point(6, 103);
+            this.lblCurrentTeam_CS.Name = "lblCurrentTeam_CS";
+            this.lblCurrentTeam_CS.Size = new System.Drawing.Size(166, 15);
+            this.lblCurrentTeam_CS.TabIndex = 12;
+            this.lblCurrentTeam_CS.Text = "CURRENT TEAM (I.E. NOVICE BOYS)";
+            // 
+            // frmTeamCreation
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(574, 591);
+            this.Controls.Add(this.grpPlayerEdit);
+            this.Controls.Add(this.grpPhotoUpload);
+            this.Controls.Add(this.btnSubmit_CS);
+            this.Controls.Add(this.grpPlayerCreation);
+            this.Controls.Add(this.grpTeamDetails_CS);
+            this.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F);
+            this.Name = "frmTeamCreation";
+            this.Text = "Royals Basketball Creation Sheet";
+            this.Load += new System.EventHandler(this.frmTeamCreation_Load);
+            this.grpTeamDetails_CS.ResumeLayout(false);
+            this.grpTeamDetails_CS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBRLogo_CS)).EndInit();
+            this.grpPlayerCreation.ResumeLayout(false);
+            this.grpPlayerCreation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayer_CS)).EndInit();
+            this.grpPhotoUpload.ResumeLayout(false);
+            this.grpPhotoUpload.PerformLayout();
+            this.grpPlayerEdit.ResumeLayout(false);
+            this.grpPlayerEdit.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private System.Windows.Forms.Button btnSubmit_CS;
+        private System.Windows.Forms.GroupBox grpTeamDetails_CS;
+        private System.Windows.Forms.Label lblTeamBracket_CS;
+        private System.Windows.Forms.Label lblRoyals_CS;
+        private System.Windows.Forms.PictureBox picBRLogo_CS;
+        private System.Windows.Forms.ComboBox cmbTeamBracket_CS;
+        private System.Windows.Forms.PictureBox picPlayer_CS;
+        private System.Windows.Forms.Label lblJerseyNumber_CS;
+        private System.Windows.Forms.Label lblPlayerFName_CS;
+        private System.Windows.Forms.Label lblBasketballPosition_CS;
+        private System.Windows.Forms.Button btnSavePhoto_CS;
+        private System.Windows.Forms.TextBox txtBasketballPosition_CS;
+        private System.Windows.Forms.TextBox txtPlayerFName_CS;
+        private System.Windows.Forms.TextBox txtJerseyNumber_CS;
+        private System.Windows.Forms.ListBox listNewTeamPlayers;
+        private System.Windows.Forms.Button btnAdd_CS;
+        private System.Windows.Forms.Button btnDelete_CS;
+        private System.Windows.Forms.GroupBox grpPlayerCreation;
+        private System.Windows.Forms.TextBox txtPlayerLName_CS;
+        private System.Windows.Forms.Label lblPlayerLName_CS;
+        private System.Windows.Forms.GroupBox grpPhotoUpload;
+        private System.Windows.Forms.TextBox txtSelectedPlayerFName_CS;
+        private System.Windows.Forms.Label lblSelectedPlayerFName_CS;
+        private System.Windows.Forms.TextBox txtSelectedPlayerLName_CS;
+        private System.Windows.Forms.Label lblSelectedPlayerLName;
+        private System.Windows.Forms.GroupBox grpPlayerEdit;
+        private System.Windows.Forms.TextBox txtPlayerLastName2_CS;
+        private System.Windows.Forms.Button btnChangeTeam;
+        private System.Windows.Forms.Label lblPlayerLastName2_CS;
+        private System.Windows.Forms.TextBox txtPlayerFirstName2_CS;
+        private System.Windows.Forms.Label lblPlayerFirstName2_CS;
+        private System.Windows.Forms.TextBox txtNewTeam_CS;
+        private System.Windows.Forms.Label lblNewTeam_CS;
+        private System.Windows.Forms.TextBox txtJerseyNumber2_CS;
+        private System.Windows.Forms.TextBox txtBasketballPosition2_CS;
+        private System.Windows.Forms.Label lblJerseyNumber2_CS;
+        private System.Windows.Forms.Label lblBasketballPosition2_CS;
+        private System.Windows.Forms.TextBox txtCurrentTeam_CS;
+        private System.Windows.Forms.Label lblCurrentTeam_CS;
+    }
+}

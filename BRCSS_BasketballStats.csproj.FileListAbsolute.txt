@@ -1,0 +1,695 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.OleDb;
+namespace BRCSS_BasketballStats
+{
+    public partial class frmMatch : Form
+    {
+        private bool ignoreValueChange = false;
+        private string teamBracketText = "";
+        private OleDbConnection connection = new OleDbConnection();
+        public frmMatch(string inputTitle, string teamBracket)
+        {
+            InitializeComponent();
+            teamBracketText = teamBracket;
+            txtSubstitutesSearchBar.KeyPress += txtSubstitutesSearchBar_KeyPress;
+            MessageBox.Show(inputTitle);
+            this.Text = inputTitle;
+            listSubstitutes.MouseClick += listSubstitutes_MouseClick;
+            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Royals Basketball Database.accdb; Persist Security Info=False";
+            try
+            {
+                connection.Open();
+                connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Warning : Unable to Establish Connection to the Microsoft Access Database! Please make sure the Microsoft Access Database (labelled 'Royals Basketball Database') is placed in bin/debug/ of this program, then restart the program. Thank you.");
+            }
+            string fName = "";
+            string lName = "";
+            string jNumber = "";
+            string position = "";
+            string IDNumber = "";
+            OleDbCommand commandGatherPlayers = new OleDbCommand();
+            commandGatherPlayers.Connection = connection;
+            connection.Open();
+            commandGatherPlayers.CommandText = "SELECT * FROM tblActivePlayers WHERE TeamBracket = @TeamBracketName";
+            commandGatherPlayers.Parameters.AddWithValue("@TeamBracketName", teamBracket);
+            OleDbDataReader commandReader = commandGatherPlayers.ExecuteReader();
+            string playerName = "";
+            while (commandReader.Read())
+            {
+                position = commandReader["BasketballPosition"].ToString();
+                IDNumber = commandReader["IDNumber"].ToString();
+                fName = commandReader["FirstName"].ToString();
+                lName = commandReader["LastName"].ToString();
+                jNumber = commandReader["JerseyNumber"].ToString();
+                playerName = commandReader["LastName"].ToString() + ", " + commandReader["FirstName"].ToString() + " - #" + commandReader["JerseyNumber"].ToString();
+                listSubstitutes.Items.Add(playerName);
+            }
+            connection.Close();
+            commandReader.Close();
+            bool connectionOpen = false;
+            cmbFVRD_OVRL.Items.Add("Match Win");
+            cmbFVRD_OVRL.Items.Add("Match Lose");
+            cmbFVRD_OVRL.Items.Add("Match Draw");
+        }
+        private void buildNMC(string tag, string fName, string lName, NumericUpDown nmc)
+        {
+            OleDbCommand commandExistValue = new OleDbCommand();
+            commandExistValue.Connection = connection;
+            connection.Open();
+            string query = "SELECT * FROM tblSubstitutions WHERE LastName = @LastName AND FirstName = @FirstName";
+            commandExistValue.CommandText = query;
+            commandExistValue.Parameters.AddWithValue("@LastName", lName);
+            commandExistValue.Parameters.AddWithValue("@FirstName", fName);
+            OleDbDataReader readerCheck = commandExistValue.ExecuteReader();
+            string fullTag = tag + "_OVRL";
+            string valueCheck = "0";
+            while (readerCheck.Read())
+            {
+                valueCheck = readerCheck[fullTag].ToString();
+            }
+            ignoreValueChange = true;
+            nmc.Value = Convert.ToInt32(valueCheck);
+            ignoreValueChange = false;
+            connection.Close();
+            readerCheck.Close();
+        }
+        private void listSubstitutes_MouseClick(object sender, EventArgs e)
+        {
+            // if player already exists
+            OleDbCommand dragAndDropPlayer = new OleDbCommand();
+            try
+            {
+                string[] selectedItem = listSubstitutes.SelectedItem.ToString().Split(',');
+                dragAndDropPlayer.Connection = connection;
+                selectedItem[0] = selectedItem[0].Trim();
+                selectedItem[1] = selectedItem[1].Trim();
+                connection.Open();
+                string idNum = "";
+                string fName = "";
+                for (int searchID = 0; searchID < selectedItem[1].Length; searchID++)
+                {
+                    if (selectedItem[1][searchID] == '-')
+                    {
+                        fName = selectedItem[1].Substring(0, searchID - 1);
+                    }
+                    if (selectedItem[1][searchID] == '#')
+                    {
+                        idNum = selectedItem[1].Substring(searchID + 1, selectedItem[1].Length - (searchID + 1));
+                    }
+                }
+                string lName = selectedItem[0].Trim();
+                dragAndDropPlayer.CommandText = "SELECT * FROM tblSubstitutions WHERE LastName = @LastName AND FirstName = @FirstName";// AND JerseyNumber = @JerseyNumber";
+                dragAndDropPlayer.Parameters.AddWithValue("@LastName", lName);
+                dragAndDropPlayer.Parameters.AddWithValue("@FirstName", fName);
+                //dragAndDropPlayer.Parameters.AddWithValue("@JerseyNumber", idNum);
+                OleDbDataReader playerReader = dragAndDropPlayer.ExecuteReader();
+                string playerPosition = "";
+                string playerFName = "";
+                string playerLName = "";
+                while (playerReader.Read())
+                {
+                    playerPosition = playerReader["BasketballPosition"].ToString();
+                    playerFName = playerReader["FirstName"].ToString();
+                    playerLName = playerReader["LastName"].ToString();
+                }
+                connection.Close();
+                playerReader.Close();
+                bool substituteCheck = true;
+                GroupBox[] playerPositions = { grpPointGuard, grpPowerForward, grpShootingGuard, grpSmallForward, grpCenter };
+                foreach (GroupBox grp in playerPositions)
+                {
+                    if (grp.Text.Contains(';') && grp.Text.Contains(playerFName) && grp.Text.Contains(playerLName))
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Substitute " + playerFName + " " + playerLName + " as " + playerPosition + "?", "Substituting...", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            substituteCheck = false;
+                            grp.Text = playerPosition + " ; " + playerFName + " " + playerLName;
+                            foreach (Control cntrl in grp.Controls)
+                            {
+                                if (cntrl is NumericUpDown nmc)
+                                {
+                                    if (nmc.Tag.ToString().Contains(playerPosition))
+                                    {
+                                        string[] splitTag = nmc.Tag.ToString().Split(';');
+                                        buildNMC(splitTag[0], playerFName, playerLName, nmc);
+                                    }
+                                }
+                            }
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            substituteCheck = false;
+                        }
+                    }
+                    if (grp.Text.Contains(playerPosition) && substituteCheck == true)
+                    {
+                        grp.Text = playerPosition + " ; " + playerFName + " " + playerLName;
+                        foreach (Control cntrl in grp.Controls)
+                        {
+                            if (cntrl is NumericUpDown nmc)
+                            {
+                                if (nmc.Tag.ToString().Contains(playerPosition))
+                                {
+                                    string[] splitTag = nmc.Tag.ToString().Split(';');
+                                    buildNMC(splitTag[0], playerFName, playerLName, nmc);
+                                }
+                            }
+                        }
+                    }
+                }
+                // player photo
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Note. No player selected, please try again by selecting a player on the list, thank you!");
+            }
+        }
+        private void numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (ignoreValueChange != true)
+            {
+                bool selectedOrNot = false;
+                try
+                {
+                    string testSelect = listSubstitutes.SelectedItem.ToString();
+                }
+                catch
+                {
+                    selectedOrNot = true;
+                    MessageBox.Show("Please make sure you've inputted all the players before making this interaction! THank you.");
+                }
+                if (selectedOrNot == false)
+                {
+                    NumericUpDown num = sender as NumericUpDown;
+                    string[] numInfo = num.Tag.ToString().Split(';');
+                    string playerFName = "";
+                    string playerLName = "";
+                    GroupBox[] playerPositions = { grpPointGuard, grpPowerForward, grpShootingGuard, grpSmallForward, grpCenter };
+                    foreach (GroupBox grp in playerPositions)
+                    {
+                        if (num.Parent == grp)
+                        {
+                            string[] grpTitleValues = grp.Text.Split(';');
+                            grpTitleValues[1] = grpTitleValues[1].Trim();
+                            string[] playerNames = grpTitleValues[1].Split(' ');
+                            playerFName = playerNames[0];
+                            playerLName = playerNames[1];
+                            foreach (Control ctrl in grp.Controls)
+                            {
+                                if (num.Name.Contains("nmc3PT"))
+                                {
+                                    if (ctrl is TextBox txt)
+                                    {
+                                        int currentNum = int.Parse(txt.Text);
+                                        currentNum += 3;
+                                        int totalPoints = int.Parse(txtTPTS_OVRL.Text);
+                                        totalPoints += 3;
+                                        txtTPTS_OVRL.Text = totalPoints.ToString();
+                                        txt.Text = currentNum.ToString();
+                                        OleDbCommand addThreePoints = new OleDbCommand();
+                                        addThreePoints.CommandText = "UPDATE tblSubstitutions SET PTS_OVRL = @StatValue WHERE LastName = @LastName AND FirstName = @FirstName";
+                                        addThreePoints.Parameters.AddWithValue("@StatValue", currentNum);
+                                        addThreePoints.Parameters.AddWithValue("@LastName", playerLName);
+                                        addThreePoints.Parameters.AddWithValue("@FirstName", playerFName);
+                                    }
+                                }
+                                if (num.Name.Contains("nmc2PT"))
+                                {
+                                    if (ctrl is TextBox txt)
+                                    {
+                                        int currentNum = int.Parse(txt.Text);
+                                        currentNum += 2;
+                                        int totalPoints = int.Parse(txtTPTS_OVRL.Text);
+                                        totalPoints += 2;
+                                        txtTPTS_OVRL.Text = totalPoints.ToString();
+                                        txt.Text = currentNum.ToString();
+                                        OleDbCommand addTwoPoints = new OleDbCommand();
+                                        addTwoPoints.CommandText = "UPDATE tblSubstitutions SET PTS_OVRL = @StatValue WHERE LastName = @LastName AND FirstName = @FirstName";
+                                        addTwoPoints.Parameters.AddWithValue("@StatValue", currentNum);
+                                        addTwoPoints.Parameters.AddWithValue("@LastName", playerLName);
+                                        addTwoPoints.Parameters.AddWithValue("@FirstName", playerFName);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (num.Parent.Text.Contains(';') == true)
+                    {
+                        OleDbCommand commandSetValue = new OleDbCommand();
+                        commandSetValue.Connection = connection;
+                        connection.Open();
+                        string query = "UPDATE tblSubstitutions SET " + numInfo[0].Trim() + "_OVRL = @StatValue WHERE LastName = @LastName AND FirstName = @FirstName";
+                        commandSetValue.CommandText = query;
+                        commandSetValue.Parameters.AddWithValue("@StatValue", num.Value);
+                        commandSetValue.Parameters.AddWithValue("@LastName", playerLName);
+                        commandSetValue.Parameters.AddWithValue("@FirstName", playerFName);
+                        commandSetValue.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("A player has not been selected for this position! Please select a player and try again. Thank you.");
+                    }
+                }
+            }
+        }
+        private void frmMatch_Load(object sender, EventArgs e)
+        {
+            nmcREB_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcAST_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcBLK_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcMIN_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcSTL_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PT_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcFDRW_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcFCMT_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcTO_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PT_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PTATMP_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTM_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTA_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PTATMP_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcTP_PG.ValueChanged += numericUpDown_ValueChanged;
+            nmcREB_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcAST_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcTO_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcBLK_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcMIN_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcSTL_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PT_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcFDRW_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcFCMT_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PT_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PTATMP_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTM_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTA_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PTATMP_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcTIPP_SG.ValueChanged += numericUpDown_ValueChanged;
+            nmcREB_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcAST_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcBLK_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcMIN_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcSTL_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PT_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcFDRW_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcFCMT_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcTO_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PT_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PTATMP_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTM_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTA_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PTATMP_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcTIPP_SF.ValueChanged += numericUpDown_ValueChanged;
+            nmcREB_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcAST_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcBLK_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcMIN_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcSTL_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PT_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcFDRW_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcFCMT_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcTO_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PT_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PTATMP_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTM_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTA_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PTATMP_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcTIPP_PF.ValueChanged += numericUpDown_ValueChanged;
+            nmcREB_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcAST_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcBLK_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcMIN_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcSTL_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PT_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcFDRW_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcFCMT_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcTO_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PT_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmc2PTATMP_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTM_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcFTA_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmc3PTATMP_CT.ValueChanged += numericUpDown_ValueChanged;
+            nmcTIPP_CT.ValueChanged += numericUpDown_ValueChanged;
+        }
+        private void recursiveStatInputSubstitutions(int markID, int markIDTotal)
+        {
+            if (markID <= markIDTotal && markIDTotal != 0)
+            {
+                OleDbCommand commandGames = new OleDbCommand();
+                commandGames.CommandText = "SELECT GAMESPLAYED FROM tblActivePlayers WHERE IDNumber = @MarkID";
+                commandGames.Parameters.AddWithValue("@MarkID", markID);
+                commandGames.Connection = connection;
+                connection.Open();
+                string GAMESPLAYED_OVRL = commandGames.ExecuteScalar().ToString();
+                connection.Close();
+                OleDbCommand collectData = new OleDbCommand();
+                collectData.Connection = connection;
+                connection.Open();
+                collectData.CommandText = "SELECT * FROM tblSubstitutions WHERE IDNumber = @MarkID";
+                collectData.Parameters.AddWithValue("@MarkID", markID);
+                OleDbDataReader dataReader = collectData.ExecuteReader();
+                int PTS_OVRL_NUM = 0;
+                int REB_OVRL_NUM = 0;
+                int AST_OVRL_NUM = 0;
+                int BLK_OVRL_NUM = 0;
+                int STL_OVRL_NUM = 0;
+                int TO_OVRL_NUM = 0;
+                int TIPPASS_OVRL_NUM = 0;
+                int FTMADE_OVRL_NUM = 0;
+                int FTATMP_OVRL_NUM = 0;
+                int TWOPTSATMP_OVRL_NUM = 0;
+                int TWOPTSMADE_OVRL_NUM = 0;
+                int THREEPTSATMP_OVRL_NUM = 0;
+                int THREEPTSMADE_OVRL_NUM = 0;
+                int MIN_OVRL_NUM = 0;
+                int FDRW_OVRL_NUM = 0;
+                int FCMT_OVRL_NUM = 0;
+                int PER_OVRL_NUM = 0;
+                int GAMESPLAYED_NUM = int.Parse(GAMESPLAYED_OVRL);
+                while (dataReader.Read())
+                {
+                    string PTS_OVRL = dataReader["PTS_OVRL"].ToString();
+                    PTS_OVRL_NUM = int.Parse(PTS_OVRL);
+                    string REB_OVRL = dataReader["REB_OVRL"].ToString();
+                    REB_OVRL_NUM = int.Parse(REB_OVRL);
+                    string AST_OVRL = dataReader["AST_OVRL"].ToString();
+                    AST_OVRL_NUM = int.Parse(AST_OVRL);
+                    string BLK_OVRL = dataReader["BLK_OVRL"].ToString();
+                    BLK_OVRL_NUM = int.Parse(BLK_OVRL);
+                    string STL_OVRL = dataReader["STL_OVRL"].ToString();
+                    STL_OVRL_NUM = int.Parse(STL_OVRL);
+                    string TO_OVRL = dataReader["TO_OVRL"].ToString();
+                    TO_OVRL_NUM = int.Parse(TO_OVRL);
+                    string TIPPASS_OVRL = dataReader["TIPPASS_OVRL"].ToString();
+                    TIPPASS_OVRL_NUM = int.Parse(TIPPASS_OVRL);
+                    string FTMADE_OVRL = dataReader["FTMADE_OVRL"].ToString();
+                    FTMADE_OVRL_NUM = int.Parse(FTMADE_OVRL);
+                    string FTATMP_OVRL = dataReader["FTATMP_OVRL"].ToString();
+                    FTATMP_OVRL_NUM = int.Parse(FTATMP_OVRL);
+                    string TWOPTSATMP_OVRL = dataReader["TWOPTSATMP_OVRL"].ToString();
+                    TWOPTSATMP_OVRL_NUM = int.Parse(TWOPTSATMP_OVRL);
+                    string TWOPTSMADE_OVRL = dataReader["TWOPTSMADE_OVRL"].ToString();
+                    TWOPTSMADE_OVRL_NUM = int.Parse(TWOPTSMADE_OVRL);
+                    string THREEPTSATMP_OVRL = dataReader["THREEPTSATMP_OVRL"].ToString();
+                    THREEPTSATMP_OVRL_NUM = int.Parse(THREEPTSATMP_OVRL);
+                    string THREEPTSMADE_OVRL = dataReader["THREEPTSMADE_OVRL"].ToString();
+                    THREEPTSMADE_OVRL_NUM = int.Parse(THREEPTSMADE_OVRL);
+                    string MIN_OVRL = dataReader["MIN_OVRL"].ToString();
+                    MIN_OVRL_NUM = int.Parse(MIN_OVRL);
+                    string FDRW_OVRL = dataReader["FDRW_OVRL"].ToString();
+                    FDRW_OVRL_NUM = int.Parse(FDRW_OVRL);
+                    string FCMT_OVRL = dataReader["FCMT_OVRL"].ToString();
+                    FCMT_OVRL_NUM = int.Parse(FCMT_OVRL);
+                    bool zeroGames = false;
+                    if (GAMESPLAYED_NUM == 0)
+                    {
+                        GAMESPLAYED_NUM = 1;
+                        zeroGames = true;
+                    }
+                    int missedFTCalc = int.Parse(FTATMP_OVRL) - int.Parse(FTMADE_OVRL);
+                    int missedTWOPT = int.Parse(TWOPTSATMP_OVRL) - int.Parse(TWOPTSMADE_OVRL);
+                    int missedTHREEPT = int.Parse(THREEPTSATMP_OVRL) - int.Parse(THREEPTSMADE_OVRL);
+                    int missedFGCalc = missedTWOPT + missedTHREEPT;
+                    int perCalcBaseValue = int.Parse(PTS_OVRL) + int.Parse(AST_OVRL) + int.Parse(REB_OVRL) + int.Parse(STL_OVRL) + int.Parse(BLK_OVRL) - missedFGCalc - missedFTCalc - int.Parse(TO_OVRL);
+                    PER_OVRL_NUM = perCalcBaseValue / GAMESPLAYED_NUM;
+                    if (zeroGames == true)
+                    {
+                        GAMESPLAYED_NUM = 0;
+                    }
+                }
+                connection.Close();
+                OleDbCommand store2PTATMP2PTMADE3PTATMP = new OleDbCommand();
+                store2PTATMP2PTMADE3PTATMP.Connection = connection;
+                connection.Open();
+                store2PTATMP2PTMADE3PTATMP.CommandText = "UPDATE tblActivePlayers SET TWOPTSATMP_OVRL = TWOPTSATMP_OVRL + @AttemptOne, TWOPTSMADE_OVRL = TWOPTSMADE_OVRL + @TwoPointsMadeToAdd, THREEPTSATMP_OVRL = THREEPTSATMP_OVRL + @ThreeAttemptedToAdd WHERE IDNumber = @MarkID";
+                store2PTATMP2PTMADE3PTATMP.Parameters.AddWithValue("@AttemptOne", TWOPTSATMP_OVRL_NUM);
+                store2PTATMP2PTMADE3PTATMP.Parameters.AddWithValue("@TwoPointsMadeToAdd", TWOPTSMADE_OVRL_NUM);
+                store2PTATMP2PTMADE3PTATMP.Parameters.AddWithValue("@ThreeAttemptedToAdd", THREEPTSATMP_OVRL_NUM);
+                store2PTATMP2PTMADE3PTATMP.Parameters.AddWithValue("@IDNumber", markID);
+                store2PTATMP2PTMADE3PTATMP.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand storePTSREBAST = new OleDbCommand();
+                storePTSREBAST.Connection = connection;
+                connection.Open();
+                storePTSREBAST.CommandText = "UPDATE tblActivePlayers SET PTS_OVRL = PTS_OVRL + @PointsToAdd, REB_OVRL = REB_OVRL + @ReboundsToAdd, AST_OVRL = AST_OVRL + @AssistsToAdd WHERE IDNumber = @MarkID";
+                storePTSREBAST.Parameters.AddWithValue("@PointsToAdd", PTS_OVRL_NUM);
+                storePTSREBAST.Parameters.AddWithValue("@ReboundsToAdd", REB_OVRL_NUM);
+                storePTSREBAST.Parameters.AddWithValue("@AssistsToAdd", AST_OVRL_NUM);
+                storePTSREBAST.Parameters.AddWithValue("@IDNumber", markID);
+                //markID
+                storePTSREBAST.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand storeBLKSTLTO = new OleDbCommand();
+                storeBLKSTLTO.Connection = connection;
+                connection.Open();
+                storeBLKSTLTO.CommandText = "UPDATE tblActivePlayers SET BLK_OVRL = BLK_OVRL + @BlocksToAdd, STL_OVRL = STL_OVRL + @StealsToAdd, TO_OVRL = TO_OVRL + @TurnoversToAdd WHERE IDNumber = @MarkID";
+                storeBLKSTLTO.Parameters.AddWithValue("@BlocksToAdd", BLK_OVRL_NUM);
+                storeBLKSTLTO.Parameters.AddWithValue("@StealsToAdd", STL_OVRL_NUM);
+                storeBLKSTLTO.Parameters.AddWithValue("@TurnoversToAdd", TO_OVRL_NUM);
+                storeBLKSTLTO.Parameters.AddWithValue("@IDNumber", markID);
+                storeBLKSTLTO.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand storeTIPPASSFTMADEFTATMP = new OleDbCommand();
+                storeTIPPASSFTMADEFTATMP.Connection = connection;
+                connection.Open();
+                storeTIPPASSFTMADEFTATMP.CommandText = "UPDATE tblActivePlayers SET TIPPASS_OVRL = TIPPASS_OVRL + @TippedPassesToAdd, FTMADE_OVRL = FTMADE_OVRL + @FreeThrowsMadeToAdd, FTATMP_OVRL = FTATMP_OVRL + @FreeThrowsAttemptedToAdd WHERE IDNumber = @MarkID";
+                storeTIPPASSFTMADEFTATMP.Parameters.AddWithValue("@TippedPassesToAdd", TIPPASS_OVRL_NUM);
+                storeTIPPASSFTMADEFTATMP.Parameters.AddWithValue("@FreeThrowsMadeToAdd", FTMADE_OVRL_NUM);
+                storeTIPPASSFTMADEFTATMP.Parameters.AddWithValue("@FreeThrowsAttemptedToAdd", FTATMP_OVRL_NUM);
+                storeTIPPASSFTMADEFTATMP.Parameters.AddWithValue("@IDNumber", markID);
+                storeTIPPASSFTMADEFTATMP.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand store3PTMADEMINFDRW = new OleDbCommand();
+                store3PTMADEMINFDRW.Connection = connection;
+                connection.Open();
+                store3PTMADEMINFDRW.CommandText = "UPDATE tblActivePlayers SET THREEPTSMADE_OVRL = THREEPTSMADE_OVRL + @ThreePointsMadeToAdd, MIN_OVRL = MIN_OVRL + @MinutesToAdd, FDRW_OVRL = FDRW_OVRL + @FoulsDrawnToAdd WHERE IDNumber = @MarkID";
+                store3PTMADEMINFDRW.Parameters.AddWithValue("@ThreePointsMadeToAdd", THREEPTSMADE_OVRL_NUM);
+                store3PTMADEMINFDRW.Parameters.AddWithValue("@MinutesToAdd", MIN_OVRL_NUM);
+                store3PTMADEMINFDRW.Parameters.AddWithValue("@FoulsDrawnToAdd", FDRW_OVRL_NUM);
+                store3PTMADEMINFDRW.Parameters.AddWithValue("@IDNumber", markID);
+                store3PTMADEMINFDRW.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand storeFCMTPERGAMESPLAYED = new OleDbCommand();
+                storeFCMTPERGAMESPLAYED.Connection = connection;
+                storeFCMTPERGAMESPLAYED.CommandText = "UPDATE tblActivePlayers SET FCMT_OVRL = FCMT_OVRL + @FoulsCommittedToAdd, PER_OVRL = PER_OVRL + @PlayerRatingToAdd, GAMESPLAYED = GAMESPLAYED + @GamesToAdd WHERE IDNumber = @MarkID";
+                storeFCMTPERGAMESPLAYED.Parameters.AddWithValue("@FoulsCommittedToAdd", FCMT_OVRL_NUM);
+                storeFCMTPERGAMESPLAYED.Parameters.AddWithValue("@PlayerRatingToAdd", PER_OVRL_NUM);
+                storeFCMTPERGAMESPLAYED.Parameters.AddWithValue("@GamesToAdd", 1);
+                storeFCMTPERGAMESPLAYED.Parameters.AddWithValue("@IDNumber", markID);
+                if (markID != markIDTotal)
+                {
+                    recursiveStatInputSubstitutions(markID + 1, markIDTotal);
+                }
+            }
+        }
+        private void mnuFileEndMatch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string gameVerdict = cmbFVRD_OVRL.SelectedItem.ToString();
+                OleDbCommand commandIDMark = new OleDbCommand();
+                commandIDMark.CommandText = "SELECT MAX(IDNumber) FROM tblSubstitutions";
+                commandIDMark.Connection = connection;
+                connection.Open();
+                int markIDTotal = 0;
+                try
+                {
+                    markIDTotal = Convert.ToInt32(commandIDMark.ExecuteScalar());
+                }
+                catch
+                {
+                    markIDTotal = 0;
+                }
+                connection.Close();
+                // subst --> active
+                recursiveStatInputSubstitutions(1, markIDTotal);
+                // match hist
+                OleDbCommand commandIDMatch = new OleDbCommand();
+                commandIDMatch.CommandText = "SELECT MAX(GameNumber) FROM tblMatchHistory";
+                commandIDMatch.Connection = connection;
+                connection.Open();
+                int currentGameID = 0;
+                try
+                {
+                    currentGameID = Convert.ToInt32(commandIDMatch.ExecuteScalar()) + 1;
+                }
+                catch
+                {
+                    currentGameID = 0;
+                }
+                connection.Close();
+                OleDbCommand matchHistoryCreation = new OleDbCommand();
+                matchHistoryCreation.Connection = connection;
+                string[] nameValues = this.Text.Split(';');
+                nameValues[0] = nameValues[0].Trim();
+                nameValues[1] = nameValues[1].Trim();
+                nameValues[2] = nameValues[2].Trim();
+                nameValues[3] = nameValues[3].Trim();
+                int totalPoints = int.Parse(txtTPTS_OVRL.Text);
+                matchHistoryCreation.CommandText = "INSERT INTO tblMatchHistory ([GameNumber], [GameVerdict], [TeamBracket], [OpponentName], [MatchDate], [CourtLocation], [PTS_TEAM]) VALUES (@GameNumberNew, @GameVerdictNew, @TeamBracketNew, @OpponentNameNew, @MatchDateNew, @CourtLocationNew, @TeamPointsTotal)";
+                matchHistoryCreation.Parameters.AddWithValue("@GameNumberNew", currentGameID + 1);
+                matchHistoryCreation.Parameters.AddWithValue("@GameVerdictNew", gameVerdict);
+                matchHistoryCreation.Parameters.AddWithValue("@TeamBracketNew", nameValues[0]);
+                matchHistoryCreation.Parameters.AddWithValue("@OpponentNameNew", nameValues[1]);
+                matchHistoryCreation.Parameters.AddWithValue("@MatchDateNew", nameValues[2]);
+                matchHistoryCreation.Parameters.AddWithValue("@CourtLocationNew", nameValues[3]);
+                matchHistoryCreation.Parameters.AddWithValue("@TeamPointsTotal", totalPoints);
+                connection.Open();
+                matchHistoryCreation.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand clearTable = new OleDbCommand();
+                clearTable.Connection = connection;
+                clearTable.CommandText = "UPDATE tblSubstitutions SET PTS_OVRL = @PreservedValue1, REB_OVRL = @PreservedValue2, AST_OVRL = @PreservedValue3";
+                clearTable.Parameters.AddWithValue("@PreservedValue1", 0);
+                clearTable.Parameters.AddWithValue("@PreservedValue2", 0);
+                clearTable.Parameters.AddWithValue("@PreservedValue3", 0);
+                connection.Open();
+                clearTable.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand clearTable2 = new OleDbCommand();
+                clearTable2.Connection = connection;
+                clearTable2.CommandText = "UPDATE tblSubstitutions SET BLK_OVRL = @PreservedValue4, STL_OVRL = @PreservedValue5, TO_OVRL = @PreservedValue6";
+                clearTable2.Parameters.AddWithValue("@PreservedValue4", 0);
+                clearTable2.Parameters.AddWithValue("@PreservedValue5", 0);
+                clearTable2.Parameters.AddWithValue("@PreservedValue6", 0);
+                connection.Open();
+                clearTable2.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand clearTable3 = new OleDbCommand();
+                clearTable3.Connection = connection;
+                clearTable3.CommandText = "UPDATE tblSubstitutions SET TIPPASS_OVRL = @PreservedValue7, FTMADE_OVRL = @PreservedValue8, FTATMP_OVRL = @PreservedValue9";
+                clearTable3.Parameters.AddWithValue("@PreservedValue7", 0);
+                clearTable3.Parameters.AddWithValue("@PreservedValue8", 0);
+                clearTable3.Parameters.AddWithValue("@PreservedValue9", 0);
+                connection.Open();
+                clearTable3.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand clearTable4 = new OleDbCommand();
+                clearTable4.Connection = connection;
+                clearTable4.CommandText = "UPDATE tblSubstitutions SET TWOPTSATMP_OVRL = @PreservedValue10, TWOPTSMADE_OVRL = @PreservedValue11, THREEPTSATMP_OVRL = @PreservedValue12";
+                clearTable4.Parameters.AddWithValue("@PreservedValue10", 0);
+                clearTable4.Parameters.AddWithValue("@PreservedValue11", 0);
+                clearTable4.Parameters.AddWithValue("@PreservedValue12", 0);
+                connection.Open();
+                clearTable4.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand clearTable5 = new OleDbCommand();
+                clearTable5.Connection = connection;
+                clearTable5.CommandText = "UPDATE tblSubstitutions SET THREEPTSATMP_OVRL = @PreservedValue13, THREEPTSMADE_OVRL = @PreservedValue14, MIN_OVRL = @PreservedValue15";
+                clearTable5.Parameters.AddWithValue("@PreservedValue13", 0);
+                clearTable5.Parameters.AddWithValue("@PreservedValue14", 0);
+                clearTable5.Parameters.AddWithValue("@PreservedValue15", 0);
+                connection.Open();
+                clearTable5.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand clearTable6 = new OleDbCommand();
+                clearTable6.Connection = connection;
+                clearTable6.CommandText = "UPDATE tblSubstitutions SET FDRW_OVRL = @PreservedValue16, FCMT_OVRL = @PreservedValue17, PER_OVRL = @PreservedValue18";
+                clearTable6.Parameters.AddWithValue("@PreservedValue16", 0);
+                clearTable6.Parameters.AddWithValue("@PreservedValue17", 0);
+                clearTable6.Parameters.AddWithValue("@PreservedValue18", 0);
+                connection.Open();
+                clearTable6.ExecuteNonQuery();
+                connection.Close();
+                OleDbCommand clearTable7 = new OleDbCommand();
+                clearTable7.Connection = connection;
+                clearTable7.CommandText = "UPDATE tblSubstitutions SET GAMESPLAYED = @PreservedValue19";
+                clearTable7.Parameters.AddWithValue("@PreservedValue19", 0);
+                connection.Open();
+                clearTable7.ExecuteNonQuery();
+                connection.Close();
+                this.Hide();
+                bool guestCheck = false;
+                frmAdminInterface frmAdminInterface = new frmAdminInterface(guestCheck);
+                frmAdminInterface.Show();
+            }
+            catch 
+            {
+                MessageBox.Show("Some information appears to be missing! Please make sure that you fill out the Game Verdict and that all appropriate information has been selected before you start a match.");
+            }
+        }
+        private void mnuCallTimeout_Click(object sender, EventArgs e)
+        {
+            if (tmrTimeout.Enabled == true)
+            {
+                NumericUpDown[] nmcList = { nmc2PTATMP_CT, nmc2PTATMP_PF, nmc2PTATMP_PG, nmc2PTATMP_SF, nmc2PTATMP_SG, nmc2PT_CT, nmc2PT_PF, nmc2PT_PG, nmc2PT_SF, nmc2PT_SG, nmc3PTATMP_CT, nmc3PTATMP_PF, nmc3PTATMP_PG, nmc3PTATMP_SF, nmc3PTATMP_SG, nmc3PT_CT, nmc3PT_PF, nmc3PT_PG, nmc3PT_SF, nmc3PT_SG, nmcAST_CT, nmcAST_PF, nmcAST_PG, nmcAST_SF, nmcAST_SG, nmcBLK_CT, nmcBLK_PF, nmcBLK_PG, nmcBLK_SF, nmcBLK_SG, nmcFCMT_CT, nmcFCMT_PF, nmcFCMT_PG, nmcFCMT_SF, nmcFCMT_SG, nmcFDRW_CT, nmcFDRW_PF, nmcFDRW_PG, nmcFDRW_SF, nmcFDRW_SG, nmcFTA_CT, nmcFTA_PF, nmcFTA_PG, nmcFTA_SF, nmcFTA_SG, nmcFTM_CT, nmcFTM_PF, nmcFTM_PG, nmcFTM_SF, nmcFTM_SG, nmcMIN_CT, nmcMIN_PF, nmcMIN_PG, nmcMIN_SF, nmcMIN_SG, nmcREB_CT, nmcREB_PF, nmcREB_PG, nmcREB_SF, nmcREB_SG, nmcSTL_CT, nmcSTL_PF, nmcSTL_PG, nmcSTL_SF, nmcSTL_SG, nmcTIPP_CT, nmcTIPP_PF, nmcTIPP_SF, nmcTIPP_SG, nmcTO_CT, nmcTO_PF, nmcTO_PG, nmcTO_SF, nmcTO_SG, nmcTP_PG };
+                listSubstitutes.Visible = true;
+                tmrTimeout.Stop();
+            }
+            else
+            {
+                MessageBox.Show("Note. The timer has not been started, please make sure the timer has started before calling the timeout button, thank you.");
+            }
+        }
+        private void mnuStartContGameTimer_Click(object sender, EventArgs e)
+        {
+            bool checkGRP = false;
+            GroupBox[] playerPositions = { grpPointGuard, grpPowerForward, grpShootingGuard, grpSmallForward, grpCenter };
+            foreach (GroupBox grp in playerPositions)
+            {
+                if (grp.Text.Contains(';') == false && checkGRP == false)
+                {
+                    checkGRP = true;
+                    MessageBox.Show("Note. Not all players have been selected for their designated positions! Please make sure that all positions are filled before starting the timer. Thank you.");
+                }
+            }
+            if (checkGRP == false)
+            {
+                NumericUpDown[] nmcList = { nmc2PTATMP_CT, nmc2PTATMP_PF, nmc2PTATMP_PG, nmc2PTATMP_SF, nmc2PTATMP_SG, nmc2PT_CT, nmc2PT_PF, nmc2PT_PG, nmc2PT_SF, nmc2PT_SG, nmc3PTATMP_CT, nmc3PTATMP_PF, nmc3PTATMP_PG, nmc3PTATMP_SF, nmc3PTATMP_SG, nmc3PT_CT, nmc3PT_PF, nmc3PT_PG, nmc3PT_SF, nmc3PT_SG, nmcAST_CT, nmcAST_PF, nmcAST_PG, nmcAST_SF, nmcAST_SG, nmcBLK_CT, nmcBLK_PF, nmcBLK_PG, nmcBLK_SF, nmcBLK_SG, nmcFCMT_CT, nmcFCMT_PF, nmcFCMT_PG, nmcFCMT_SF, nmcFCMT_SG, nmcFDRW_CT, nmcFDRW_PF, nmcFDRW_PG, nmcFDRW_SF, nmcFDRW_SG, nmcFTA_CT, nmcFTA_PF, nmcFTA_PG, nmcFTA_SF, nmcFTA_SG, nmcFTM_CT, nmcFTM_PF, nmcFTM_PG, nmcFTM_SF, nmcFTM_SG, nmcMIN_CT, nmcMIN_PF, nmcMIN_PG, nmcMIN_SF, nmcMIN_SG, nmcREB_CT, nmcREB_PF, nmcREB_PG, nmcREB_SF, nmcREB_SG, nmcSTL_CT, nmcSTL_PF, nmcSTL_PG, nmcSTL_SF, nmcSTL_SG, nmcTIPP_CT, nmcTIPP_PF, nmcTIPP_SF, nmcTIPP_SG, nmcTO_CT, nmcTO_PF, nmcTO_PG, nmcTO_SF, nmcTO_SG, nmcTP_PG };
+                tmrTimeout.Interval = 60000;
+                tmrTimeout.Start();
+            }
+        }
+        private void tmrTimeout_Tick(object sender, EventArgs e)
+        {
+            NumericUpDown[] nmcList = { nmc2PTATMP_CT, nmc2PTATMP_PF, nmc2PTATMP_PG, nmc2PTATMP_SF, nmc2PTATMP_SG, nmc2PT_CT, nmc2PT_PF, nmc2PT_PG, nmc2PT_SF, nmc2PT_SG, nmc3PTATMP_CT, nmc3PTATMP_PF, nmc3PTATMP_PG, nmc3PTATMP_SF, nmc3PTATMP_SG, nmc3PT_CT, nmc3PT_PF, nmc3PT_PG, nmc3PT_SF, nmc3PT_SG, nmcAST_CT, nmcAST_PF, nmcAST_PG, nmcAST_SF, nmcAST_SG, nmcBLK_CT, nmcBLK_PF, nmcBLK_PG, nmcBLK_SF, nmcBLK_SG, nmcFCMT_CT, nmcFCMT_PF, nmcFCMT_PG, nmcFCMT_SF, nmcFCMT_SG, nmcFDRW_CT, nmcFDRW_PF, nmcFDRW_PG, nmcFDRW_SF, nmcFDRW_SG, nmcFTA_CT, nmcFTA_PF, nmcFTA_PG, nmcFTA_SF, nmcFTA_SG, nmcFTM_CT, nmcFTM_PF, nmcFTM_PG, nmcFTM_SF, nmcFTM_SG, nmcMIN_CT, nmcMIN_PF, nmcMIN_PG, nmcMIN_SF, nmcMIN_SG, nmcREB_CT, nmcREB_PF, nmcREB_PG, nmcREB_SF, nmcREB_SG, nmcSTL_CT, nmcSTL_PF, nmcSTL_PG, nmcSTL_SF, nmcSTL_SG, nmcTIPP_CT, nmcTIPP_PF, nmcTIPP_SF, nmcTIPP_SG, nmcTO_CT, nmcTO_PF, nmcTO_PG, nmcTO_SF, nmcTO_SG, nmcTP_PG };
+            foreach (Control cntrl in nmcList)
+            {
+                if (cntrl is NumericUpDown nmc)
+                {
+                    if (nmc.Name.Contains("MIN"))
+                    {
+                        if (nmc.Value != 48)
+                        {
+                            nmc.Value = nmc.Value + 1;
+                        }
+                    }
+                }
+            }
+        }
+        private void txtSubstitutesSearchBar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            listSubstitutes.Items.Clear();
+            OleDbCommand command2 = new OleDbCommand();//new command
+            command2.Connection = connection;//connect linked
+            connection.Open();
+            string test = txtSubstitutesSearchBar.Text;
+            command2.CommandText = "SELECT * FROM tblSubstitutions WHERE FirstName LIKE '%" + test + "%' AND TeamBracket = @TeamBracket";//getting ready to display
+            command2.Parameters.AddWithValue("@TeamBracket", teamBracketText);
+            OleDbDataReader reader2 = command2.ExecuteReader();//start reader
+            while (reader2.Read())//reader for ID and BD
+            {
+                string fNameValue = reader2["LastName"].ToString() + ", " + reader2["FirstName"].ToString() + " - #" + reader2["JerseyNumber"].ToString();
+                listSubstitutes.Items.Add(fNameValue);
+            }
+            connection.Close();
+        }
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
